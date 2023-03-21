@@ -1,0 +1,497 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!-- Hero -->
+<!-- Hero -->
+<div class="p-5 text-center bg-image rounded-3" style="
+    background-image: url('{{ single_tour.featured_image.url }}');
+    height: 550px;
+  ">
+  <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
+    <div class="d-flex justify-content-center align-items-center h-100">
+      <div class="text-white">
+        <h1 class="mb-3">{{single_tour.name }}</h1>
+       
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Hero -->
+<!-- Hero -->
+
+
+
+<div class="scroll-menus bottomMenu" id="bottomMenu">
+  <div class="row">
+    <div class="col-12 col-sm-12 col-md-9 col-lg-9 scroll-left">
+      <ul>
+        <li><a href="#overviews"><i class="fa fa-search"></i> Overview</a></li>
+        <li><a href="#itinerary"><i class="fas fa-bars"></i> Itinerary</a></li>
+        <li><a href="#photo-video"><i class="fas fa-image"></i> Photos</a></li>
+        <li><a href="#includes"><i class="fa fa-check"></i> Includes / Excludes</a></li>
+        <li><a href="#equipment"><i class="fas fa-box-open"></i> Equipments</a></li>
+        <li><a href="#faqs"><i class="fas fa-question-circle"></i> FAQs</a></li>
+        <li><a href="#reviews"><i class="fas fa-comments"></i> Reviews</a></li>
+      </ul>
+    </div>
+    <div class="col-12 col-sm-12 col-md-3 col-lg-3 scroll-right">
+      <ul>
+        <li><a href="#"><i class="fa fa-phone-volume"></i></a></li>
+        <li><a href="#" class="btn btn-thetrip">Book The Trip</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="everest-body">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-sm-12 col-md-8 col-lg-8 main">
+        <div class="row tourdes">
+          <div class="col-12 col-sm-12">
+            <ul>
+              <li><i class="fa fa-users"></i> Group size: <span>{{single_tour.group_size}}</span></li>
+              <li><i class="fa fa-globe"></i> Destination: <span>{{single_tour.destination}}</span></li>
+              <li><i class="fa fa-check"></i> Max-Altitude: <span>{{ single_tour.max_altitude }}</span></li>
+              <li><i class="fa fa-users"></i> Fitness level: <span>{{ single_tour.difficulty }}</span></li>
+              <li><i class="fa fa-plane"></i> Trip Start: <span>{{single_tour.trip_start}}</span></li>
+              <li><i class="fa fa-plane"></i> Trip End: <span>{{single_tour.trip_end}}</span></li>
+              <li class="lead"><i class="fas fa-dollar-sign"></i>Starts at: <span>$ {{ single_tour.sell_price}}</span></li>
+              
+            </ul>
+          </div>
+        </div>
+        <div class="row overviews" id="overviews">
+          <div class="col-12 col-sm-12">
+            <h4>{{ single_tour.name }}</h4>
+            <ul class="trip-facts-inline">
+              <li> <i class="fa fa-calendar"></i> {{ single_tour.duration }}  days</li>
+              <li> <i class="fa fa-bars"></i> {{single_tour.difficulty }}</li>
+              <li> <i class="fa fa-mountain"></i> {{single_tour.max_altitude}} Meters</li>
+              <li> <i class="fa fa-user"></i> Pax. {{ single_tour.group_size}}</li>
+            </ul>
+            <h5>Trip Overview</h5>
+            <p>
+            {{ single_tour.overview | safe }}
+            </p>
+
+             <h5>Meals </h5>
+            <p>
+            {{ single_tour.meals | safe }}
+            </p>
+             <h5>Accomodation </h5>
+            <p>
+            {{ single_tour.accomodation | safe }}
+            </p>
+          </div>
+          </div>
+          <div class="row itenerary" id="itinerary">
+          <div class="col-12 col-sm-12">
+            <h4>Itenerary</h4>
+          </div>
+          <div class="col-12 col-sm-12">
+            <div id="accordion">
+            {% for i in single_tour.itinerary_set.all %}
+              <div class="card">
+                <div class="card-header">
+                  <a class="card-link text-dark" data-toggle="collapse" href="#collapseOne"><span class="float-right"><i class="fa fa-arrow-down"></i></span>
+                    <h6><span>Day {{ i.day }}</span> {{ i.title }}</h6>
+                  </a>
+                </div>
+                <div id="collapseOne" class="collapse" data-parent="#accordion">
+                  <div class="card-body">
+                    {{i.description}}
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
+             
+            </div>
+          </div>
+          </div>
+          <div class="row photo-video" id="photo-video">
+            <div class="col-12 col-sm-12">
+              <h4>Photos</h4>
+            </div>
+            <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+              <img src="{{single_tour.featured_image.url}}" alt="">
+            </div>
+            
+          </div>
+          <div class="row includes" id="includes">
+            <div class="col-12 col-sm-12">
+              <h4><i class="fa fa-check"></i> What is Included?</h4>
+              <ul>
+              
+                <li><i class="fa fa-check"></i> Domestic Flights (Kathmandu – Lukla – Kathmandu) Tickets and airport departure taxes</li>
+                
+              </ul>
+            </div>
+          </div>
+          <div class="row excludes">
+            <div class="col-12 col-ms-12">
+              <h4><i class="fa fa-times"></i> What is Excluded?</h4>
+              <ul>
+                <li><i class="fa fa-times"></i> International flight airfare</li>
+                
+              </ul>
+            </div>
+          </div>
+          <!-- <div class="row route-map" id="routemap">
+            <div class="col-12 col-ms-12">
+              <h4><i class="fa fa-map-marker"></i> Route Map</h4>
+              <img src="./images/map.jpg" alt="">
+            </div>
+          </div> -->
+          <div class="row equipment" id="equipment">
+            <div class="col-12 col-ms-12">
+              <h4><i class="fas fa-box-open"></i>Equipment Checklist</h4>
+              <h5>Equipment lists for Everest Base Camp Trek</h5>
+              <p>It is recommended to carry the basic clothing and accessories needed for the trek. The followings belongings are suggested that should be brought, although we understand that our clients have their own preference for clothing, we have listed some useful clothing during the trek. Porters will be carrying the main luggage which should not exceed more than 18kg (one porter will carry two people's luggage, 9 kg for each). Equipment can be bought in Kathmandu at a reasonable price.</p>
+              <h6>Head</h6>
+              <ul>
+                <li><i class="fas fa-hand-point-right"></i> Sun hat or scarf</li>
+                <li><i class="fas fa-hand-point-right"></i> Winter hat or insulating hat or Wide-brimmed hat</li>
+                <li><i class="fas fa-hand-point-right"></i> Headlight with extra batteries</li>
+              </ul>
+              <h6>Face</h6>
+              <ul>
+                <li><i class="fas fa-hand-point-right"></i> Sunscreen</li>
+                <li><i class="fas fa-hand-point-right"></i> Sunglass with UV protection</li>
+                <li><i class="fas fa-hand-point-right"></i> Face/body wipes</li>
+                <li><i class="fas fa-hand-point-right"></i> Hands</li>
+                <li><i class="fas fa-hand-point-right"></i> Light weight gloves</li>
+                <li><i class="fas fa-hand-point-right"></i> Heavy weight winter gloves</li>
+              </ul>
+              <h6>Body</h6>
+              <ul>
+                <li><i class="fas fa-hand-point-right"></i> Hiking shirts</li>
+                <li><i class="fas fa-hand-point-right"></i> Long sleeved shirt</li>
+                <li><i class="fas fa-hand-point-right"></i> Hooded rain jacket</li>
+                <li><i class="fas fa-hand-point-right"></i> Fleece jacket</li>
+                <li><i class="fas fa-hand-point-right"></i> Light weight cotton pants</li>
+                <li><i class="fas fa-hand-point-right"></i> T- Shirt (bring Light weight wool)</li>
+                <li><i class="fas fa-hand-point-right"></i> Polypropylene underwear</li>
+                <li><i class="fas fa-hand-point-right"></i> Down jacket (available in rent in Kathmandu)</li>
+                <li><i class="fas fa-hand-point-right"></i> Sweater</li>
+                <li><i class="fas fa-hand-point-right"></i> Water proof jacket and pants</li>
+              </ul>
+              <p class="notes"><strong>Note: </strong> It is recommended to carry the basic clothing and accessories needed for the trek. The followings belongings are suggested that should be brought, although we understand that our clients have their own preference for clothing, we have listed some useful clothing during the trek.</p>
+            </div>
+          </div>
+          <div class="row faqssection" id="faqs">
+            <div class="col-12 col-sm-12">
+              <h4><i class="fas fa-question-circle"></i> faqs</h4>
+            </div>
+            <div class="col-12 col-sm-12">
+            {% for i in single_tour.faq_set.all %}
+              <div class="accordion-container">
+                  <div class="set">
+                    <a href="javascript:void(0)" class="">
+                    {{ i.question }}
+                    <i class="fa fa-minus"></i>
+                  </a>
+                  <div class="content" style="display: block;">
+                    <p>{{ i.answer }}</p>
+                  </div>
+                </div>
+                
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+          <div class="row trip-reviews" id="reviews">
+            <div class="col-12 col-ms-12">
+              <h3>Trip Reviews</h3>
+            </div>
+            <div class="col-12 col-ms-12">
+              <div class="review-box">
+                <h4>Everest Base Camp Trek 12 days</h4>
+                <img src="./images/admin1.jpg" alt="">
+                <h5>Cindy <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> <span>5 - Excellent</span></h5>
+                <h6>11/15/2019</h6>
+                <p>We booked with DWT per our friend’s recommendation. They had a very good experience trekking the EBC in March 2019, and our experience was the same if not better.DWT is a socially conscious company, providing uniforms to the guides, offering family activities and events to the staff, and regulating weight limits for their porters.The owner of the company, Paul, was very accommodating and responsive to all of our inquiries. He made sure we were happy and satisfied. He treated us like his family.Our guide, Dol, was simply amazing! Dol was kind, humble, respectful, and just a solid human being! We felt safe the entire time.</p>
+              </div>
+              <div class="review-box">
+                <h4>Everest Base Camp Trek 12 days</h4>
+                <img src="./images/admin2.jpg" alt="">
+                <h5>Cindy <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> 5 - Excellent</h5>
+                <h6>11/15/2019</h6>
+                <p>We booked with DWT per our friend’s recommendation. They had a very good experience trekking the EBC in March 2019, and our experience was the same if not better.DWT is a socially conscious company, providing uniforms to the guides, offering family activities and events to the staff, and regulating weight limits for their porters.The owner of the company, Paul, was very accommodating and responsive to all of our inquiries. He made sure we were happy and satisfied. He treated us like his family.Our guide, Dol, was simply amazing! Dol was kind, humble, respectful, and just a solid human being! We felt safe the entire time.</p>
+              </div>
+              <div class="review-box">
+                <h4>Everest Base Camp Trek 12 days</h4>
+                <img src="./images/admin1.jpg" alt="">
+                <h5>Cindy <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> 5 - Excellent</h5>
+                <h6>11/15/2019</h6>
+                <p>We booked with DWT per our friend’s recommendation. They had a very good experience trekking the EBC in March 2019, and our experience was the same if not better.DWT is a socially conscious company, providing uniforms to the guides, offering family activities and events to the staff, and regulating weight limits for their porters.The owner of the company, Paul, was very accommodating and responsive to all of our inquiries. He made sure we were happy and satisfied. He treated us like his family.Our guide, Dol, was simply amazing! Dol was kind, humble, respectful, and just a solid human being! We felt safe the entire time.</p>
+              </div>
+              <div class="review-box1">
+                <h4>Everest Base Camp Trek 12 days</h4>
+                <img src="./images/admin1.jpg" alt="">
+                <h5>Cindy <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> 5 - Excellent</h5>
+                <h6>11/15/2019</h6>
+                <p>We booked with DWT per our friend’s recommendation. They had a very good experience trekking the EBC in March 2019, and our experience was the same if not better.DWT is a socially conscious company, providing uniforms to the guides, offering family activities and events to the staff, and regulating weight limits for their porters.The owner of the company, Paul, was very accommodating and responsive to all of our inquiries. He made sure we were happy and satisfied. He treated us like his family.Our guide, Dol, was simply amazing! Dol was kind, humble, respectful, and just a solid human being! We felt safe the entire time.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-12 col-md-4 col-lg-4 main-rights">
+          <div class="right-conatainer">
+            <div id="sticky-anchor"></div>
+              <div class="sidebar">
+                <div class="price-listing">
+                  <!-- <h5 class="days">We Offer Group Discount</h5>
+                  <h3>US$ <span>1550</span><sup>pp</sup></h3> -->
+                  <div class="discount">
+                    <h5 class="offer">We Offer Group Discount</h5>
+                    <a href="#" class="btn btn-checked">Write Us</a>
+                    <ul class="sidebar-block__card-item discount-card__list bottomMenu1"> 
+                      <li> <span class="persion">1 Pax</span> <span class="discount-price">US$ 1550</span> </li> 
+                      <li> <span class="persion">2 Paxes</span> <span class="discount-price">US$ 1350</span> </li> 
+                      <li> <span class="persion">3 Paxes</span> <span class="discount-price">US$ 1320</span> </li> 
+                      <li> <span class="persion">4 - 6 Paxes</span> <span class="discount-price">US$ 1290</span> </li> 
+                      <li> <span class="persion">7 - 12 Paxes</span> <span class="discount-price">US$ 1250</span> </li> 
+                      <li> <span class="persion">13 - 18 Paxes</span> <span class="discount-price">US$ 1210</span> </li> <li> <span class="persion">19 - 24 Paxes</span> <span class="discount-price">US$ 1175</span> </li> 
+                      <li> <span class="persion">25 - 30 Paxes</span> <span class="discount-price">US$ 1150</span> </li> 
+                    </ul>
+                  </div>
+                  <ul class="sidebar-block__card-item list small-check feature-list--small" style="display: block;">
+                    <li><i class="fa fa-check"></i> Best Price Guarantee</li>
+                    <li><i class="fa fa-check"></i> Hassle-Free Booking</li>
+                    <li><i class="fa fa-check"></i> No Booking or Credit Card Fees</li>
+                    <li><i class="fa fa-check"></i> Team of highly experienced Experts</li>
+                    <li><i class="fa fa-check"></i> Your Happiness Guaranteed</li>
+                  </ul>
+                  <a href="#" class="btn btn-checked1">Check Availability</a>
+                  <div class="sidebar-block"> <a href="#" class="inquire-link">Have Questions? Inquire Now <i class="fa fa-angle-right"></i></a></div>
+                  <ul class="social-link">
+                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fa fa-envelope"></i></a></li>
+                    <li><a href="#"><i class="fa fa-link"></i></a></li>
+                    <li><a href="#" class="btn btn-book-trip">Book The Trip</a></li>
+                  </ul>
+                  <ul class="what-viber">
+                    <li><a href="#"><i class="fab fa-whatsapp"></i></a></li>
+                    <li><a href="#"><i class="fab fa-viber"></i></a></li>
+                    <li><a href="#">+9771234567890</a></li>
+                  </ul>
+                </div>
+                <div class="everest-trip">
+                  <a href="#"><img src="./images/trip-advisor-side.png" alt=""></a>
+                </div>
+            <div class="quickform">
+            <h5>Quick Inquiry</h5>
+            <div class="well">
+              <div class="row">
+                <div class="col-md-12 col-xs-12 col-sm-12">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                        <i class="fa fa-user"></i>
+                      </div>
+                      <input type="text" name="cname" placeholder="Enter Your Name" required="" class="form-control">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-12 col-xs-12 col-sm-12">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                        <i class="fa fa-envelope"></i>
+                      </div>
+                      <input type="email" required="" class="form-control" name="cemail" placeholder="Enter Email">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-12 col-xs-12 col-sm-12">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                        <i class="fa fa-mobile"></i>
+                      </div>
+                      <input type="email" required="" class="form-control" name="cemail" placeholder="Enter Mobile No.">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-12 col-xs-12 col-sm-12">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                        <i class="fa fa-comment"></i>
+                      </div>
+                      <textarea class="form-control" placeholder="Enter Message Here..."></textarea>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-12 col-xs-12 col-sm-12">
+                  <button class="btn btn-block btn-lg btn-info"> Submit </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="ourmaps">
+            <h4>Our Maps</h4>
+            <a href="#" data-toggle="modal" data-target="#myModal">
+              <img src="./images/map.jpg" alt="">
+            </a>
+          </div>
+          <div class="download-box">
+            <a href="#" class="btn btn-download"><i class="fas fa-money-bill-alt"></i> Offline Payment</a>
+            <a href="#" class="btn btn-download"><i class="fas fa-file-pdf"></i> Download the Trip PDF</a>
+          </div>
+          </div>
+          </div>
+
+
+          <div class="sidebar1">
+            <div class="price-listing">
+              <div class="discount">
+                <h5 class="offer">We Offer Group Discount</h5>
+                <a href="#" class="btn btn-checked">Write Us</a>
+                <ul class="sidebar-block__card-item discount-card__list bottomMenu1"> 
+                  <li> <span class="persion">1 Pax</span> <span class="discount-price">US$ 1550</span> </li> 
+                  <li> <span class="persion">2 Paxes</span> <span class="discount-price">US$ 1350</span> </li> 
+                  <li> <span class="persion">3 Paxes</span> <span class="discount-price">US$ 1320</span> </li> 
+                  <li> <span class="persion">4 - 6 Paxes</span> <span class="discount-price">US$ 1290</span> </li> 
+                  <li> <span class="persion">7 - 12 Paxes</span> <span class="discount-price">US$ 1250</span> </li> 
+                  <li> <span class="persion">13 - 18 Paxes</span> <span class="discount-price">US$ 1210</span> </li> <li> <span class="persion">19 - 24 Paxes</span> <span class="discount-price">US$ 1175</span> </li> 
+                  <li> <span class="persion">25 - 30 Paxes</span> <span class="discount-price">US$ 1150</span> </li> 
+                </ul>
+              </div>
+              <ul class="sidebar-block__card-item list small-check feature-list--small" style="display: block;">
+                <li><i class="fa fa-check"></i> Best Price Guarantee</li>
+                <li><i class="fa fa-check"></i> Hassle-Free Booking</li>
+                <li><i class="fa fa-check"></i> No Booking or Credit Card Fees</li>
+                <li><i class="fa fa-check"></i> Team of highly experienced Experts</li>
+                <li><i class="fa fa-check"></i> Your Happiness Guaranteed</li>
+              </ul>
+              <a href="#" class="btn btn-checked1">Check Availability</a>
+              <div class="sidebar-block"> <a href="#" class="inquire-link">Have Questions? Inquire Now <i class="fa fa-angle-right"></i></a></div>
+              <ul class="social-link">
+                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa fa-envelope"></i></a></li>
+                <li><a href="#"><i class="fa fa-link"></i></a></li>
+                <li><a href="#" class="btn btn-book-trip">Book The Trip</a></li>
+              </ul>
+              <ul class="what-viber">
+                <li><a href="#"><i class="fab fa-whatsapp"></i></a></li>
+                <li><a href="#"><i class="fab fa-viber"></i></a></li>
+                <li><a href="#">+9771234567890</a></li>
+              </ul>
+            </div>
+            <div class="everest-trip">
+              <a href="#"><img src="./images/trip-advisor-side.png" alt=""></a>
+            </div>
+            <div class="quickform">
+            <h5>Quick Inquiry</h5>
+            <div class="well">
+              <div class="row">
+                <div class="col-md-12 col-xs-12 col-sm-12">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                        <i class="fa fa-user"></i>
+                      </div>
+                      <input type="text" name="cname" placeholder="Enter Your Name" required="" class="form-control">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-12 col-xs-12 col-sm-12">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                        <i class="fa fa-envelope"></i>
+                      </div>
+                      <input type="email" required="" class="form-control" name="cemail" placeholder="Enter Email">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-12 col-xs-12 col-sm-12">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                        <i class="fa fa-mobile"></i>
+                      </div>
+                      <input type="email" required="" class="form-control" name="cemail" placeholder="Enter Mobile No.">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-12 col-xs-12 col-sm-12">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                        <i class="fa fa-comment"></i>
+                      </div>
+                      <textarea class="form-control" placeholder="Enter Message Here..."></textarea>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-12 col-xs-12 col-sm-12">
+                  <button class="btn btn-block btn-lg btn-info"> Submit </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="ourmaps">
+            <h4>Our Maps</h4>
+            <a href="#" data-toggle="modal" data-target="#myModal">
+              <img src="./images/map.jpg" alt="">
+            </a>
+          </div>
+          <div class="download-box">
+            <a href="#" class="btn btn-download"><i class="fas fa-money-bill-alt"></i> Offline Payment</a>
+            <a href="#" class="btn btn-download"><i class="fas fa-file-pdf"></i> Download the Trip PDF</a>
+          </div>
+          </div>
+
+
+
+          
+        </div>
+      </div>
+  </div>
+</div>
+
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <img src="./images/map.jpg" alt="">
+      </div>
+    </div>
+
+  </div>
+</div>
+{% endblock content %}

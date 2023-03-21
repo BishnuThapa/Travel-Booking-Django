@@ -1,0 +1,681 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Travel</title>
+    
+    <!--Bootstrap CSS-->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+
+    <!--Font Awesome CSS-->
+    <link rel="stylesheet" href="{% static 'css/all.css' %}">
+
+    <!--Main CSS-->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Courier+Prime:400,400i,700,700i&display=swap" rel="stylesheet">
+
+    <!--Owl Carousel-->
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+
+</head>
+<body>
+
+<!-- header start here -->
+<header>
+  
+  <div class="top-header">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-sm-12 col-md-5 col-lg-4">
+          <a href="/" class="logo"><img src="{% static 'images/logo.png' %}" alt=""></a>
+        </div>       
+        <div class="col-12 col-sm-6 col-md-4 col-lg-6 header-search">
+          <div id="custom-search-input">
+            <div class="input-group">
+              <input type="text" class="form-control input-lg" placeholder="Search" />
+              <span class="input-group-btn">
+                <button class="btn btn-info btn-lg" type="button">
+                  <i class="fa fa-search"></i>
+                </button>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-3 col-lg-2 search-box">
+          <a href="#" class="btn btn-plans">Plan Your Trip</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="menu-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-sm-12">
+          <nav class="navbar navbar-expand-lg navbar-light">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    About Us
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Our Team</a>
+                    <a class="dropdown-item" href="#">Why With Us</a>
+                    <a class="dropdown-item" href="#">Our Story</a>
+                    <a class="dropdown-item" href="#">Contact Us</a>
+                  </div>
+                </li>
+                <li class="nav-item dropdown megamenu-li dmenu">
+                  <a class="nav-link dropdown-toggle" href="" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Nepal</a>
+                  <div class="dropdown-menu megamenu sm-menu" aria-labelledby="dropdown01">
+                    <div class="row">
+                      <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-3">
+                        <ul class="nav nav-pills flex-column" id="myTab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="true"> <i class="fas fa-hand-point-right"></i> Nepal Tour</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="company-tab" data-toggle="tab" href="#company" role="tab" aria-controls="company" aria-selected="false"><i class="fas fa-hand-point-right"></i> Peak Climbing</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="create-tab" data-toggle="tab" href="#create" role="tab" aria-controls="create" aria-selected="false"><i class="fas fa-hand-point-right"></i> Helicopter Tours</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="manage-tab" data-toggle="tab" href="#manage" role="tab" aria-controls="manage" aria-selected="true"><i class="fas fa-hand-point-right"></i> Day Tours</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="view-tab" data-toggle="tab" href="#view" role="tab" aria-controls="view" aria-selected="false"><i class="fas fa-hand-point-right"></i> Short Hiking Tours</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-8 col-lg-9 dash-right">
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                              <div class="row">
+                                <div class="col-12 col-sm-12 col-md-6 col-lg-3">
+                                  <a href="#"><img src="./images/adventure1.jpg" alt=""><p>Nagarkot Dhulikhel Cycling Tour</p></a>
+                                </div>
+                                <div class="col-12 col-sm-12 col-md-6 col-lg-3">
+                                  <a href="#"><img src="./images/adventure1.jpg" alt=""><p>Nagarkot Dhulikhel Cycling Tour</p></a>
+                                </div>
+                                <div class="col-12 col-sm-12 col-md-6 col-lg-3">
+                                  <a href="#"><img src="./images/adventure1.jpg" alt=""><p>Nagarkot Dhulikhel Cycling Tour</p></a>
+                                </div>
+                                <div class="col-12 col-sm-12 col-md-6 col-lg-3">
+                                  <a href="#"><img src="./images/adventure1.jpg" alt=""><p>Nagarkot Dhulikhel Cycling Tour</p></a>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="tab-pane fade" id="company" role="tabpanel" aria-labelledby="company-tab">
+                              <div class="row">
+                                <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                                  <ul>
+                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
+                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
+                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
+                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
+                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
+                                  </ul>
+                                </div>
+                                <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                                  <ul>
+                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
+                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
+                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
+                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
+                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
+                                  </ul>
+                                </div>
+                                <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                                  <ul>
+                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
+                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
+                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
+                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
+                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="tab-pane fade" id="create" role="tabpanel" aria-labelledby="create-tab">
+                              <div class="row">
+                                <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                                  <ul>
+                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
+                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
+                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
+                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
+                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
+                                  </ul>
+                                </div>
+                                <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                                  <ul>
+                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
+                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
+                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
+                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
+                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
+                                  </ul>
+                                </div>
+                                <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                                  <ul>
+                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
+                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
+                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
+                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
+                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="tab-pane fade" id="manage" role="tabpanel" aria-labelledby="manage-tab">
+                              <div class="row">
+                                <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                                  <ul>
+                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
+                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
+                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
+                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
+                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
+                                  </ul>
+                                </div>
+                                <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                                  <ul>
+                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
+                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
+                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
+                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
+                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
+                                  </ul>
+                                </div>
+                                <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                                  <ul>
+                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
+                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
+                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
+                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
+                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="tab-pane fade" id="view" role="tabpanel" aria-labelledby="view-tab">
+                              <div class="row">
+                                <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                                  <ul>
+                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
+                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
+                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
+                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
+                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
+                                  </ul>
+                                </div>
+                                <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                                  <ul>
+                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
+                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
+                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
+                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
+                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
+                                  </ul>
+                                </div>
+                                <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                                  <ul>
+                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
+                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
+                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
+                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
+                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="nav-item dropdown megamenu-li dmenu">
+                  <a class="nav-link dropdown-toggle" href="" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Bhutan</a>
+                  <div class="dropdown-menu megamenu sm-menu" aria-labelledby="dropdown01">
+                    <div class="row bhutan-menus">
+                      <div class="col-12 col-sm-12 col-md-6 col-lg-3">
+                        <a href="#"><img src="./images/adventure1.jpg" alt=""><p>Nagarkot Dhulikhel Cycling Tour</p></a>
+                      </div>
+                      <div class="col-12 col-sm-12 col-md-6 col-lg-3">
+                        <a href="#"><img src="./images/adventure1.jpg" alt=""><p>Nagarkot Dhulikhel Cycling Tour</p></a>
+                      </div>
+                      <div class="col-12 col-sm-12 col-md-6 col-lg-3">
+                        <a href="#"><img src="./images/adventure1.jpg" alt=""><p>Nagarkot Dhulikhel Cycling Tour</p></a>
+                      </div>
+                      <div class="col-12 col-sm-12 col-md-6 col-lg-3">
+                        <a href="#"><img src="./images/adventure1.jpg" alt=""><p>Nagarkot Dhulikhel Cycling Tour</p></a>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="nav-item dropdown megamenu-li dmenu">
+                  <a class="nav-link dropdown-toggle" href="" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tibet</a>
+                  <div class="dropdown-menu megamenu sm-menu" aria-labelledby="dropdown01">
+                    <div class="row bhutan-menus">
+                      <div class="col-12 col-sm-12 col-md-6 col-lg-3">
+                        <a href="#"><img src="./images/adventure1.jpg" alt=""><p>Nagarkot Dhulikhel Cycling Tour</p></a>
+                      </div>
+                      <div class="col-12 col-sm-12 col-md-6 col-lg-3">
+                        <a href="#"><img src="./images/adventure1.jpg" alt=""><p>Nagarkot Dhulikhel Cycling Tour</p></a>
+                      </div>
+                      <div class="col-12 col-sm-12 col-md-6 col-lg-3">
+                        <a href="#"><img src="./images/adventure1.jpg" alt=""><p>Nagarkot Dhulikhel Cycling Tour</p></a>
+                      </div>
+                      <div class="col-12 col-sm-12 col-md-6 col-lg-3">
+                        <a href="#"><img src="./images/adventure1.jpg" alt=""><p>Nagarkot Dhulikhel Cycling Tour</p></a>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Multicountry</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">FAQs</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Blog</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Contact Us</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="mobile-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-sm-12">
+        <span class="clickmenus" onclick="openNav()">&#9776; </span>
+        <div id="mySidenav" class="sidenav">
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+          <div class="mobile-menus">
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li>
+                <a href="#" type="text" data-toggle="collapse" data-target="#multiCollapseExample1" aria-expanded="false" aria-controls="multiCollapseExample1">About Us <i class="wsmenu-arrow fa fa-angle-down"></i></a>
+                <div class="collapse multi-collapse" id="multiCollapseExample1">
+                  <div class="card card-body">
+                  <ul>
+                    <li><a href="#">Our Team</a></li>
+                    <li><a href="#">Why With Us</a></li>
+                    <li><a href="#">Our Story</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <a href="#" type="text" data-toggle="collapse" data-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">Nepal<i class="wsmenu-arrow fa fa-angle-down"></i></a>
+                <div class="collapse multi-collapse" id="multiCollapseExample2">
+                  <div class="card card-body">
+                  <ul>
+                    <li>
+                      <a href="#" type="text" data-toggle="collapse" data-target="#multiCollapseExample3" aria-expanded="false" aria-controls="multiCollapseExample3">Nepal Tours<i class="wsmenu-arrow fa fa-angle-down"></i></a>
+                      <div class="collapse multi-collapse" id="multiCollapseExample3">
+                        <div class="card card-body">
+                        <ul>
+                          <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
+                          <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
+                          <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
+                          <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
+                          <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li>
+                      <a href="#" type="text" data-toggle="collapse" data-target="#multiCollapseExample4" aria-expanded="false" aria-controls="multiCollapseExample4">Peak Climbing<i class="wsmenu-arrow fa fa-angle-down"></i></a>
+                      <div class="collapse multi-collapse" id="multiCollapseExample4">
+                        <div class="card card-body">
+                        <ul>
+                          <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
+                          <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
+                          <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
+                          <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
+                          <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li>
+                      <a href="#" type="text" data-toggle="collapse" data-target="#multiCollapseExample5" aria-expanded="false" aria-controls="multiCollapseExample5">Helicopter Tours<i class="wsmenu-arrow fa fa-angle-down"></i></a>
+                      <div class="collapse multi-collapse" id="multiCollapseExample5">
+                        <div class="card card-body">
+                        <ul>
+                          <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
+                          <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
+                          <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
+                          <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
+                          <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li>
+                      <a href="#" type="text" data-toggle="collapse" data-target="#multiCollapseExample6" aria-expanded="false" aria-controls="multiCollapseExample6">Days Tours<i class="wsmenu-arrow fa fa-angle-down"></i></a>
+                      <div class="collapse multi-collapse" id="multiCollapseExample6">
+                        <div class="card card-body">
+                        <ul>
+                          <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
+                          <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
+                          <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
+                          <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
+                          <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li>
+                      <a href="#" type="text" data-toggle="collapse" data-target="#multiCollapseExample7" aria-expanded="false" aria-controls="multiCollapseExample7">Short Hiking Tours<i class="wsmenu-arrow fa fa-angle-down"></i></a>
+                      <div class="collapse multi-collapse" id="multiCollapseExample7">
+                        <div class="card card-body">
+                        <ul>
+                          <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
+                          <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
+                          <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
+                          <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
+                          <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
+                        </ul>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li><a href="#">Bhutan</a></li>
+              <li><a href="#">Tibet</a></li>
+              <li><a href="#">Multicountry</a></li>
+              <li><a href="#">FAQs</a></li>
+            </ul>
+          </div>  
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</header>
+<!-- header end here -->
+
+{% block content %}
+
+{% endblock %}
+
+<!-- footer logo end here-->
+<div class="partner-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-sm-12">
+        <h4>Are you looking forward to extend your travel business in nepal?</h4>
+        <a href="https://namaste.mountaindelights.com/" class="btn btn-become" target="_blank">Partner With Us</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- footer start here-->
+<footer class="footer">
+  <div class="top-footer">
+    <div class="container">
+      <div class="row footer-content-box">
+        <div class="col-12 col-sm-6 col-md-6 col-lg-3 footerbox">
+          <h4>Destination</h4>
+          <ul class="footer-lists">
+            <li><a href="#">Nepal</a></li>
+            <li><a href="#">Tibet</a></li>
+            <li><a href="#">Bhutan</a></li>
+            <li><a href="#">India</a></li>
+            <li><a href="#">Tanzania</a></li>
+            <li><a href="#">Multi Country</a></li>
+          </ul>
+        </div>
+        <div class="col-12 col-sm-6 col-md-6 col-lg-3 footerbox">
+          <h4>Activities</h4>
+          <ul class="footer-lists">
+            <li><a href="#">Cultural and Historical Tours</a></li>
+            <li><a href="#">Trekking and Hiking</a></li>
+            <li><a href="#">Climbing and Expedition</a></li>
+            <li><a href="#">Day Tours</a></li>
+            <li><a href="#">Religious and Spiritual Tours</a></li>
+            <li><a href="#">Multiple Activities</a></li>
+          </ul>
+        </div>
+        <div class="col-12 col-sm-6 col-md-6 col-lg-3 footerbox">
+          <h4>Useful Info</h4>
+          <ul class="footer-lists">
+            <li><a href="#">Trip Terms and Conditions</a></li>
+            <li><a href="#">Privacy and Disclaimer</a></li>
+            <li><a href="#">Link Exchange</a></li>
+            <li><a href="#">Volunteering Opportunities</a></li>
+            <li><a href="#">Travel Insurances</a></li>
+            <li><a href="#">Submit Insurance Detail</a></li>
+          </ul>
+        </div>
+        <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+          <h4>Contact Info</h4>
+          <p><i class="fa fa-map-marker-alt"></i> Kathmandu, Nepal</p>
+          <p><i class="fa fa-phone-volume"></i> 977-1-123456</p>
+          <p><i class="fa fa-envelope"></i> info@yourdomain.com</p>
+          <ul class="footer-lists">
+            <li><a href="#">Privecy & Policy</a></li>
+            <li><a href="#">Terms & Conditions</a></li>
+            <li><a href="#">Sitemap</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-6">
+          <h3>Subscribe Us</h3>
+          <div class="content">
+            <div class="input-group">
+               <input type="email" class="form-control" placeholder="Enter your email">
+               <span class="input-group-btn">
+                <button class="btn" type="submit">Subscribe Now</button>
+               </span>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-12 col-md-6 col-lg-3 our-partners">
+          <h3>Follow Us</h3>
+          <ul class="footer-icons">
+            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+            <li><a href="#"><i class="fab fa-pinterest"></i></a></li>
+            <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+          </ul>
+        </div>
+        <div class="col-12 col-sm-12 col-md-6 col-lg-3">
+          <a href="#" class="btn btn-partners">Our Partner</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mid-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-sm-6 col-md-9 col-lg-9">
+          <h5>We are associated with</h5>
+          <ul>
+            <li><img src="./images/associate1.png" alt=""></li>
+            <li><img src="./images/associate2.png" alt=""></li>
+            <li><img src="./images/associate3.png" alt=""></li>
+            <li><img src="./images/associate4.png" alt=""></li>
+          </ul>
+        </div>
+        <div class="col-12 col-sm-6 col-md-3 col-lg-3 we-accept">
+          <h5>We accept</h5>
+          <ul>
+            <li><img src="./images/visa.png" alt=""></li>
+            <li><img src="./images/mastercard.png" alt=""></li>
+            <li><img src="./images/american.png" alt=""></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bottom-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 botton-left">
+          <p>© 2023 Copyright Trekking Company Pvt. Ltd. All rights reserved.</p>
+        </div>
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 botton-right">
+          <p>Developed By: <a href="#" target="_blank">asckai</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- footer end here-->
+
+<div class="scroll-top-wrapper show">
+  <span class="scroll-top-inner">
+    <i class="fa fa-angle-up"></i>
+    <h5>TOP</h5>
+  </span>
+</div>
+
+<div class="payonline">
+  <a href="#">Pay Online</a>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>    
+<script src="{% static 'js/popper.min.js' %}"></script> 
+<script src="{% static 'js/owl.carousel.min.js' %}"></script>   
+<script src="{% static 'js/main.js' %}"></script>
+<script src="{% static 'js/wow.min.js' %}"></script>
+
+<script>
+var currentTab = 0; // Current tab is set to be the first tab (0)
+showTab(currentTab); // Display the current tab
+
+function showTab(n) {
+  // This function will display the specified tab of the form...
+  var x = document.getElementsByClassName("tab");
+  x[n].style.display = "block";
+  //... and fix the Previous/Next buttons:
+  if (n == 0) {
+    document.getElementById("prevBtn").style.display = "none";
+  } else {
+    document.getElementById("prevBtn").style.display = "inline";
+  }
+  if (n == (x.length - 1)) {
+    document.getElementById("nextBtn").innerHTML = "Submit";
+  } else {
+    document.getElementById("nextBtn").innerHTML = "Next";
+  }
+  //... and run a function that will display the correct step indicator:
+  fixStepIndicator(n)
+}
+
+function nextPrev(n) {
+  // This function will figure out which tab to display
+  var x = document.getElementsByClassName("tab");
+  // Exit the function if any field in the current tab is invalid:
+  if (n == 1 && !validateForm()) return true;
+  // Hide the current tab:
+  x[currentTab].style.display = "none";
+  // Increase or decrease the current tab by 1:
+  currentTab = currentTab + n;
+  // if you have reached the end of the form...
+  if (currentTab >= x.length) {
+    // ... the form gets submitted:
+    document.getElementById("regForm").submit();
+    return true;
+  }
+  // Otherwise, display the correct tab:
+  showTab(currentTab);
+}
+
+function validateForm() {
+  // This function deals with validation of the form fields
+  var x, y, i, valid = true;
+  x = document.getElementsByClassName("tab");
+  y = x[currentTab].getElementsByTagName("input");
+  // A loop that checks every input field in the current tab:
+  for (i = 0; i < y.length; i++) {
+    // If a field is empty...
+    if (y[i].value == "") {
+      // add an "invalid" class to the field:
+      y[i].className += " invalid";
+      // and set the current valid status to false
+      valid = true;
+    }
+  }
+  // If the valid status is true, mark the step as finished and valid:
+  if (valid) {
+    document.getElementsByClassName("step")[currentTab].className += " finish";
+  }
+  return valid; // return the valid status
+}
+
+function fixStepIndicator(n) {
+  // This function removes the "active" class of all steps...
+  var i, x = document.getElementsByClassName("step");
+  for (i = 0; i < x.length; i++) {
+    x[i].className = x[i].className.replace(" active", "");
+  }
+  //... and adds the "active" class on the current step:
+  x[n].className += " active";
+}
+</script>
+
+
+
+<script>
+  $(document).ready(function(){
+    $("#formButton").click(function(){
+        $(".onewayformfinal").show();
+    });
+});
+  $(document).ready(function(){
+    $("#formButton").click(function(){
+        $(".onewayform").hide();
+    });
+});
+  $(document).ready(function(){
+    $("#previewBtn").click(function(){
+        $(".onewayformfinal").hide();
+        $(".onewayform").show();
+    });
+});
+</script>
+
+<script>
+  new WOW().init();
+</script>
+<script>
+    $(document).ready(function() {      
+        $('.carousel').carousel('pause');
+    });
+</script>
+
+</body>
+</html>
