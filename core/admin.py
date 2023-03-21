@@ -8,6 +8,11 @@ class Itinerary(admin.StackedInline):
     extra = 1
 
 
+class Gallery(admin.StackedInline):
+    model = Gallery
+    extra = 1
+
+
 class Faq(admin.StackedInline):
     model = Faq
     extra = 1
@@ -44,7 +49,7 @@ class TourAdmin(admin.ModelAdmin):
     prepopulated_fields = {
         'slug': ['name', ]
     }
-    inlines = (Itinerary, Faq)
+    inlines = (Itinerary, Faq, Gallery)
 
 
 @admin.register(Blog)

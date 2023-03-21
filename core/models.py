@@ -151,6 +151,7 @@ class Tour(models.Model):
     overview = RichTextField()
     includes = RichTextField(null=True, blank=True)
     excludes = RichTextField(null=True, blank=True)
+    additional_information = RichTextField(null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -160,6 +161,15 @@ class Tour(models.Model):
     class Meta:
         verbose_name = 'Tour'
         verbose_name_plural = 'Tour'
+
+
+class Gallery(models.Model):
+    tour = models.ForeignKey(Tour, on_delete=models.CASCADE)
+    image = models.ImageField(upload_to='tour/gallery', null=True, blank=True)
+
+    class Meta:
+        verbose_name = "Gallery"
+        verbose_name_plural = "Gallery"
 
 
 class Itinerary(models.Model):

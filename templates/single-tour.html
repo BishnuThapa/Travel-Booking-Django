@@ -113,9 +113,12 @@
             <div class="col-12 col-sm-12">
               <h4>Photos</h4>
             </div>
+            {% for i in single_tour.gallery_set.all %}
+           
             <div class="col-12 col-sm-12 col-md-4 col-lg-4">
-              <img src="{{single_tour.featured_image.url}}" alt="">
+              <img src="{{i.image.url}}" alt="">
             </div>
+            {% endfor %}
             
           </div>
           <div class="row includes" id="includes">
@@ -145,38 +148,9 @@
           </div> -->
           <div class="row equipment" id="equipment">
             <div class="col-12 col-ms-12">
-              <h4><i class="fas fa-box-open"></i>Equipment Checklist</h4>
-              <h5>Equipment lists for Everest Base Camp Trek</h5>
-              <p>It is recommended to carry the basic clothing and accessories needed for the trek. The followings belongings are suggested that should be brought, although we understand that our clients have their own preference for clothing, we have listed some useful clothing during the trek. Porters will be carrying the main luggage which should not exceed more than 18kg (one porter will carry two people's luggage, 9 kg for each). Equipment can be bought in Kathmandu at a reasonable price.</p>
-              <h6>Head</h6>
-              <ul>
-                <li><i class="fas fa-hand-point-right"></i> Sun hat or scarf</li>
-                <li><i class="fas fa-hand-point-right"></i> Winter hat or insulating hat or Wide-brimmed hat</li>
-                <li><i class="fas fa-hand-point-right"></i> Headlight with extra batteries</li>
-              </ul>
-              <h6>Face</h6>
-              <ul>
-                <li><i class="fas fa-hand-point-right"></i> Sunscreen</li>
-                <li><i class="fas fa-hand-point-right"></i> Sunglass with UV protection</li>
-                <li><i class="fas fa-hand-point-right"></i> Face/body wipes</li>
-                <li><i class="fas fa-hand-point-right"></i> Hands</li>
-                <li><i class="fas fa-hand-point-right"></i> Light weight gloves</li>
-                <li><i class="fas fa-hand-point-right"></i> Heavy weight winter gloves</li>
-              </ul>
-              <h6>Body</h6>
-              <ul>
-                <li><i class="fas fa-hand-point-right"></i> Hiking shirts</li>
-                <li><i class="fas fa-hand-point-right"></i> Long sleeved shirt</li>
-                <li><i class="fas fa-hand-point-right"></i> Hooded rain jacket</li>
-                <li><i class="fas fa-hand-point-right"></i> Fleece jacket</li>
-                <li><i class="fas fa-hand-point-right"></i> Light weight cotton pants</li>
-                <li><i class="fas fa-hand-point-right"></i> T- Shirt (bring Light weight wool)</li>
-                <li><i class="fas fa-hand-point-right"></i> Polypropylene underwear</li>
-                <li><i class="fas fa-hand-point-right"></i> Down jacket (available in rent in Kathmandu)</li>
-                <li><i class="fas fa-hand-point-right"></i> Sweater</li>
-                <li><i class="fas fa-hand-point-right"></i> Water proof jacket and pants</li>
-              </ul>
-              <p class="notes"><strong>Note: </strong> It is recommended to carry the basic clothing and accessories needed for the trek. The followings belongings are suggested that should be brought, although we understand that our clients have their own preference for clothing, we have listed some useful clothing during the trek.</p>
+              <h4><i class="fas fa-box-open"></i>Additional Information</h4>
+              <p>{{ single_tour.additional_information | safe }}</p>
+              
             </div>
           </div>
           <div class="row faqssection" id="faqs">
