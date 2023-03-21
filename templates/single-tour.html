@@ -1,5 +1,8 @@
 {% extends 'base.html' %}
+
 {% load static %}
+
+
 {% block content %}
 <!-- Hero -->
 <!-- Hero -->
@@ -126,7 +129,7 @@
               <h4><i class="fa fa-check"></i> What is Included?</h4>
               <ul>
               
-                <li><i class="fa fa-check"></i> Domestic Flights (Kathmandu – Lukla – Kathmandu) Tickets and airport departure taxes</li>
+                <li>{{single_tour.includes | safe }}</li>
                 
               </ul>
             </div>
@@ -135,7 +138,7 @@
             <div class="col-12 col-ms-12">
               <h4><i class="fa fa-times"></i> What is Excluded?</h4>
               <ul>
-                <li><i class="fa fa-times"></i> International flight airfare</li>
+                <li> {{single_tour.excludes | safe }}</li>
                 
               </ul>
             </div>

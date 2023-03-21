@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Travel</title>
-    
+    <link rel="icon" type="image/x-icon" href="{% static 'images/favicon.png' %}">
     <!--Bootstrap CSS-->
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
 
@@ -27,7 +27,7 @@
     <!--Owl Carousel-->
     <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
-
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/css/lightbox.min.css">
 </head>
 <body>
 
@@ -70,7 +70,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                  <a class="nav-link" href="#">Home</a>
+                  <a class="nav-link" href="/">Home</a>
                 </li>
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -294,14 +294,12 @@
                 <li class="nav-item">
                   <a class="nav-link" href="#">Multicountry</a>
                 </li>
+               
                 <li class="nav-item">
-                  <a class="nav-link" href="#">FAQs</a>
+                  <a class="nav-link" href="{% url 'blog' %}">Travel Blog</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Blog</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Contact Us</a>
+                  <a class="nav-link" href="{% url 'contact-us' %}">Contact Us</a>
                 </li>
               </ul>
             </div>

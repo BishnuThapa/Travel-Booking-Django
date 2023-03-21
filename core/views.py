@@ -26,3 +26,15 @@ def tour_detail(request, tour_slug):
         'single_tour': single_tour
     }
     return render(request, 'single-tour.html', context)
+
+
+def blog(request):
+    blogs = Blog.objects.all()
+    context = {
+        'blogs': blogs
+    }
+    return render(request, 'blog.html', context)
+
+
+def contact(request):
+    return render(request, 'contact.html')
