@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404
+from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from .models import *
 # Create your views here.
 
@@ -30,8 +31,11 @@ def tour_detail(request, tour_slug):
 
 def blog(request):
     blogs = Blog.objects.all()
+    paginator = Paginator(blogs, 1)
+    page = request.GET.get('page')
+    paged_blog = paginator.get_page(page)
     context = {
-        'blogs': blogs
+        'blogs': paged_blog
     }
     return render(request, 'blog.html', context)
 
