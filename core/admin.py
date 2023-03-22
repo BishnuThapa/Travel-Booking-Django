@@ -33,7 +33,8 @@ class DestinationAdmin(admin.ModelAdmin):
 
 @admin.register(CompanyInfo)
 class CompanyInfoAdmin(admin.ModelAdmin):
-    pass
+    def has_add_permission(self, request, obj=None):
+        return False
 
 
 @admin.register(Tour_Type)

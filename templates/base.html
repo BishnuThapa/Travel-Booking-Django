@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Travel</title>
-    <link rel="icon" type="image/x-icon" href="{% static 'images/favicon.png' %}">
+    <link rel="icon" type="image/x-icon" href="{{ company_info.favicon.url }}">
     <!--Bootstrap CSS-->
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
 
@@ -38,7 +38,7 @@
     <div class="container">
       <div class="row">
         <div class="col-12 col-sm-12 col-md-5 col-lg-4">
-          <a href="/" class="logo"><img src="{% static 'images/logo.png' %}" alt=""></a>
+          <a href="/" class="logo"><img src="{{ company_info.logo.url }}" alt=""></a>
         </div>       
         <div class="col-12 col-sm-6 col-md-4 col-lg-6 header-search">
           <div id="custom-search-input">
@@ -475,9 +475,9 @@
         </div>
         <div class="col-12 col-sm-6 col-md-6 col-lg-3">
           <h4>Contact Info</h4>
-          <p><i class="fa fa-map-marker-alt"></i> Kathmandu, Nepal</p>
-          <p><i class="fa fa-phone-volume"></i> 977-1-123456</p>
-          <p><i class="fa fa-envelope"></i> info@yourdomain.com</p>
+          <p><i class="fa fa-map-marker-alt"></i> {{ company_info.address }}</p>
+          <p><i class="fa fa-phone-volume"></i> {{ company_info.mobile }}</p>
+          <p><i class="fa fa-envelope"></i> {{ company_info.email }}</p>
           <ul class="footer-lists">
             <li><a href="#">Privecy & Policy</a></li>
             <li><a href="#">Terms & Conditions</a></li>

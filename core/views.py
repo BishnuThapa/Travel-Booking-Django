@@ -9,7 +9,7 @@ def index(request):
     tour_category = Tour_Type.objects.all()[:6]
     tours = Tour.objects.filter(is_featured=True)[:6]
     culturaltour = Tour.objects.filter(activity__name='Religious Tour')[:6]
-    blogs = Blog.objects.all().order_by('-id')[:3]
+    blogs = Blog.objects.all().order_by('-id')[:2]
 
     context = {
         'sliders': sliders,
@@ -31,7 +31,7 @@ def tour_detail(request, tour_slug):
 
 def blog(request):
     blogs = Blog.objects.all()
-    paginator = Paginator(blogs, 1)
+    paginator = Paginator(blogs, 6)
     page = request.GET.get('page')
     paged_blog = paginator.get_page(page)
     context = {
@@ -53,4 +53,8 @@ def blog_detail(request, blog_slug):
 
 
 def contact(request):
-    return render(request, 'contact.html')
+    company_info = CompanyInfo.objects.first()
+    context = {
+        'company_info': company_info
+    }
+    return render(request, 'contact.html', context)

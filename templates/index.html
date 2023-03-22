@@ -444,13 +444,15 @@
           <div class="col-12 col-sm-12">
             <h4>Travel Blog</h4>
           </div>
+          {% for blog in blogs %}
           <div class="col-12 col-sm-12 col-md-6 col-lg-6">
-            <a href="#"><img src="./images/gallery1.jpg" loading="lazy" alt=""></a>
+            <a href="{% url 'blog-detail' blog.slug %}"><img src="{{ blog.featured_image.url }}" loading="lazy" alt=""></a>
             <div class="blog-box">
-              <h5><a href="#">Everest Base Camp and Great Deals</a></h5>
-              <a href="#" class="btn btn-continue">Continue Reading</a>
+              <h5><a href="{% url 'blog-detail' blog.slug %}">{{ blog.title }}</a></h5>
+              <a href="{% url 'blog-detail' blog.slug %}" class="btn btn-continue">Continue Reading</a>
             </div>
           </div>
+          {% endfor %}
           
         </div>
       </div>
