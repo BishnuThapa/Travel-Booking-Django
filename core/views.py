@@ -58,3 +58,19 @@ def contact(request):
         'company_info': company_info
     }
     return render(request, 'contact.html', context)
+
+
+def team(request):
+    return render(request, 'our-team.html')
+
+
+def why_us(request):
+    return render(request, 'why-us.html')
+
+
+def our_story(request):
+    return render(request, 'our-story.html')
+
+
+def about_us(request):
+    return render(request, 'about-us.html')
