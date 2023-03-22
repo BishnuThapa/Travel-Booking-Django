@@ -32,7 +32,7 @@
         <div class="row">
         {% for blog in blogs %}
           <div class="col-12 col-sm-12 col-md-6 col-lg-6 blog-box">
-            <a href="#"><img src="{{ blog.featured_image.url }}" alt=""></a>
+            <a href="{% url 'blog-detail' blog.slug %}"><img src="{{ blog.featured_image.url }}" alt=""></a>
             <h6>{{ blog.created_at | date }}</h6>
             <ul class="footer-icons">
               <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
@@ -41,9 +41,9 @@
               <li><a href="#"><i class="fab fa-pinterest"></i></a></li>
               <li><a href="#"><i class="fab fa-youtube"></i></a></li>
             </ul>
-            <h4><a href="#">{{ blog.title }}</a></h4>
+            <h4><a href="{% url 'blog-detail' blog.slug %}">{{ blog.title }}</a></h4>
             <p>{{blog.description | safe | truncatechars:40 }}</p>
-            <a href="#" class="btn btn-read">Read More</a>
+            <a href="{% url 'blog-detail' blog.slug %}" class="btn btn-read">Read More</a>
           </div>
           {% endfor %}
           

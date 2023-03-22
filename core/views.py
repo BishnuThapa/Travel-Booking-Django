@@ -36,5 +36,17 @@ def blog(request):
     return render(request, 'blog.html', context)
 
 
+def blog_detail(request, blog_slug):
+    single_blog = get_object_or_404(Blog, slug=blog_slug)
+    recent_blogs = Blog.objects.all().order_by('-id')[:3]
+    featured_packages = Tour.objects.filter(is_featured=True)[:3]
+    context = {
+        'single_blog': single_blog,
+        'recent_blogs': recent_blogs,
+        'featured_packages': featured_packages
+    }
+    return render(request, 'blog-detail.html', context)
+
+
 def contact(request):
     return render(request, 'contact.html')
