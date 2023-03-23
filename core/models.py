@@ -270,6 +270,7 @@ class Team(models.Model):
     designation = models.CharField(max_length=255, blank=True, null=True)
     description = RichTextField(blank=True, null=True)
     category = models.ForeignKey(TeamCategory, on_delete=models.CASCADE)
+    order = models.IntegerField()
 
     def __str__(self):
         return self.name

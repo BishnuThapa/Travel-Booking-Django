@@ -65,7 +65,7 @@ def contact(request):
 
 def team(request):
     teamcat = TeamCategory.objects.all()
-    teams = Team.objects.all()
+    teams = Team.objects.all().order_by('order')
     context = {
         'teamcat': teamcat,
         'teams': teams
