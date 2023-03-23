@@ -18,7 +18,7 @@
       <div class="col-12 col-sm-12">
         <h1>Why Us</h1>
         <ul class="breadcrumb">
-          <li><a href="index.html">Home</a></li>
+          <li><a href="/">Home</a></li>
           <li>Why Us</li>
         </ul>
       </div>
@@ -29,62 +29,16 @@
 <div class="why-body">
   <div class="container">
     <div class="row">
+    {% for i in whyus %}
       <div class="col-12 col-sm-12 col-md-6 col-lg-4">
         <div class="why-box">
           <i class="fas fa-hiking"></i>
-          <h4>Our Enthusiastic Team</h4>
-          <p>At Nepal Hiking Team, we know that you travel to explore and discover more about the world. We understand the importance of making a genuine personal connection when you travel, and our entire team is full of passion and boundless enthusiasm about our work. That’s why you can trust us to be your companion in every part of Nepal and the greater Himalayan region. We employ professionally trained experts who won’t just guide you on your trek; they’ll also introduce you to the places, culture, and history of the Himalayas. With cheerful dispositions and expert advice, our trekking guides will help you to make the most of your adventure, every step of the way.</p>
+          <h4>{{ i.heading }}</h4>
+          <p>{{i.description | safe }}</p>
         </div>
       </div>
-      <div class="col-12 col-sm-12 col-md-6 col-lg-4">
-        <div class="why-box">
-          <i class="fas fa-hiking"></i>
-          <h4>Our Enthusiastic Team</h4>
-          <p>At Nepal Hiking Team, we know that you travel to explore and discover more about the world. We understand the importance of making a genuine personal connection when you travel, and our entire team is full of passion and boundless enthusiasm about our work. That’s why you can trust us to be your companion in every part of Nepal and the greater Himalayan region. We employ professionally trained experts who won’t just guide you on your trek; they’ll also introduce you to the places, culture, and history of the Himalayas. With cheerful dispositions and expert advice, our trekking guides will help you to make the most of your adventure, every step of the way.</p>
-        </div>
-      </div>
-      <div class="col-12 col-sm-12 col-md-6 col-lg-4">
-        <div class="why-box">
-          <i class="fas fa-hiking"></i>
-          <h4>Our Enthusiastic Team</h4>
-          <p>At Nepal Hiking Team, we know that you travel to explore and discover more about the world. We understand the importance of making a genuine personal connection when you travel, and our entire team is full of passion and boundless enthusiasm about our work. That’s why you can trust us to be your companion in every part of Nepal and the greater Himalayan region. We employ professionally trained experts who won’t just guide you on your trek; they’ll also introduce you to the places, culture, and history of the Himalayas. With cheerful dispositions and expert advice, our trekking guides will help you to make the most of your adventure, every step of the way.</p>
-        </div>
-      </div>
-      <div class="col-12 col-sm-12 col-md-6 col-lg-4">
-        <div class="why-box">
-          <i class="fas fa-hiking"></i>
-          <h4>Our Enthusiastic Team</h4>
-          <p>At Nepal Hiking Team, we know that you travel to explore and discover more about the world. We understand the importance of making a genuine personal connection when you travel, and our entire team is full of passion and boundless enthusiasm about our work. That’s why you can trust us to be your companion in every part of Nepal and the greater Himalayan region. We employ professionally trained experts who won’t just guide you on your trek; they’ll also introduce you to the places, culture, and history of the Himalayas. With cheerful dispositions and expert advice, our trekking guides will help you to make the most of your adventure, every step of the way.</p>
-        </div>
-      </div>
-      <div class="col-12 col-sm-12 col-md-6 col-lg-4">
-        <div class="why-box">
-          <i class="fas fa-hiking"></i>
-          <h4>Our Enthusiastic Team</h4>
-          <p>At Nepal Hiking Team, we know that you travel to explore and discover more about the world. We understand the importance of making a genuine personal connection when you travel, and our entire team is full of passion and boundless enthusiasm about our work. That’s why you can trust us to be your companion in every part of Nepal and the greater Himalayan region. We employ professionally trained experts who won’t just guide you on your trek; they’ll also introduce you to the places, culture, and history of the Himalayas. With cheerful dispositions and expert advice, our trekking guides will help you to make the most of your adventure, every step of the way.</p>
-        </div>
-      </div>
-      <div class="col-12 col-sm-12 col-md-6 col-lg-4">
-        <div class="why-box">
-          <i class="fas fa-hiking"></i>
-          <h4>Our Enthusiastic Team</h4>
-          <p>At Nepal Hiking Team, we know that you travel to explore and discover more about the world. We understand the importance of making a genuine personal connection when you travel, and our entire team is full of passion and boundless enthusiasm about our work. That’s why you can trust us to be your companion in every part of Nepal and the greater Himalayan region. We employ professionally trained experts who won’t just guide you on your trek; they’ll also introduce you to the places, culture, and history of the Himalayas. With cheerful dispositions and expert advice, our trekking guides will help you to make the most of your adventure, every step of the way.</p>
-        </div>
-      </div>
-      <div class="col-12 col-sm-12 col-md-6 col-lg-4">
-        <div class="why-box">
-          <i class="fas fa-hiking"></i>
-          <h4>Our Enthusiastic Team</h4>
-          <p>At Nepal Hiking Team, we know that you travel to explore and discover more about the world. We understand the importance of making a genuine personal connection when you travel, and our entire team is full of passion and boundless enthusiasm about our work. That’s why you can trust us to be your companion in every part of Nepal and the greater Himalayan region. We employ professionally trained experts who won’t just guide you on your trek; they’ll also introduce you to the places, culture, and history of the Himalayas. With cheerful dispositions and expert advice, our trekking guides will help you to make the most of your adventure, every step of the way.</p>
-        </div>
-      </div>
-      <div class="col-12 col-sm-12 col-md-6 col-lg-4">
-        <div class="why-box">
-          <i class="fas fa-hiking"></i>
-          <h4>Our Enthusiastic Team</h4>
-          <p>At Nepal Hiking Team, we know that you travel to explore and discover more about the world. We understand the importance of making a genuine personal connection when you travel, and our entire team is full of passion and boundless enthusiasm about our work. That’s why you can trust us to be your companion in every part of Nepal and the greater Himalayan region. We employ professionally trained experts who won’t just guide you on your trek; they’ll also introduce you to the places, culture, and history of the Himalayas. With cheerful dispositions and expert advice, our trekking guides will help you to make the most of your adventure, every step of the way.</p>
-        </div>
-      </div>
+      {% endfor %}
+      
     </div>
   </div>
 </div>

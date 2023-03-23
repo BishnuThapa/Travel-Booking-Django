@@ -475,7 +475,7 @@
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="{% url 'about-us' %}">About us</a>
                     <a class="dropdown-item" href="{% url 'why-us' %}">Why With Us</a>
-                    <a class="dropdown-item" href="{% url 'our-story' %}">Our Story</a>
+                    <a class="dropdown-item" href="{% url 'our-story' %}">Our Story & Awards</a>
                     <a class="dropdown-item" href="{% url 'team' %}">Our Team</a>
                     
                   </div>
@@ -685,11 +685,19 @@
         <div class="col-12 col-sm-12 col-md-6 col-lg-3 our-partners">
           <h3>Follow Us</h3>
           <ul class="footer-icons">
-            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-            <li><a href="#"><i class="fab fa-pinterest"></i></a></li>
-            <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+          {% if company_info.facebook_link %}
+            <li><a href="{{ company_info.facebook_link}}" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+            {% endif %}
+            {% if company_info.twitter_link %}
+            <li><a href="{{ company_info.twitter_link }}"><i class="fab fa-twitter" target="_blank"></i></a></li>
+            {% endif %}
+            {% if company_info.linkedin_link %}
+            <li><a href="{{ company_info.linkedin_link}}"><i class="fab fa-linkedin-in" target="_blank"></i></a></li>
+            {% endif %}
+            <li><a href="#"><i class="fab fa-instagram" target="_blank"></i></a></li>
+            {% if company_info.youtube_link %}
+            <li><a href="{{ company_info.youtube_link}}"><i class="fab fa-youtube" target="_blank"></i></a></li>
+            {% endif %}
           </ul>
         </div>
         <div class="col-12 col-sm-12 col-md-6 col-lg-3">
@@ -704,18 +712,18 @@
         <div class="col-12 col-sm-6 col-md-9 col-lg-9">
           <h5>We are associated with</h5>
           <ul>
-            <li><img src="./images/associate1.png" alt=""></li>
-            <li><img src="./images/associate2.png" alt=""></li>
-            <li><img src="./images/associate3.png" alt=""></li>
-            <li><img src="./images/associate4.png" alt=""></li>
+            <li><img src="{% static 'images/associate1.png' %}" alt=""></li>
+            <li><img src="{% static 'images/associate2.png' %}" alt=""></li>
+            <li><img src="{% static 'images/associate3.png' %}" alt=""></li>
+            <li><img src="{% static 'images/associate4.png' %}" alt=""></li>
           </ul>
         </div>
         <div class="col-12 col-sm-6 col-md-3 col-lg-3 we-accept">
           <h5>We accept</h5>
           <ul>
-            <li><img src="./images/visa.png" alt=""></li>
-            <li><img src="./images/mastercard.png" alt=""></li>
-            <li><img src="./images/american.png" alt=""></li>
+            <li><img src="{% static 'images/visa.png' %}" alt=""></li>
+            <li><img src="{% static 'images/mastercard.png' %}" alt=""></li>
+            <li><img src="{% static 'images/american.png' %}" alt=""></li>
           </ul>
         </div>
       </div>
@@ -725,10 +733,10 @@
     <div class="container">
       <div class="row">
         <div class="col-12 col-sm-12 col-md-6 col-lg-6 botton-left">
-          <p>© 2023 Copyright Trekking Company Pvt. Ltd. All rights reserved.</p>
+          <p>© {% now 'Y' %} Copyright - {{ company_info.footer_text_copyright }} - All rights reserved.</p>
         </div>
         <div class="col-12 col-sm-12 col-md-6 col-lg-6 botton-right">
-          <p>Developed By: <a href="#" target="_blank">asckai</a></p>
+          <p>Developed By: <a href="{{ company_info.footer_copyright_url }}" target="_blank">asckai</a></p>
         </div>
       </div>
     </div>

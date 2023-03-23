@@ -20,6 +20,53 @@ class Slider(models.Model):
         verbose_name_plural = 'Slider'
 
 
+class AboutUs(models.Model):
+    heading = models.CharField(max_length=255)
+    description = RichTextField()
+
+    def __str__(self):
+        return self.heading
+
+    class Meta:
+        verbose_name = 'About Us'
+        verbose_name_plural = 'About Us'
+
+
+class WhyUs(models.Model):
+    heading = models.CharField(max_length=255)
+    description = RichTextField()
+
+    def __str__(self):
+        return self.heading
+
+    class Meta:
+        verbose_name = 'Why Us'
+        verbose_name_plural = 'Why Us'
+
+
+class OurStory(models.Model):
+    heading = models.CharField(max_length=255)
+    description = RichTextField()
+
+    def __str__(self):
+        return self.heading
+
+    class Meta:
+        verbose_name = 'Story & Award'
+        verbose_name_plural = 'Story & Awards'
+
+
+class AwardImages(models.Model):
+    ourstory = models.ForeignKey(OurStory, on_delete=models.CASCADE)
+    title = models.CharField(max_length=255, null=True, blank=True)
+    image = models.ImageField(upload_to='awards', null=True, blank=True)
+    url = models.CharField(max_length=255, blank=True, null=True)
+
+    class Meta:
+        verbose_name = "Award"
+        verbose_name_plural = "Award"
+
+
 class Destination(models.Model):
     name = models.CharField(max_length=100)
     slug = models.SlugField(max_length=100, unique=True, blank=True, null=True)
@@ -52,7 +99,7 @@ class CompanyInfo(models.Model):
     short_description = models.TextField(max_length=255, blank=True, null=True)
     location_map = models.TextField(null=True, blank=True)
     footer_text_copyright = models.CharField(
-        max_length=100, null=True, blank=True, default='')
+        max_length=100, null=True, blank=True)
     footer_copyright_url = models.URLField(
         default='', null=True, blank=True)
     facebook_link = models.URLField(null=True, blank=True)
@@ -204,3 +251,28 @@ class Blog(models.Model):
     class Meta:
         verbose_name = 'Blog'
         verbose_name_plural = 'Blog'
+
+
+class TeamCategory(models.Model):
+    name = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = 'Team Category'
+        verbose_name_plural = 'Team Category'
+
+
+class Team(models.Model):
+    image = models.ImageField(upload_to='team', blank=True, null=True)
+    name = models.CharField(max_length=255, blank=True, null=True)
+    designation = models.CharField(max_length=255, blank=True, null=True)
+    category = models.ForeignKey(TeamCategory, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = 'Team'
+        verbose_name_plural = 'Team'

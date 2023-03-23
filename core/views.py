@@ -14,6 +14,7 @@ def index(request):
     context = {
         'sliders': sliders,
         'tour_category': tour_category,
+
         'tours': tours,
         'culturaltour': culturaltour,
         'blogs': blogs,
@@ -61,16 +62,33 @@ def contact(request):
 
 
 def team(request):
-    return render(request, 'our-team.html')
+    teams = Team.objects.all()
+    context = {
+        'teams': teams
+    }
+    return render(request, 'our-team.html', context)
 
 
 def why_us(request):
-    return render(request, 'why-us.html')
+    whyus = WhyUs.objects.all()
+    context = {
+        'whyus': whyus
+    }
+    return render(request, 'why-us.html', context)
 
 
 def our_story(request):
-    return render(request, 'our-story.html')
+    ourstory = OurStory.objects.first()
+    context = {
+        'ourstory': ourstory
+    }
+    return render(request, 'our-story.html', context)
 
 
 def about_us(request):
-    return render(request, 'about-us.html')
+    introduction = AboutUs.objects.first()
+    context = {
+        'introduction': introduction
+
+    }
+    return render(request, 'about-us.html', context)

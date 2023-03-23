@@ -28,41 +28,19 @@
 <div class="award-section">
   <div class="container">
     <div class="row mb-5">
+      <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+        <h4>{{ ourstory.heading }}</h4>
+        <p>{{ ourstory.description | safe }}</p>
+      </div>
+      {% for i in ourstory.awardimages_set.all %}
       <div class="col-12 col-sm-12 col-md-4 col-lg-3">
-        <a href="#"><img src="./images/award1.jpg" alt=""></a>
+        <a href="#"><img src="{{ i.image.url }}" alt=""></a>
+        <h5 class="mt-3">{{ i.title}}</h5>
       </div>
-      <div class="col-12 col-sm-12 col-md-8 col-lg-9">
-        <h4>CERTIFICATE OF EXCELLENCE FROM TRIPADVISOR, 2017.</h4>
-        <p>For meeting every criteria as promised and delivering great services consistently to all our valuable guests. And for putting untiring efforts to live up to the expectations and satisfaction of our clients.</p>
-      </div>
+      {% endfor %}
+      
     </div>
-    <div class="row mb-5">
-      <div class="col-12 col-sm-12 col-md-8 col-lg-9">
-        <h4>CERTIFICATE OF EXCELLENCE FROM TRIPADVISOR, 2017.</h4>
-        <p>For meeting every criteria as promised and delivering great services consistently to all our valuable guests. And for putting untiring efforts to live up to the expectations and satisfaction of our clients.</p>
-      </div>
-      <div class="col-12 col-sm-12 col-md-4 col-lg-3">
-        <a href="#"><img src="./images/award1.jpg" alt=""></a>
-      </div>
-    </div>
-    <div class="row mb-5">
-      <div class="col-12 col-sm-12 col-md-4 col-lg-3">
-        <a href="#"><img src="./images/award1.jpg" alt=""></a>
-      </div>
-      <div class="col-12 col-sm-12 col-md-8 col-lg-9">
-        <h4>CERTIFICATE OF EXCELLENCE FROM TRIPADVISOR, 2017.</h4>
-        <p>For meeting every criteria as promised and delivering great services consistently to all our valuable guests. And for putting untiring efforts to live up to the expectations and satisfaction of our clients.</p>
-      </div>
-    </div>    
-    <div class="row mb-5">
-      <div class="col-12 col-sm-12 col-md-8 col-lg-9">
-        <h4>CERTIFICATE OF EXCELLENCE FROM TRIPADVISOR, 2017.</h4>
-        <p>For meeting every criteria as promised and delivering great services consistently to all our valuable guests. And for putting untiring efforts to live up to the expectations and satisfaction of our clients.</p>
-      </div>
-      <div class="col-12 col-sm-12 col-md-4 col-lg-3">
-        <a href="#"><img src="./images/award1.jpg" alt=""></a>
-      </div>
-    </div>
+    
   </div>
 </div>
 {% endblock content %}
