@@ -78,7 +78,7 @@
                   </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                   {% for dest in destination %}
-                    <a class="dropdown-item" href="#">{{dest.name}}</a>
+                    <a class="dropdown-item" href="{% url 'destination' dest.slug %}">{{dest.name}}</a>
                     
                     
                     {% endfor %}
@@ -629,7 +629,7 @@
           <h4>Destinations</h4>
           <ul class="footer-lists">
           {% for dest in destination %}
-            <li><a href="#">{{ dest.name }}</a></li>
+            <li><a href="{% url 'destination' dest.slug %}">{{ dest.name }}</a></li>
             
             {% endfor %}
           </ul>
