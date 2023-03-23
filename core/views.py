@@ -6,6 +6,7 @@ from .models import *
 
 def index(request):
     sliders = Slider.objects.all()[:3]
+    intro = AboutUs.objects.first()
     tour_category = Tour_Type.objects.all()[:6]
     tours = Tour.objects.filter(is_featured=True)[:6]
     culturaltour = Tour.objects.filter(activity__name='Religious Tour')[:6]
@@ -13,6 +14,7 @@ def index(request):
 
     context = {
         'sliders': sliders,
+        'intro': intro,
         'tour_category': tour_category,
 
         'tours': tours,
@@ -92,3 +94,11 @@ def about_us(request):
 
     }
     return render(request, 'about-us.html', context)
+
+
+def destination(request):
+    # single_dest = get_object_or_404(Destination)
+    # context = {
+    #     'single_dest': single_dest,
+    # }
+    return render(request, 'destination.html')

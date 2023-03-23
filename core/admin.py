@@ -8,6 +8,11 @@ class Itinerary(admin.StackedInline):
     extra = 1
 
 
+class FooterUseFulInfo(admin.StackedInline):
+    model = FooterUseFulInfo
+    extra = 1
+
+
 class Gallery(admin.StackedInline):
     model = Gallery
     extra = 1
@@ -62,6 +67,7 @@ class DestinationAdmin(admin.ModelAdmin):
 class CompanyInfoAdmin(admin.ModelAdmin):
     def has_add_permission(self, request, obj=None):
         return False
+    inlines = (FooterUseFulInfo,)
 
 
 @admin.register(Tour_Type)

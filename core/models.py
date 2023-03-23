@@ -276,3 +276,16 @@ class Team(models.Model):
     class Meta:
         verbose_name = 'Team'
         verbose_name_plural = 'Team'
+
+
+class FooterUseFulInfo(models.Model):
+    companyinfo = models.ForeignKey(CompanyInfo, on_delete=models.CASCADE)
+    title = models.CharField(max_length=255, null=True, blank=True)
+    url = models.CharField(max_length=255, null=True, blank=True)
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = 'Useful Info'
+        verbose_name_plural = 'Useful Info'

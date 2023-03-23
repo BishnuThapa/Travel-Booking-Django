@@ -1,4 +1,5 @@
 from core.models import Destination, CompanyInfo, Tour_Type
+from django.shortcuts import render, get_object_or_404
 
 
 def default(request):
@@ -10,3 +11,11 @@ def default(request):
         'company_info': company_info,
         'activities': activities
     }
+
+
+def destination(request, destination_slug):
+    single_dest = get_object_or_404(Destination, slug=destination_slug)
+    context = {
+        'single_dest': single_dest,
+    }
+    return render(request, 'destination.html', context)

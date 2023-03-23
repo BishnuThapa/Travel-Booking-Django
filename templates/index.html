@@ -100,10 +100,9 @@
   <div class="container">
     <div class="row">
       <div class="col-12 col-sm-12">
-        <h1>Welcome to Travel Company</h1>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.</p>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.</p>
-        <a href="#" class="btn btn-reads">Read More <i class="fa fa-arrow-right"></i></a>
+        <h1>{{ intro.heading }}</h1>
+        <p>{{ intro.description | safe | truncatewords:160 }}</p>
+        <a href="{% url 'about-us' %}" class="btn btn-reads">Read More <i class="fa fa-arrow-right"></i></a>
       </div>
     </div>
   </div>

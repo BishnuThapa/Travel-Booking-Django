@@ -626,36 +626,30 @@
     <div class="container">
       <div class="row footer-content-box">
         <div class="col-12 col-sm-6 col-md-6 col-lg-3 footerbox">
-          <h4>Destination</h4>
+          <h4>Destinations</h4>
           <ul class="footer-lists">
-            <li><a href="#">Nepal</a></li>
-            <li><a href="#">Tibet</a></li>
-            <li><a href="#">Bhutan</a></li>
-            <li><a href="#">India</a></li>
-            <li><a href="#">Tanzania</a></li>
-            <li><a href="#">Multi Country</a></li>
+          {% for dest in destination %}
+            <li><a href="#">{{ dest.name }}</a></li>
+            
+            {% endfor %}
           </ul>
         </div>
         <div class="col-12 col-sm-6 col-md-6 col-lg-3 footerbox">
           <h4>Activities</h4>
           <ul class="footer-lists">
-            <li><a href="#">Cultural and Historical Tours</a></li>
-            <li><a href="#">Trekking and Hiking</a></li>
-            <li><a href="#">Climbing and Expedition</a></li>
-            <li><a href="#">Day Tours</a></li>
-            <li><a href="#">Religious and Spiritual Tours</a></li>
-            <li><a href="#">Multiple Activities</a></li>
+          {% for activitiy in activities %}
+            <li><a href="#">{{ activitiy.name }}</a></li>
+            
+            {% endfor %}
           </ul>
         </div>
         <div class="col-12 col-sm-6 col-md-6 col-lg-3 footerbox">
           <h4>Useful Info</h4>
           <ul class="footer-lists">
-            <li><a href="#">Trip Terms and Conditions</a></li>
-            <li><a href="#">Privacy and Disclaimer</a></li>
-            <li><a href="#">Link Exchange</a></li>
-            <li><a href="#">Volunteering Opportunities</a></li>
-            <li><a href="#">Travel Insurances</a></li>
-            <li><a href="#">Submit Insurance Detail</a></li>
+          {% for usefullinks in company_info.footerusefulinfo_set.all %}
+            <li><a href="{{ usefullinks.url }}" target="_blank">{{ usefullinks.title }}</a></li>
+            
+            {% endfor %}
           </ul>
         </div>
         <div class="col-12 col-sm-6 col-md-6 col-lg-3">
