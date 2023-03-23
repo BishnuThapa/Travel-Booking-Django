@@ -53,7 +53,7 @@
           </div>
         </div>
         <div class="col-12 col-sm-6 col-md-3 col-lg-2 search-box">
-          <a href="#" class="btn btn-plans">Plan Your Trip</a>
+          <a href="{% url 'plan-my-trip' %}" class="btn btn-plans">Plan Your Trip</a>
         </div>
       </div>
     </div>
@@ -658,9 +658,9 @@
           <p><i class="fa fa-phone-volume"></i> {{ company_info.mobile }}</p>
           <p><i class="fa fa-envelope"></i> {{ company_info.email }}</p>
           <ul class="footer-lists">
-            <li><a href="#">Privecy & Policy</a></li>
-            <li><a href="#">Terms & Conditions</a></li>
-            <li><a href="#">Sitemap</a></li>
+            <li><a href="{% url 'offline-payment' %}">Offline Payment</a></li>
+            {% comment %} <li><a href="#">Terms & Conditions</a></li>
+            <li><a href="#">Sitemap</a></li> {% endcomment %}
           </ul>
         </div>
       </div>

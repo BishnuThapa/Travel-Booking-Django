@@ -1,0 +1,463 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="plan-banner">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-sm-12">
+        
+      </div>
+      <div class="col-12 col-sm-12">
+        <h1>Let’s Plan Your Trip</h1>
+        <p class="plan-text">Every Trip or vacation becomes part of your life, sometimes people travel to remember the moment and sometimes to forget something. Whichever is your reason, Discovery World Trekking would love to hear about your desire from the trip to Nepal and suit your itinerary according to your wish. We might not be the genie you saw in movies but we’ll make all wishes come true in every possible manner from the trip with us.</p>
+      </div>
+    </div>
+    <div class="row travel-row">
+      <div class="col-12 col-sm-12">
+        
+        <form role="form">
+          <div class="row">
+            <div class="col-12 col-sm-12 col-md-8 col-lg-9">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="panel panel-primary setup-content" id="step-1">
+                    <div class="panel-body">
+                      <div class="row single-trips">
+
+                        <div class="col-12 col-sm-12">
+                          <ul class="nav nav-tabs" role="tablist">
+                            <li class="nav-item">
+                              <a class="nav-link" data-toggle="tab" href="#home">
+                                <p><i class="fas fa-male"></i> <span>Single</span></p>
+                              </a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" data-toggle="tab" href="#menu1">
+                                <p><i class="fas fa-user-friends"></i> <span>Couple</span></p>
+                              </a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" data-toggle="tab" href="#menu2">
+                                <p><i class="fas fa-users-cog"></i> <span>Family</span></p>
+                              </a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link active show" data-toggle="tab" href="#menu3">
+                                <p><i class="fas fa-users"></i> <span>Group</span></p>
+                              </a>
+                            </li>
+                          </ul>
+
+                          <!-- Tab panes -->
+                          <div class="tab-content">
+                            <div id="home" class="container tab-pane"><br>
+                              <div class="row">
+                                <div class="col-md-12">
+                                  <button class="btn btn-primary nextBtn pull-right" type="button">Next</button>
+                                </div>
+                              </div>
+                            </div>
+                            <div id="menu1" class="container tab-pane fade"><br>
+                              <h3 class="panel-title">Destination</h3>
+                              <!-- <div class="row single-trips">
+                                <div class="col-12 col-sm-6 col-lg-4">
+                                  <p><a href="#"><i class="fa fa-calendar"></i> <span>I have exact date</span></a></p>
+                                </div>
+                                <div class="col-12 col-sm-6 col-lg-4">
+                                  <p><a href="#"><i class="fa fa-calendar"></i> <span>I have approx. date</span></a>
+                                </div>
+                                <div class="col-12 col-sm-6 col-lg-4">
+                                  <p><a href="#"><i class="fa fa-calendar"></i> <span>I will decide latewr</span></a></p>
+                                </div>
+                                <div class="col-12 col-sm-12 col-md-5">
+                                  <input type="date" name="">
+                                </div>
+                                <div class="col-12 col-sm-12 col-md-5">
+                                  <input type="date" name="">
+                                </div>
+                                <div class="col-12 col-sm-12 col-md-2">
+                                  <button class="btn btn-primary nextBtn pull-right" type="button">Next</button>
+                                </div>
+                              </div> -->
+                              <ul class="nav nav-tabs" role="tablist">
+                                <li class="nav-item">
+                                  <a class="nav-link active" data-toggle="tab" href="#date1">
+                                    <p><i class="fas fa-male"></i> <span>I have exact date</span></p>
+                                  </a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" data-toggle="tab" href="#date2">
+                                    <p><i class="fas fa-user-friends"></i> <span>I have approx. date</span></p>
+                                  </a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" data-toggle="tab" href="#date3">
+                                    <p><i class="fas fa-users-cog"></i> <span>I will decide latewr</span></p>
+                                  </a>
+                                </li>
+                              </ul>
+
+                              <!-- Tab panes -->
+                              <div class="tab-content">
+                                <div id="date1" class="container tab-pane active"><br>
+                                  <div class="row">
+                                    <div class="col-12 col-sm-12 col-md-4 col-lg-5">
+                                      <input type="date" name="">
+                                    </div>
+                                    <div class="col-12 col-sm-12 col-md-4 col-lg-5">
+                                      <input type="date" name="">
+                                    </div>
+                                    <div class="col-12 col-sm-12 col-md-4 col-lg-2">
+                                      <button class="btn btn-primary nextBtn pull-right" type="button">Next</button>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div id="date2" class="container tab-pane fade"><br>
+                                  <div class="row">
+                                    <div class="col-12 col-sm-12 col-md-5">
+                                      <select>
+                                        <option>Select Month, Year</option>
+                                        <option value="2020-10">October, 2020</option>
+                                        <option value="2020-11">November, 2020</option>
+                                        <option value="2020-12">December, 2020</option>
+                                        <option value="2021-01">January, 2021</option>
+                                        <option value="2021-02">February, 2021</option>
+                                        <option value="2021-03">March, 2021</option>
+                                        <option value="2021-04">April, 2021</option>
+                                        <option value="2021-05">May, 2021</option>
+                                        <option value="2021-06">June, 2021</option>
+                                        <option value="2021-07">July, 2021</option>
+                                        <option value="2021-08">August, 2021</option>
+                                      </select>
+                                    </div>
+                                    <div class="col-12 col-sm-12 col-md-5">
+                                      <select>
+                                        <option>Select your preferred duration</option>
+                                        <option value="1">Less than 1 Day</option>
+                                        <option value="2">2 Days</option>
+                                        <option value="3">3 Days</option>
+                                        <option value="4">4 Days</option>
+                                        <option value="5">5 Days</option>
+                                        <option value="6">6 Days</option>
+                                        <option value="7">7 Days</option>
+                                        <option value="8">8 Days</option>
+                                        <option value="9">9 Days</option>
+                                        <option value="10">10 Days</option>
+                                        <option value="11">11 Days</option>
+                                        <option value="12">12 Days</option>
+                                        <option value="13">13 Days</option>
+                                        <option value="14">14 Days</option>
+                                        <option value="15">15 Days</option>
+                                        <option value="16">16 Days</option>
+                                        <option value="17">17 Days</option>
+                                      </select>
+                                    </div>
+                                    <div class="col-12 col-sm-12 col-md-2">
+                                      <button class="btn btn-primary nextBtn pull-right" type="button">Next</button>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div id="date3" class="container tab-pane fade"><br>
+                                  <div class="row">
+                                    <div class="col-12 col-sm-12 col-md-4">
+                                      
+                                    </div>
+                                    <div class="col-12 col-sm-12 col-md-4">
+                                      
+                                    </div>
+                                    <div class="col-12 col-sm-12 col-md-4">
+                                      <button class="btn btn-primary nextBtn pull-right" type="button">Next</button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div id="menu2" class="container tab-pane fade"><br>
+                              <div class="row child-select">
+                                <div class="col-12 col-sm-12 col-md-4">
+                                  <select>
+                                    <option>No. of Adults</option>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                    <option>6</option>
+                                    <option>7</option>
+                                  </select>
+                                </div>
+                                <div class="col-12 col-sm-12 col-md-4">
+                                  <select>
+                                    <option>No. of Childrens</option>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                    <option>6</option>
+                                    <option>7</option>
+                                  </select>
+                                </div>
+                                <div class="col-12 col-sm-12 col-md-4">
+                                  <button class="btn btn-primary nextBtn pull-right" type="button">Next</button>
+                                </div>
+                              </div>
+                            </div>
+                            <div id="menu3" class="container tab-pane fade active show"><br>
+                              <div class="row child-select">
+                                <div class="col-12 col-sm-12 col-md-4">
+                                  <select>
+                                    <option>No. of Adults</option>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                    <option>6</option>
+                                    <option>7</option>
+                                  </select>
+                                </div>
+                                <div class="col-12 col-sm-12 col-md-4">
+                                  <select>
+                                    <option>No. of Childrens</option>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                    <option>6</option>
+                                    <option>7</option>
+                                  </select>
+                                </div>
+                                <div class="col-12 col-sm-12 col-md-4">
+                                  <button class="btn btn-primary nextBtn pull-right" type="button">Next</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>                      
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="panel panel-primary setup-content" id="step-3">
+                    <div class="panel-heading">
+                      <h3 class="panel-title">Please Enter Your Details</h3>
+                      <p>Your details are needed so that we can securely connect you with a travel expert. We ensure you that the information you provide will only be used for customizing your trip.</p>
+                    </div>
+                    <div class="panel-body">
+                      <div class="row plan-booking">
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            <label class="control-label">Full Name</label>
+                            <input maxlength="200" type="text" required="required" class="form-control" placeholder="Enter Company Name">
+                          </div>
+                        </div>
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            <label class="control-label">Select A Country</label>
+                            <select>
+                              <option>None</option>
+                              <option value="" selected="selected">None</option><option value="AF">Afghanistan</option><option value="AL">Albania</option><option value="DZ">Algeria</option><option value="AS">American Samoa</option><option value="AD">Andorra</option><option value="AO">Angola</option><option value="AI">Anguilla</option><option value="AQ">Antarctica</option><option value="AG">Antigua And Barbuda</option><option value="AR">Argentina</option><option value="AM">Armenia</option><option value="AW">Aruba</option><option value="AU">Australia</option><option value="AT">Austria</option><option value="AZ">Azerbaijan</option><option value="BS">Bahamas</option><option value="BH">Bahrain</option><option value="BD">Bangladesh</option><option value="BB">Barbados</option><option value="BY">Belarus</option><option value="BE">Belgium</option><option value="BZ">Belize</option><option value="BJ">Benin</option><option value="BM">Bermuda</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            <label class="control-label">Email Address</label>
+                            <input maxlength="200" type="email" required="required" class="form-control" placeholder="example@example.com">
+                          </div>
+                        </div>
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            <label class="control-label">Password</label>
+                            <input maxlength="200" type="password" required="required" class="form-control" placeholder="Password">
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label class="control-label">Contact Number</label>
+                            <input maxlength="200" type="number" required="required" class="form-control" placeholder="example@example.com">
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label class="control-label">Emergency Contact Number</label>
+                            <input maxlength="200" type="number" required="required" class="form-control" placeholder="example@example.com">
+                          </div>
+                        </div>
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            <label class="control-label">Your Address</label>
+                            <input maxlength="200" type="Your Address" required="required" class="form-control" placeholder="example@example.com">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="panel panel-primary setup-content" id="step-4">
+                    <div class="panel-heading">
+                      <h3 class="panel-title">Great! Just Some Information And We’ll Get There.</h3>
+                      <p>Please give us all your trip ideas and thoughts. Based on your input we'll connect you with a travel expert, suiting your needs.</p>
+                    </div>
+                    <div class="panel-body">
+                      <div class="row plan-booking">
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            <label class="control-label">Destination</label>
+                            <a href="#" class="btn btn-nepal">Nepal</a>
+                            <a href="#" class="btn btn-nepal">Bhutan</a>
+                            <a href="#" class="btn btn-nepal">Tibel</a>
+                          </div>
+                        </div>
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            <label class="control-label">Primary Age Groups Of Adults *</label>
+                            <div class="form-check-inline">
+                              <label class="form-check-label">
+                                <input type="checkbox" class="form-check-input" value="">18-35 Years
+                              </label>
+                            </div>
+                            <div class="form-check-inline">
+                              <label class="form-check-label">
+                                <input type="checkbox" class="form-check-input" value="">35-50 Years
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            <label class="control-label">What Type Of Tour ? *</label>
+                            <div class="form-check">
+                              <label class="form-check-label">
+                                <input type="checkbox">Custom Made Trip with guides/drivers and porter.
+                              </label>
+                              <p>You'll be on your own schedule and have a guide and/or driver to accompany you. If you’re doing Trekking or Mountaineering, carrying your bags yourself can be difficult and you may need a porter to help you.</p>
+                            </div>
+                            <div class="form-check">
+                              <label class="form-check-label">
+                                <input type="checkbox">Custom Made Trip with guides/drivers and porter.
+                              </label>
+                              <p>You'll be on your own schedule and have a guide and/or driver to accompany you. If you’re doing Trekking or Mountaineering, carrying your bags yourself can be difficult and you may need a porter to help you.</p>
+                            </div>
+                            <div class="form-check">
+                              <label class="form-check-label">
+                                <input type="checkbox">Custom Made Trip with guides/drivers and porter.
+                              </label>
+                              <p>You'll be on your own schedule and have a guide and/or driver to accompany you. If you’re doing Trekking or Mountaineering, carrying your bags yourself can be difficult and you may need a porter to help you.</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            <label class="control-label">What Accommodation Options ? *</label>
+                            <div class="form-check">
+                              <label class="form-check-label">
+                                <input type="checkbox">Basic
+                              </label>
+                              <p>Basic accomodations are available in all the places you’ll travel.</p>
+                            </div>
+                            <div class="form-check">
+                              <label class="form-check-label">
+                                <input type="checkbox">Comfortable
+                              </label>
+                              <p>Comfortable accomodations are available in major places in Nepal and few trekking routes.</p>
+                            </div>
+                            <div class="form-check">
+                              <label class="form-check-label">
+                                <input type="checkbox">Luxury
+                              </label>
+                              <p>luxury accomodations are avaiable in only major cities</p>
+                            </div>
+                            <div class="form-check">
+                              <label class="form-check-label">
+                                <input type="checkbox">Camping
+                              </label>
+                              <p>You'll have a different experience</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label class="control-label">Your Estimated Budget Per Person *</label>
+                            <input maxlength="200" type="text" required="required" class="form-control" placeholder="USD eg. 1500">
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label class="control-label">Is Your Budget Flexible? *</label>
+                            <select> 
+                              <option>Select</option> 
+                              <option>No, this is my max. budget</option> 
+                              <option>Yes, its flexible</option> 
+                            </select>
+                          </div>
+                        </div>
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            <label class="control-label">Are You Ready To Start Planning Your Trip?*</label>
+                            <div class="form-check">
+                              <label class="form-check-label">
+                                <input type="checkbox">I need more information before I can start trip planning
+                              </label>
+                            </div>
+                            <div class="form-check">
+                              <label class="form-check-label">
+                                <input type="checkbox">I'm ready to start trip planning
+                              </label>
+                            </div>
+                            <div class="form-check">
+                              <label class="form-check-label">
+                                <input type="checkbox">I've done my homework and almost ready to book
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            <label class="control-label">Describe Your Trip</label>
+                            <textarea placeholder="Your message here..."></textarea>
+                          </div>
+                        </div>
+                        <div class="col-md-8">
+                          
+                        </div>
+                        <div class="col-md-4">
+                          <button class="btn btn-primary nextBtn pull-right" type="button">Submit your trip details</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="panel panel-primary setup-content" id="step-5">
+                    <div class="panel-body">
+                      <div class="Woohoo">
+                        <h5>Woohoo!</h5>
+                        <p>You’ve successfully submitted your details. Our travel expert will go through your details and contact you as soon as possible. We’re looking forward for your best experience ahead.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-4 col-lg-3">
+              <div class="your-trip-box">
+                <h5>Your Trip Plan</h5>
+                <ul>
+                  <li><i class="far fa-hand-point-right"></i> Group Size</li>
+                  <li><i class="far fa-hand-point-right"></i> Travel Dates</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}

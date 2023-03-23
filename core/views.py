@@ -64,8 +64,10 @@ def contact(request):
 
 
 def team(request):
+    teamcat = TeamCategory.objects.all()
     teams = Team.objects.all()
     context = {
+        'teamcat': teamcat,
         'teams': teams
     }
     return render(request, 'our-team.html', context)
@@ -96,9 +98,16 @@ def about_us(request):
     return render(request, 'about-us.html', context)
 
 
-def destination(request):
-    # single_dest = get_object_or_404(Destination)
-    # context = {
-    #     'single_dest': single_dest,
-    # }
-    return render(request, 'destination.html')
+# def destination(request):
+#     # single_dest = get_object_or_404(Destination)
+#     # context = {
+#     #     'single_dest': single_dest,
+#     # }
+#     return render(request, 'destination.html')
+
+def plan_my_trip(request):
+    return render(request, 'plan-my-trip.html')
+
+
+def offline_payment(request):
+    return render(request, 'offline-payment.html')

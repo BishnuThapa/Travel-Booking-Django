@@ -6,6 +6,7 @@ from .context_processor import destination
 urlpatterns = [
     path('', views.index, name='index'),
     path('contact-us/', views.contact, name='contact-us'),
+    path('plan-my-trip/', views.plan_my_trip, name='plan-my-trip'),
     path('blog/', views.blog, name='blog'),
     path('blog/<slug:blog_slug>/', views.blog_detail, name='blog-detail'),
     path('trips/<slug:tour_slug>/', views.tour_detail, name='tour-detail'),
@@ -15,4 +16,5 @@ urlpatterns = [
     path('why-us/', views.why_us, name='why-us'),
     path('our-story/', views.our_story, name='our-story'),
     path('about-us/', views.about_us, name='about-us'),
+    path('offline-payment/', views.offline_payment, name='offline-payment'),
 ]

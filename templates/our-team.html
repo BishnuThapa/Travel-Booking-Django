@@ -32,230 +32,24 @@
         <p class="team-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since.</p>
       </div>
       <div class="col-12 col-sm-12">
-        <nav>
-          <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
-            <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Exclusive Team</a>
-            <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Representative</a>
-            <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Trekking Leaders</a>
-            <a class="nav-item nav-link" id="nav-about-tab" data-toggle="tab" href="#nav-about" role="tab" aria-controls="nav-about" aria-selected="false">Climbing Leaders</a>
-          </div>
-        </nav>
+       
         <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
           <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
             <div class="row">
+            {% for i in teams %}
               <div class="col-12 col-sm-12 team-box">
-                <img src="./images/team1.jpg" alt="">
-                <h5>John Doe</h5>
-                <h6>Founder and Managing Director</h6>
+                <img src="{{i.image.url}}" alt="">
+                <h5>{{i.name}}</h5>
+                <h6>{{ i.designation }}</h6>
                 <div class="truncate">
-                  <p>Consciousness, explorations from which we spring star stuff harvesting star light shores of the cosmic ocean Apollonius of Perga permanence of the stars, Tunguska event paroxysm of global death white dwarf the carbon in our apple pies tendrils of gossamer clouds white dwarf not a sunrise but a galaxyrise. Brain is the seed of intelligence extraordinary claims require extraordinary evidence stirred by starlight, vanquish the impossible colonies quasar shores of the cosmic ocean Euclid dream of the mind's eye something incredible is waiting to be known rings of Uranus explorations the only home we've ever known.</p>
-                  <p>Galaxies tesseract cosmos inconspicuous motes of rock and gas Hypatia tesseract corpus callosum tingling of the spine astonishment extraordinary claims require extraordinary evidence. Citizens of distant epochs galaxies, Tunguska event intelligent beings dream of the mind's eye, Rig Veda culture. Billions upon billions with pretty stories for which there's little good evidence light years? Hydrogen atoms, venture, birth Hypatia tingling of the spine birth, muse about. Kindling the energy hidden in matter. Vanquish the impossible!</p>
-                  <p>Hearts of the stars emerged into consciousness, extraplanetary as a patch of light citizens of distant epochs, finite but unbounded, kindling the energy hidden in matter dream of the mind's eye take root and flourish ship of the imagination another world. Light years, descended from astronomers tingling of the spine, a mote of dust suspended in a sunbeam star stuff harvesting star light colonies courage of our questions hundreds of thousands of brilliant syntheses, hydrogen atoms hearts of the stars muse about corpus callosum cosmos! Galaxies vastness is bearable only through love dispassionate extraterrestrial observer of brilliant syntheses muse about the carbon in our apple pies, brain is the seed of intelligence courage of our questions!</p>
+                  <p>{{i.description | safe }}</p>
                 </div>
               </div>
-              <div class="col-12 col-sm-12 team-box">
-                <img src="./images/team1.jpg" alt="">
-                <h5>John Doe</h5>
-                <h6>Founder and Managing Director</h6>
-                <div class="truncate">
-                  <p>Consciousness, explorations from which we spring star stuff harvesting star light shores of the cosmic ocean Apollonius of Perga permanence of the stars, Tunguska event paroxysm of global death white dwarf the carbon in our apple pies tendrils of gossamer clouds white dwarf not a sunrise but a galaxyrise. Brain is the seed of intelligence extraordinary claims require extraordinary evidence stirred by starlight, vanquish the impossible colonies quasar shores of the cosmic ocean Euclid dream of the mind's eye something incredible is waiting to be known rings of Uranus explorations the only home we've ever known.</p>
-                  <p>Galaxies tesseract cosmos inconspicuous motes of rock and gas Hypatia tesseract corpus callosum tingling of the spine astonishment extraordinary claims require extraordinary evidence. Citizens of distant epochs galaxies, Tunguska event intelligent beings dream of the mind's eye, Rig Veda culture. Billions upon billions with pretty stories for which there's little good evidence light years? Hydrogen atoms, venture, birth Hypatia tingling of the spine birth, muse about. Kindling the energy hidden in matter. Vanquish the impossible!</p>
-                  <p>Hearts of the stars emerged into consciousness, extraplanetary as a patch of light citizens of distant epochs, finite but unbounded, kindling the energy hidden in matter dream of the mind's eye take root and flourish ship of the imagination another world. Light years, descended from astronomers tingling of the spine, a mote of dust suspended in a sunbeam star stuff harvesting star light colonies courage of our questions hundreds of thousands of brilliant syntheses, hydrogen atoms hearts of the stars muse about corpus callosum cosmos! Galaxies vastness is bearable only through love dispassionate extraterrestrial observer of brilliant syntheses muse about the carbon in our apple pies, brain is the seed of intelligence courage of our questions!</p>
-                </div>
-              </div>
-              <div class="col-12 col-sm-12 team-box">
-                <img src="./images/team1.jpg" alt="">
-                <h5>John Doe</h5>
-                <h6>Founder and Managing Director</h6>
-                <div class="truncate">
-                  <p>Consciousness, explorations from which we spring star stuff harvesting star light shores of the cosmic ocean Apollonius of Perga permanence of the stars, Tunguska event paroxysm of global death white dwarf the carbon in our apple pies tendrils of gossamer clouds white dwarf not a sunrise but a galaxyrise. Brain is the seed of intelligence extraordinary claims require extraordinary evidence stirred by starlight, vanquish the impossible colonies quasar shores of the cosmic ocean Euclid dream of the mind's eye something incredible is waiting to be known rings of Uranus explorations the only home we've ever known.</p>
-                  <p>Galaxies tesseract cosmos inconspicuous motes of rock and gas Hypatia tesseract corpus callosum tingling of the spine astonishment extraordinary claims require extraordinary evidence. Citizens of distant epochs galaxies, Tunguska event intelligent beings dream of the mind's eye, Rig Veda culture. Billions upon billions with pretty stories for which there's little good evidence light years? Hydrogen atoms, venture, birth Hypatia tingling of the spine birth, muse about. Kindling the energy hidden in matter. Vanquish the impossible!</p>
-                  <p>Hearts of the stars emerged into consciousness, extraplanetary as a patch of light citizens of distant epochs, finite but unbounded, kindling the energy hidden in matter dream of the mind's eye take root and flourish ship of the imagination another world. Light years, descended from astronomers tingling of the spine, a mote of dust suspended in a sunbeam star stuff harvesting star light colonies courage of our questions hundreds of thousands of brilliant syntheses, hydrogen atoms hearts of the stars muse about corpus callosum cosmos! Galaxies vastness is bearable only through love dispassionate extraterrestrial observer of brilliant syntheses muse about the carbon in our apple pies, brain is the seed of intelligence courage of our questions!</p>
-                </div>
-              </div>
-              <div class="col-12 col-sm-12 team-box">
-                <img src="./images/team1.jpg" alt="">
-                <h5>John Doe</h5>
-                <h6>Founder and Managing Director</h6>
-                <div class="truncate">
-                  <p>Consciousness, explorations from which we spring star stuff harvesting star light shores of the cosmic ocean Apollonius of Perga permanence of the stars, Tunguska event paroxysm of global death white dwarf the carbon in our apple pies tendrils of gossamer clouds white dwarf not a sunrise but a galaxyrise. Brain is the seed of intelligence extraordinary claims require extraordinary evidence stirred by starlight, vanquish the impossible colonies quasar shores of the cosmic ocean Euclid dream of the mind's eye something incredible is waiting to be known rings of Uranus explorations the only home we've ever known.</p>
-                  <p>Galaxies tesseract cosmos inconspicuous motes of rock and gas Hypatia tesseract corpus callosum tingling of the spine astonishment extraordinary claims require extraordinary evidence. Citizens of distant epochs galaxies, Tunguska event intelligent beings dream of the mind's eye, Rig Veda culture. Billions upon billions with pretty stories for which there's little good evidence light years? Hydrogen atoms, venture, birth Hypatia tingling of the spine birth, muse about. Kindling the energy hidden in matter. Vanquish the impossible!</p>
-                  <p>Hearts of the stars emerged into consciousness, extraplanetary as a patch of light citizens of distant epochs, finite but unbounded, kindling the energy hidden in matter dream of the mind's eye take root and flourish ship of the imagination another world. Light years, descended from astronomers tingling of the spine, a mote of dust suspended in a sunbeam star stuff harvesting star light colonies courage of our questions hundreds of thousands of brilliant syntheses, hydrogen atoms hearts of the stars muse about corpus callosum cosmos! Galaxies vastness is bearable only through love dispassionate extraterrestrial observer of brilliant syntheses muse about the carbon in our apple pies, brain is the seed of intelligence courage of our questions!</p>
-                </div>
-              </div>
-              <div class="col-12 col-sm-12 team-box">
-                <img src="./images/team1.jpg" alt="">
-                <h5>John Doe</h5>
-                <h6>Founder and Managing Director</h6>
-                <div class="truncate">
-                  <p>Consciousness, explorations from which we spring star stuff harvesting star light shores of the cosmic ocean Apollonius of Perga permanence of the stars, Tunguska event paroxysm of global death white dwarf the carbon in our apple pies tendrils of gossamer clouds white dwarf not a sunrise but a galaxyrise. Brain is the seed of intelligence extraordinary claims require extraordinary evidence stirred by starlight, vanquish the impossible colonies quasar shores of the cosmic ocean Euclid dream of the mind's eye something incredible is waiting to be known rings of Uranus explorations the only home we've ever known.</p>
-                  <p>Galaxies tesseract cosmos inconspicuous motes of rock and gas Hypatia tesseract corpus callosum tingling of the spine astonishment extraordinary claims require extraordinary evidence. Citizens of distant epochs galaxies, Tunguska event intelligent beings dream of the mind's eye, Rig Veda culture. Billions upon billions with pretty stories for which there's little good evidence light years? Hydrogen atoms, venture, birth Hypatia tingling of the spine birth, muse about. Kindling the energy hidden in matter. Vanquish the impossible!</p>
-                  <p>Hearts of the stars emerged into consciousness, extraplanetary as a patch of light citizens of distant epochs, finite but unbounded, kindling the energy hidden in matter dream of the mind's eye take root and flourish ship of the imagination another world. Light years, descended from astronomers tingling of the spine, a mote of dust suspended in a sunbeam star stuff harvesting star light colonies courage of our questions hundreds of thousands of brilliant syntheses, hydrogen atoms hearts of the stars muse about corpus callosum cosmos! Galaxies vastness is bearable only through love dispassionate extraterrestrial observer of brilliant syntheses muse about the carbon in our apple pies, brain is the seed of intelligence courage of our questions!</p>
-                </div>
-              </div>
+            {% endfor %}
+              
             </div>
           </div>
-          <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-            <div class="row">
-              <div class="col-12 col-sm-12 team-box">
-                <img src="./images/team1.jpg" alt="">
-                <h5>John Doe</h5>
-                <h6>Founder and Managing Director</h6>
-                <div class="truncate">
-                  <p>Consciousness, explorations from which we spring star stuff harvesting star light shores of the cosmic ocean Apollonius of Perga permanence of the stars, Tunguska event paroxysm of global death white dwarf the carbon in our apple pies tendrils of gossamer clouds white dwarf not a sunrise but a galaxyrise. Brain is the seed of intelligence extraordinary claims require extraordinary evidence stirred by starlight, vanquish the impossible colonies quasar shores of the cosmic ocean Euclid dream of the mind's eye something incredible is waiting to be known rings of Uranus explorations the only home we've ever known.</p>
-                  <p>Galaxies tesseract cosmos inconspicuous motes of rock and gas Hypatia tesseract corpus callosum tingling of the spine astonishment extraordinary claims require extraordinary evidence. Citizens of distant epochs galaxies, Tunguska event intelligent beings dream of the mind's eye, Rig Veda culture. Billions upon billions with pretty stories for which there's little good evidence light years? Hydrogen atoms, venture, birth Hypatia tingling of the spine birth, muse about. Kindling the energy hidden in matter. Vanquish the impossible!</p>
-                  <p>Hearts of the stars emerged into consciousness, extraplanetary as a patch of light citizens of distant epochs, finite but unbounded, kindling the energy hidden in matter dream of the mind's eye take root and flourish ship of the imagination another world. Light years, descended from astronomers tingling of the spine, a mote of dust suspended in a sunbeam star stuff harvesting star light colonies courage of our questions hundreds of thousands of brilliant syntheses, hydrogen atoms hearts of the stars muse about corpus callosum cosmos! Galaxies vastness is bearable only through love dispassionate extraterrestrial observer of brilliant syntheses muse about the carbon in our apple pies, brain is the seed of intelligence courage of our questions!</p>
-                </div>
-              </div>
-              <div class="col-12 col-sm-12 team-box">
-                <img src="./images/team1.jpg" alt="">
-                <h5>John Doe</h5>
-                <h6>Founder and Managing Director</h6>
-                <div class="truncate">
-                  <p>Consciousness, explorations from which we spring star stuff harvesting star light shores of the cosmic ocean Apollonius of Perga permanence of the stars, Tunguska event paroxysm of global death white dwarf the carbon in our apple pies tendrils of gossamer clouds white dwarf not a sunrise but a galaxyrise. Brain is the seed of intelligence extraordinary claims require extraordinary evidence stirred by starlight, vanquish the impossible colonies quasar shores of the cosmic ocean Euclid dream of the mind's eye something incredible is waiting to be known rings of Uranus explorations the only home we've ever known.</p>
-                  <p>Galaxies tesseract cosmos inconspicuous motes of rock and gas Hypatia tesseract corpus callosum tingling of the spine astonishment extraordinary claims require extraordinary evidence. Citizens of distant epochs galaxies, Tunguska event intelligent beings dream of the mind's eye, Rig Veda culture. Billions upon billions with pretty stories for which there's little good evidence light years? Hydrogen atoms, venture, birth Hypatia tingling of the spine birth, muse about. Kindling the energy hidden in matter. Vanquish the impossible!</p>
-                  <p>Hearts of the stars emerged into consciousness, extraplanetary as a patch of light citizens of distant epochs, finite but unbounded, kindling the energy hidden in matter dream of the mind's eye take root and flourish ship of the imagination another world. Light years, descended from astronomers tingling of the spine, a mote of dust suspended in a sunbeam star stuff harvesting star light colonies courage of our questions hundreds of thousands of brilliant syntheses, hydrogen atoms hearts of the stars muse about corpus callosum cosmos! Galaxies vastness is bearable only through love dispassionate extraterrestrial observer of brilliant syntheses muse about the carbon in our apple pies, brain is the seed of intelligence courage of our questions!</p>
-                </div>
-              </div>
-              <div class="col-12 col-sm-12 team-box">
-                <img src="./images/team1.jpg" alt="">
-                <h5>John Doe</h5>
-                <h6>Founder and Managing Director</h6>
-                <div class="truncate">
-                  <p>Consciousness, explorations from which we spring star stuff harvesting star light shores of the cosmic ocean Apollonius of Perga permanence of the stars, Tunguska event paroxysm of global death white dwarf the carbon in our apple pies tendrils of gossamer clouds white dwarf not a sunrise but a galaxyrise. Brain is the seed of intelligence extraordinary claims require extraordinary evidence stirred by starlight, vanquish the impossible colonies quasar shores of the cosmic ocean Euclid dream of the mind's eye something incredible is waiting to be known rings of Uranus explorations the only home we've ever known.</p>
-                  <p>Galaxies tesseract cosmos inconspicuous motes of rock and gas Hypatia tesseract corpus callosum tingling of the spine astonishment extraordinary claims require extraordinary evidence. Citizens of distant epochs galaxies, Tunguska event intelligent beings dream of the mind's eye, Rig Veda culture. Billions upon billions with pretty stories for which there's little good evidence light years? Hydrogen atoms, venture, birth Hypatia tingling of the spine birth, muse about. Kindling the energy hidden in matter. Vanquish the impossible!</p>
-                  <p>Hearts of the stars emerged into consciousness, extraplanetary as a patch of light citizens of distant epochs, finite but unbounded, kindling the energy hidden in matter dream of the mind's eye take root and flourish ship of the imagination another world. Light years, descended from astronomers tingling of the spine, a mote of dust suspended in a sunbeam star stuff harvesting star light colonies courage of our questions hundreds of thousands of brilliant syntheses, hydrogen atoms hearts of the stars muse about corpus callosum cosmos! Galaxies vastness is bearable only through love dispassionate extraterrestrial observer of brilliant syntheses muse about the carbon in our apple pies, brain is the seed of intelligence courage of our questions!</p>
-                </div>
-              </div>
-              <div class="col-12 col-sm-12 team-box">
-                <img src="./images/team1.jpg" alt="">
-                <h5>John Doe</h5>
-                <h6>Founder and Managing Director</h6>
-                <div class="truncate">
-                  <p>Consciousness, explorations from which we spring star stuff harvesting star light shores of the cosmic ocean Apollonius of Perga permanence of the stars, Tunguska event paroxysm of global death white dwarf the carbon in our apple pies tendrils of gossamer clouds white dwarf not a sunrise but a galaxyrise. Brain is the seed of intelligence extraordinary claims require extraordinary evidence stirred by starlight, vanquish the impossible colonies quasar shores of the cosmic ocean Euclid dream of the mind's eye something incredible is waiting to be known rings of Uranus explorations the only home we've ever known.</p>
-                  <p>Galaxies tesseract cosmos inconspicuous motes of rock and gas Hypatia tesseract corpus callosum tingling of the spine astonishment extraordinary claims require extraordinary evidence. Citizens of distant epochs galaxies, Tunguska event intelligent beings dream of the mind's eye, Rig Veda culture. Billions upon billions with pretty stories for which there's little good evidence light years? Hydrogen atoms, venture, birth Hypatia tingling of the spine birth, muse about. Kindling the energy hidden in matter. Vanquish the impossible!</p>
-                  <p>Hearts of the stars emerged into consciousness, extraplanetary as a patch of light citizens of distant epochs, finite but unbounded, kindling the energy hidden in matter dream of the mind's eye take root and flourish ship of the imagination another world. Light years, descended from astronomers tingling of the spine, a mote of dust suspended in a sunbeam star stuff harvesting star light colonies courage of our questions hundreds of thousands of brilliant syntheses, hydrogen atoms hearts of the stars muse about corpus callosum cosmos! Galaxies vastness is bearable only through love dispassionate extraterrestrial observer of brilliant syntheses muse about the carbon in our apple pies, brain is the seed of intelligence courage of our questions!</p>
-                </div>
-              </div>
-              <div class="col-12 col-sm-12 team-box">
-                <img src="./images/team1.jpg" alt="">
-                <h5>John Doe</h5>
-                <h6>Founder and Managing Director</h6>
-                <div class="truncate">
-                  <p>Consciousness, explorations from which we spring star stuff harvesting star light shores of the cosmic ocean Apollonius of Perga permanence of the stars, Tunguska event paroxysm of global death white dwarf the carbon in our apple pies tendrils of gossamer clouds white dwarf not a sunrise but a galaxyrise. Brain is the seed of intelligence extraordinary claims require extraordinary evidence stirred by starlight, vanquish the impossible colonies quasar shores of the cosmic ocean Euclid dream of the mind's eye something incredible is waiting to be known rings of Uranus explorations the only home we've ever known.</p>
-                  <p>Galaxies tesseract cosmos inconspicuous motes of rock and gas Hypatia tesseract corpus callosum tingling of the spine astonishment extraordinary claims require extraordinary evidence. Citizens of distant epochs galaxies, Tunguska event intelligent beings dream of the mind's eye, Rig Veda culture. Billions upon billions with pretty stories for which there's little good evidence light years? Hydrogen atoms, venture, birth Hypatia tingling of the spine birth, muse about. Kindling the energy hidden in matter. Vanquish the impossible!</p>
-                  <p>Hearts of the stars emerged into consciousness, extraplanetary as a patch of light citizens of distant epochs, finite but unbounded, kindling the energy hidden in matter dream of the mind's eye take root and flourish ship of the imagination another world. Light years, descended from astronomers tingling of the spine, a mote of dust suspended in a sunbeam star stuff harvesting star light colonies courage of our questions hundreds of thousands of brilliant syntheses, hydrogen atoms hearts of the stars muse about corpus callosum cosmos! Galaxies vastness is bearable only through love dispassionate extraterrestrial observer of brilliant syntheses muse about the carbon in our apple pies, brain is the seed of intelligence courage of our questions!</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
-            <div class="row">
-              <div class="col-12 col-sm-12 team-box">
-                <img src="./images/team1.jpg" alt="">
-                <h5>John Doe</h5>
-                <h6>Founder and Managing Director</h6>
-                <div class="truncate">
-                  <p>Consciousness, explorations from which we spring star stuff harvesting star light shores of the cosmic ocean Apollonius of Perga permanence of the stars, Tunguska event paroxysm of global death white dwarf the carbon in our apple pies tendrils of gossamer clouds white dwarf not a sunrise but a galaxyrise. Brain is the seed of intelligence extraordinary claims require extraordinary evidence stirred by starlight, vanquish the impossible colonies quasar shores of the cosmic ocean Euclid dream of the mind's eye something incredible is waiting to be known rings of Uranus explorations the only home we've ever known.</p>
-                  <p>Galaxies tesseract cosmos inconspicuous motes of rock and gas Hypatia tesseract corpus callosum tingling of the spine astonishment extraordinary claims require extraordinary evidence. Citizens of distant epochs galaxies, Tunguska event intelligent beings dream of the mind's eye, Rig Veda culture. Billions upon billions with pretty stories for which there's little good evidence light years? Hydrogen atoms, venture, birth Hypatia tingling of the spine birth, muse about. Kindling the energy hidden in matter. Vanquish the impossible!</p>
-                  <p>Hearts of the stars emerged into consciousness, extraplanetary as a patch of light citizens of distant epochs, finite but unbounded, kindling the energy hidden in matter dream of the mind's eye take root and flourish ship of the imagination another world. Light years, descended from astronomers tingling of the spine, a mote of dust suspended in a sunbeam star stuff harvesting star light colonies courage of our questions hundreds of thousands of brilliant syntheses, hydrogen atoms hearts of the stars muse about corpus callosum cosmos! Galaxies vastness is bearable only through love dispassionate extraterrestrial observer of brilliant syntheses muse about the carbon in our apple pies, brain is the seed of intelligence courage of our questions!</p>
-                </div>
-              </div>
-              <div class="col-12 col-sm-12 team-box">
-                <img src="./images/team1.jpg" alt="">
-                <h5>John Doe</h5>
-                <h6>Founder and Managing Director</h6>
-                <div class="truncate">
-                  <p>Consciousness, explorations from which we spring star stuff harvesting star light shores of the cosmic ocean Apollonius of Perga permanence of the stars, Tunguska event paroxysm of global death white dwarf the carbon in our apple pies tendrils of gossamer clouds white dwarf not a sunrise but a galaxyrise. Brain is the seed of intelligence extraordinary claims require extraordinary evidence stirred by starlight, vanquish the impossible colonies quasar shores of the cosmic ocean Euclid dream of the mind's eye something incredible is waiting to be known rings of Uranus explorations the only home we've ever known.</p>
-                  <p>Galaxies tesseract cosmos inconspicuous motes of rock and gas Hypatia tesseract corpus callosum tingling of the spine astonishment extraordinary claims require extraordinary evidence. Citizens of distant epochs galaxies, Tunguska event intelligent beings dream of the mind's eye, Rig Veda culture. Billions upon billions with pretty stories for which there's little good evidence light years? Hydrogen atoms, venture, birth Hypatia tingling of the spine birth, muse about. Kindling the energy hidden in matter. Vanquish the impossible!</p>
-                  <p>Hearts of the stars emerged into consciousness, extraplanetary as a patch of light citizens of distant epochs, finite but unbounded, kindling the energy hidden in matter dream of the mind's eye take root and flourish ship of the imagination another world. Light years, descended from astronomers tingling of the spine, a mote of dust suspended in a sunbeam star stuff harvesting star light colonies courage of our questions hundreds of thousands of brilliant syntheses, hydrogen atoms hearts of the stars muse about corpus callosum cosmos! Galaxies vastness is bearable only through love dispassionate extraterrestrial observer of brilliant syntheses muse about the carbon in our apple pies, brain is the seed of intelligence courage of our questions!</p>
-                </div>
-              </div>
-              <div class="col-12 col-sm-12 team-box">
-                <img src="./images/team1.jpg" alt="">
-                <h5>John Doe</h5>
-                <h6>Founder and Managing Director</h6>
-                <div class="truncate">
-                  <p>Consciousness, explorations from which we spring star stuff harvesting star light shores of the cosmic ocean Apollonius of Perga permanence of the stars, Tunguska event paroxysm of global death white dwarf the carbon in our apple pies tendrils of gossamer clouds white dwarf not a sunrise but a galaxyrise. Brain is the seed of intelligence extraordinary claims require extraordinary evidence stirred by starlight, vanquish the impossible colonies quasar shores of the cosmic ocean Euclid dream of the mind's eye something incredible is waiting to be known rings of Uranus explorations the only home we've ever known.</p>
-                  <p>Galaxies tesseract cosmos inconspicuous motes of rock and gas Hypatia tesseract corpus callosum tingling of the spine astonishment extraordinary claims require extraordinary evidence. Citizens of distant epochs galaxies, Tunguska event intelligent beings dream of the mind's eye, Rig Veda culture. Billions upon billions with pretty stories for which there's little good evidence light years? Hydrogen atoms, venture, birth Hypatia tingling of the spine birth, muse about. Kindling the energy hidden in matter. Vanquish the impossible!</p>
-                  <p>Hearts of the stars emerged into consciousness, extraplanetary as a patch of light citizens of distant epochs, finite but unbounded, kindling the energy hidden in matter dream of the mind's eye take root and flourish ship of the imagination another world. Light years, descended from astronomers tingling of the spine, a mote of dust suspended in a sunbeam star stuff harvesting star light colonies courage of our questions hundreds of thousands of brilliant syntheses, hydrogen atoms hearts of the stars muse about corpus callosum cosmos! Galaxies vastness is bearable only through love dispassionate extraterrestrial observer of brilliant syntheses muse about the carbon in our apple pies, brain is the seed of intelligence courage of our questions!</p>
-                </div>
-              </div>
-              <div class="col-12 col-sm-12 team-box">
-                <img src="./images/team1.jpg" alt="">
-                <h5>John Doe</h5>
-                <h6>Founder and Managing Director</h6>
-                <div class="truncate">
-                  <p>Consciousness, explorations from which we spring star stuff harvesting star light shores of the cosmic ocean Apollonius of Perga permanence of the stars, Tunguska event paroxysm of global death white dwarf the carbon in our apple pies tendrils of gossamer clouds white dwarf not a sunrise but a galaxyrise. Brain is the seed of intelligence extraordinary claims require extraordinary evidence stirred by starlight, vanquish the impossible colonies quasar shores of the cosmic ocean Euclid dream of the mind's eye something incredible is waiting to be known rings of Uranus explorations the only home we've ever known.</p>
-                  <p>Galaxies tesseract cosmos inconspicuous motes of rock and gas Hypatia tesseract corpus callosum tingling of the spine astonishment extraordinary claims require extraordinary evidence. Citizens of distant epochs galaxies, Tunguska event intelligent beings dream of the mind's eye, Rig Veda culture. Billions upon billions with pretty stories for which there's little good evidence light years? Hydrogen atoms, venture, birth Hypatia tingling of the spine birth, muse about. Kindling the energy hidden in matter. Vanquish the impossible!</p>
-                  <p>Hearts of the stars emerged into consciousness, extraplanetary as a patch of light citizens of distant epochs, finite but unbounded, kindling the energy hidden in matter dream of the mind's eye take root and flourish ship of the imagination another world. Light years, descended from astronomers tingling of the spine, a mote of dust suspended in a sunbeam star stuff harvesting star light colonies courage of our questions hundreds of thousands of brilliant syntheses, hydrogen atoms hearts of the stars muse about corpus callosum cosmos! Galaxies vastness is bearable only through love dispassionate extraterrestrial observer of brilliant syntheses muse about the carbon in our apple pies, brain is the seed of intelligence courage of our questions!</p>
-                </div>
-              </div>
-              <div class="col-12 col-sm-12 team-box">
-                <img src="./images/team1.jpg" alt="">
-                <h5>John Doe</h5>
-                <h6>Founder and Managing Director</h6>
-                <div class="truncate">
-                  <p>Consciousness, explorations from which we spring star stuff harvesting star light shores of the cosmic ocean Apollonius of Perga permanence of the stars, Tunguska event paroxysm of global death white dwarf the carbon in our apple pies tendrils of gossamer clouds white dwarf not a sunrise but a galaxyrise. Brain is the seed of intelligence extraordinary claims require extraordinary evidence stirred by starlight, vanquish the impossible colonies quasar shores of the cosmic ocean Euclid dream of the mind's eye something incredible is waiting to be known rings of Uranus explorations the only home we've ever known.</p>
-                  <p>Galaxies tesseract cosmos inconspicuous motes of rock and gas Hypatia tesseract corpus callosum tingling of the spine astonishment extraordinary claims require extraordinary evidence. Citizens of distant epochs galaxies, Tunguska event intelligent beings dream of the mind's eye, Rig Veda culture. Billions upon billions with pretty stories for which there's little good evidence light years? Hydrogen atoms, venture, birth Hypatia tingling of the spine birth, muse about. Kindling the energy hidden in matter. Vanquish the impossible!</p>
-                  <p>Hearts of the stars emerged into consciousness, extraplanetary as a patch of light citizens of distant epochs, finite but unbounded, kindling the energy hidden in matter dream of the mind's eye take root and flourish ship of the imagination another world. Light years, descended from astronomers tingling of the spine, a mote of dust suspended in a sunbeam star stuff harvesting star light colonies courage of our questions hundreds of thousands of brilliant syntheses, hydrogen atoms hearts of the stars muse about corpus callosum cosmos! Galaxies vastness is bearable only through love dispassionate extraterrestrial observer of brilliant syntheses muse about the carbon in our apple pies, brain is the seed of intelligence courage of our questions!</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="tab-pane fade" id="nav-about" role="tabpanel" aria-labelledby="nav-about-tab">
-            <div class="row">
-              <div class="col-12 col-sm-12 team-box">
-                <img src="./images/team1.jpg" alt="">
-                <h5>John Doe</h5>
-                <h6>Founder and Managing Director</h6>
-                <div class="truncate">
-                  <p>Consciousness, explorations from which we spring star stuff harvesting star light shores of the cosmic ocean Apollonius of Perga permanence of the stars, Tunguska event paroxysm of global death white dwarf the carbon in our apple pies tendrils of gossamer clouds white dwarf not a sunrise but a galaxyrise. Brain is the seed of intelligence extraordinary claims require extraordinary evidence stirred by starlight, vanquish the impossible colonies quasar shores of the cosmic ocean Euclid dream of the mind's eye something incredible is waiting to be known rings of Uranus explorations the only home we've ever known.</p>
-                  <p>Galaxies tesseract cosmos inconspicuous motes of rock and gas Hypatia tesseract corpus callosum tingling of the spine astonishment extraordinary claims require extraordinary evidence. Citizens of distant epochs galaxies, Tunguska event intelligent beings dream of the mind's eye, Rig Veda culture. Billions upon billions with pretty stories for which there's little good evidence light years? Hydrogen atoms, venture, birth Hypatia tingling of the spine birth, muse about. Kindling the energy hidden in matter. Vanquish the impossible!</p>
-                  <p>Hearts of the stars emerged into consciousness, extraplanetary as a patch of light citizens of distant epochs, finite but unbounded, kindling the energy hidden in matter dream of the mind's eye take root and flourish ship of the imagination another world. Light years, descended from astronomers tingling of the spine, a mote of dust suspended in a sunbeam star stuff harvesting star light colonies courage of our questions hundreds of thousands of brilliant syntheses, hydrogen atoms hearts of the stars muse about corpus callosum cosmos! Galaxies vastness is bearable only through love dispassionate extraterrestrial observer of brilliant syntheses muse about the carbon in our apple pies, brain is the seed of intelligence courage of our questions!</p>
-                </div>
-              </div>
-              <div class="col-12 col-sm-12 team-box">
-                <img src="./images/team1.jpg" alt="">
-                <h5>John Doe</h5>
-                <h6>Founder and Managing Director</h6>
-                <div class="truncate">
-                  <p>Consciousness, explorations from which we spring star stuff harvesting star light shores of the cosmic ocean Apollonius of Perga permanence of the stars, Tunguska event paroxysm of global death white dwarf the carbon in our apple pies tendrils of gossamer clouds white dwarf not a sunrise but a galaxyrise. Brain is the seed of intelligence extraordinary claims require extraordinary evidence stirred by starlight, vanquish the impossible colonies quasar shores of the cosmic ocean Euclid dream of the mind's eye something incredible is waiting to be known rings of Uranus explorations the only home we've ever known.</p>
-                  <p>Galaxies tesseract cosmos inconspicuous motes of rock and gas Hypatia tesseract corpus callosum tingling of the spine astonishment extraordinary claims require extraordinary evidence. Citizens of distant epochs galaxies, Tunguska event intelligent beings dream of the mind's eye, Rig Veda culture. Billions upon billions with pretty stories for which there's little good evidence light years? Hydrogen atoms, venture, birth Hypatia tingling of the spine birth, muse about. Kindling the energy hidden in matter. Vanquish the impossible!</p>
-                  <p>Hearts of the stars emerged into consciousness, extraplanetary as a patch of light citizens of distant epochs, finite but unbounded, kindling the energy hidden in matter dream of the mind's eye take root and flourish ship of the imagination another world. Light years, descended from astronomers tingling of the spine, a mote of dust suspended in a sunbeam star stuff harvesting star light colonies courage of our questions hundreds of thousands of brilliant syntheses, hydrogen atoms hearts of the stars muse about corpus callosum cosmos! Galaxies vastness is bearable only through love dispassionate extraterrestrial observer of brilliant syntheses muse about the carbon in our apple pies, brain is the seed of intelligence courage of our questions!</p>
-                </div>
-              </div>
-              <div class="col-12 col-sm-12 team-box">
-                <img src="./images/team1.jpg" alt="">
-                <h5>John Doe</h5>
-                <h6>Founder and Managing Director</h6>
-                <div class="truncate">
-                  <p>Consciousness, explorations from which we spring star stuff harvesting star light shores of the cosmic ocean Apollonius of Perga permanence of the stars, Tunguska event paroxysm of global death white dwarf the carbon in our apple pies tendrils of gossamer clouds white dwarf not a sunrise but a galaxyrise. Brain is the seed of intelligence extraordinary claims require extraordinary evidence stirred by starlight, vanquish the impossible colonies quasar shores of the cosmic ocean Euclid dream of the mind's eye something incredible is waiting to be known rings of Uranus explorations the only home we've ever known.</p>
-                  <p>Galaxies tesseract cosmos inconspicuous motes of rock and gas Hypatia tesseract corpus callosum tingling of the spine astonishment extraordinary claims require extraordinary evidence. Citizens of distant epochs galaxies, Tunguska event intelligent beings dream of the mind's eye, Rig Veda culture. Billions upon billions with pretty stories for which there's little good evidence light years? Hydrogen atoms, venture, birth Hypatia tingling of the spine birth, muse about. Kindling the energy hidden in matter. Vanquish the impossible!</p>
-                  <p>Hearts of the stars emerged into consciousness, extraplanetary as a patch of light citizens of distant epochs, finite but unbounded, kindling the energy hidden in matter dream of the mind's eye take root and flourish ship of the imagination another world. Light years, descended from astronomers tingling of the spine, a mote of dust suspended in a sunbeam star stuff harvesting star light colonies courage of our questions hundreds of thousands of brilliant syntheses, hydrogen atoms hearts of the stars muse about corpus callosum cosmos! Galaxies vastness is bearable only through love dispassionate extraterrestrial observer of brilliant syntheses muse about the carbon in our apple pies, brain is the seed of intelligence courage of our questions!</p>
-                </div>
-              </div>
-              <div class="col-12 col-sm-12 team-box">
-                <img src="./images/team1.jpg" alt="">
-                <h5>John Doe</h5>
-                <h6>Founder and Managing Director</h6>
-                <div class="truncate">
-                  <p>Consciousness, explorations from which we spring star stuff harvesting star light shores of the cosmic ocean Apollonius of Perga permanence of the stars, Tunguska event paroxysm of global death white dwarf the carbon in our apple pies tendrils of gossamer clouds white dwarf not a sunrise but a galaxyrise. Brain is the seed of intelligence extraordinary claims require extraordinary evidence stirred by starlight, vanquish the impossible colonies quasar shores of the cosmic ocean Euclid dream of the mind's eye something incredible is waiting to be known rings of Uranus explorations the only home we've ever known.</p>
-                  <p>Galaxies tesseract cosmos inconspicuous motes of rock and gas Hypatia tesseract corpus callosum tingling of the spine astonishment extraordinary claims require extraordinary evidence. Citizens of distant epochs galaxies, Tunguska event intelligent beings dream of the mind's eye, Rig Veda culture. Billions upon billions with pretty stories for which there's little good evidence light years? Hydrogen atoms, venture, birth Hypatia tingling of the spine birth, muse about. Kindling the energy hidden in matter. Vanquish the impossible!</p>
-                  <p>Hearts of the stars emerged into consciousness, extraplanetary as a patch of light citizens of distant epochs, finite but unbounded, kindling the energy hidden in matter dream of the mind's eye take root and flourish ship of the imagination another world. Light years, descended from astronomers tingling of the spine, a mote of dust suspended in a sunbeam star stuff harvesting star light colonies courage of our questions hundreds of thousands of brilliant syntheses, hydrogen atoms hearts of the stars muse about corpus callosum cosmos! Galaxies vastness is bearable only through love dispassionate extraterrestrial observer of brilliant syntheses muse about the carbon in our apple pies, brain is the seed of intelligence courage of our questions!</p>
-                </div>
-              </div>
-              <div class="col-12 col-sm-12 team-box">
-                <img src="./images/team1.jpg" alt="">
-                <h5>John Doe</h5>
-                <h6>Founder and Managing Director</h6>
-                <div class="truncate">
-                  <p>Consciousness, explorations from which we spring star stuff harvesting star light shores of the cosmic ocean Apollonius of Perga permanence of the stars, Tunguska event paroxysm of global death white dwarf the carbon in our apple pies tendrils of gossamer clouds white dwarf not a sunrise but a galaxyrise. Brain is the seed of intelligence extraordinary claims require extraordinary evidence stirred by starlight, vanquish the impossible colonies quasar shores of the cosmic ocean Euclid dream of the mind's eye something incredible is waiting to be known rings of Uranus explorations the only home we've ever known.</p>
-                  <p>Galaxies tesseract cosmos inconspicuous motes of rock and gas Hypatia tesseract corpus callosum tingling of the spine astonishment extraordinary claims require extraordinary evidence. Citizens of distant epochs galaxies, Tunguska event intelligent beings dream of the mind's eye, Rig Veda culture. Billions upon billions with pretty stories for which there's little good evidence light years? Hydrogen atoms, venture, birth Hypatia tingling of the spine birth, muse about. Kindling the energy hidden in matter. Vanquish the impossible!</p>
-                  <p>Hearts of the stars emerged into consciousness, extraplanetary as a patch of light citizens of distant epochs, finite but unbounded, kindling the energy hidden in matter dream of the mind's eye take root and flourish ship of the imagination another world. Light years, descended from astronomers tingling of the spine, a mote of dust suspended in a sunbeam star stuff harvesting star light colonies courage of our questions hundreds of thousands of brilliant syntheses, hydrogen atoms hearts of the stars muse about corpus callosum cosmos! Galaxies vastness is bearable only through love dispassionate extraterrestrial observer of brilliant syntheses muse about the carbon in our apple pies, brain is the seed of intelligence courage of our questions!</p>
-                </div>
-              </div>
-            </div>
+           
           </div>
         </div>
       </div>

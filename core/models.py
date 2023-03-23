@@ -268,6 +268,7 @@ class Team(models.Model):
     image = models.ImageField(upload_to='team', blank=True, null=True)
     name = models.CharField(max_length=255, blank=True, null=True)
     designation = models.CharField(max_length=255, blank=True, null=True)
+    description = RichTextField(blank=True, null=True)
     category = models.ForeignKey(TeamCategory, on_delete=models.CASCADE)
 
     def __str__(self):
