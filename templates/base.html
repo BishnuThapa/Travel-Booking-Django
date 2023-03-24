@@ -107,7 +107,7 @@
                         <ul class="dropdown-menu dropdown-submenu">
                         {% for tour in act.tour_set.all %}
                           <li>
-                            <a class="dropdown-item" href="#">{{ tour.name }}</a>
+                            <a class="dropdown-item" href="{% url 'tour-detail' tour.slug %}">{{ tour.name }}</a>
                           </li>
                           
                         {% endfor %}
@@ -119,47 +119,13 @@
                   </div>
                 </li>
                
-                <li class="nav-item dropdown megamenu-li dmenu">
-                  <a class="nav-link dropdown-toggle" href="" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Bhutan</a>
-                  <div class="dropdown-menu megamenu sm-menu" aria-labelledby="dropdown01">
-                    <div class="row bhutan-menus">
-                      <div class="col-12 col-sm-12 col-md-6 col-lg-3">
-                        <a href="#"><img src="{% static 'images/adventure1.jpg' %}" alt=""><p>Bhutan Tour </p></a>
-                      </div>
-                      <div class="col-12 col-sm-12 col-md-6 col-lg-3">
-                        <a href="#"><img src="{% static 'images/adventure1.jpg' %}" alt=""><p>Bhutan Tour </p></a>
-                      </div>
-                      <div class="col-12 col-sm-12 col-md-6 col-lg-3">
-                        <a href="#"><img src="{% static 'images/adventure1.jpg' %}" alt=""><p>Bhutan Tour </p></a>
-                      </div>
-                      <div class="col-12 col-sm-12 col-md-6 col-lg-3">
-                        <a href="#"><img src="{% static 'images/adventure1.jpg' %}" alt=""><p>Bhutan Tour</p></a>
-                      </div>
-                    </div>
-                  </div>
+                
+                <li class="nav-item">
+                  <a class="nav-link" href="/destination/bhutan">Bhutan</a>
                 </li>
-                <li class="nav-item dropdown megamenu-li dmenu">
-                  <a class="nav-link dropdown-toggle" href="" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tibet</a>
-                  <div class="dropdown-menu megamenu sm-menu" aria-labelledby="dropdown01">
-                    <div class="row bhutan-menus">
-                      <div class="col-12 col-sm-12 col-md-6 col-lg-3">
-                        <a href="#"><img src="{% static 'images/adventure1.jpg' %}" alt=""><p>Nagarkot Dhulikhel Cycling Tour</p></a>
-                      </div>
-                      <div class="col-12 col-sm-12 col-md-6 col-lg-3">
-                        <a href="#"><img src="{% static 'images/adventure1.jpg' %}" alt=""><p>Nagarkot Dhulikhel Cycling Tour</p></a>
-                      </div>
-                      <div class="col-12 col-sm-12 col-md-6 col-lg-3">
-                        <a href="#"><img src="{% static 'images/adventure1.jpg' %}" alt=""><p>Nagarkot Dhulikhel Cycling Tour</p></a>
-                      </div>
-                      <div class="col-12 col-sm-12 col-md-6 col-lg-3">
-                        <a href="#"><img src="{% static 'images/adventure1.jpg' %}" alt=""><p>Nagarkot Dhulikhel Cycling Tour</p></a>
-                      </div>
-                    </div>
-                  </div>
+                <li class="nav-item">
+                  <a class="nav-link" href="/destination/tibet/">Tibet</a>
                 </li>
-                {% comment %} <li class="nav-item">
-                  <a class="nav-link" href="#">Multicountry</a>
-                </li> {% endcomment %}
                <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     About
