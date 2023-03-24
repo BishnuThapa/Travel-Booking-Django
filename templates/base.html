@@ -88,232 +88,37 @@
                   <div class="dropdown">
                     <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton"
                       data-mdb-toggle="dropdown" aria-expanded="false">
-                      Nepal
+                      Activities
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      {% for act in activities %}
                       <li>
-                        <a class="dropdown-item" href="#">Another action</a>
-                      </li>
-                      <li>
-                        <a class="dropdown-item" href="#">
-                          Submenu <span>&raquo;</span>
+                        {% if act.tour_set.all %}
+                        <a class="dropdown-item" href="{% url 'activities' act.slug %}">
+                          {{ act.name }} <span>&raquo;</span>
                         </a>
+                        {% else %}
+                         <a class="dropdown-item" href="{% url 'activities' act.slug %}">
+                          {{ act.name }} </span>
+                        </a>
+
+                        {% endif %}
+
                         <ul class="dropdown-menu dropdown-submenu">
+                        {% for tour in act.tour_set.all %}
                           <li>
-                            <a class="dropdown-item" href="#">Submenu item 1</a>
+                            <a class="dropdown-item" href="#">{{ tour.name }}</a>
                           </li>
-                          <li>
-                            <a class="dropdown-item" href="#">Submenu item 2</a>
-                          </li>
-                          <li>
-                            <a class="dropdown-item" href="#">Submenu item 3 <span>&raquo;</span> </a>
-                            <ul class="dropdown-menu dropdown-submenu">
-                              <li>
-                                <a class="dropdown-item" href="#">Multi level 1</a>
-                              </li>
-                              <li>
-                                <a class="dropdown-item" href="#">Multi level 2</a>
-                              </li>
-                            </ul>
-                          </li>
-                          <li>
-                            <a class="dropdown-item" href="#">Submenu item 4</a>
-                          </li>
-                          <li>
-                            <a class="dropdown-item" href="#">Submenu item 5</a>
-                          </li>
+                          
+                        {% endfor %}
                         </ul>
                       </li>
+                        {% endfor %}
+
                     </ul>
                   </div>
                 </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Nepal
-                  </a>
-                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  {% for act in activities %}
-                  
-                    <a class="dropdown-item" href="{% url 'activities' act.slug %}">{{act.name}}</a>
-                    
-                    
-                  {% endfor %}
-                  </div>
-                </li>
-                
-                
-                
-                {% comment %} <li class="nav-item dropdown megamenu-li dmenu">
-                  <a class="nav-link dropdown-toggle" href="" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Nepal</a>
-                  <div class="dropdown-menu megamenu sm-menu" aria-labelledby="dropdown01">
-                    <div class="row">
-                      <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-3">
-                        <ul class="nav nav-pills flex-column" id="myTab" role="tablist">
-                            <li class="nav-item">
-                                <a class="nav-link active" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="true"> <i class="fas fa-hand-point-right"></i> Nepal Tour</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" id="company-tab" data-toggle="tab" href="#company" role="tab" aria-controls="company" aria-selected="false"><i class="fas fa-hand-point-right"></i> Peak Climbing</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" id="create-tab" data-toggle="tab" href="#create" role="tab" aria-controls="create" aria-selected="false"><i class="fas fa-hand-point-right"></i> Helicopter Tours</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" id="manage-tab" data-toggle="tab" href="#manage" role="tab" aria-controls="manage" aria-selected="true"><i class="fas fa-hand-point-right"></i> Day Tours</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" id="view-tab" data-toggle="tab" href="#view" role="tab" aria-controls="view" aria-selected="false"><i class="fas fa-hand-point-right"></i> Short Hiking Tours</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-12 col-sm-6 col-md-8 col-lg-9 dash-right">
-                        <div class="tab-content" id="myTabContent">
-                            <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                              <div class="row">
-                                <div class="col-12 col-sm-12 col-md-6 col-lg-3">
-                                  <a href="#"><img src="./images/adventure1.jpg" alt=""><p>Nagarkot Dhulikhel Cycling Tour</p></a>
-                                </div>
-                                <div class="col-12 col-sm-12 col-md-6 col-lg-3">
-                                  <a href="#"><img src="./images/adventure1.jpg" alt=""><p>Nagarkot Dhulikhel Cycling Tour</p></a>
-                                </div>
-                                <div class="col-12 col-sm-12 col-md-6 col-lg-3">
-                                  <a href="#"><img src="./images/adventure1.jpg" alt=""><p>Nagarkot Dhulikhel Cycling Tour</p></a>
-                                </div>
-                                <div class="col-12 col-sm-12 col-md-6 col-lg-3">
-                                  <a href="#"><img src="./images/adventure1.jpg" alt=""><p>Nagarkot Dhulikhel Cycling Tour</p></a>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="tab-pane fade" id="company" role="tabpanel" aria-labelledby="company-tab">
-                              <div class="row">
-                                <div class="col-12 col-sm-12 col-md-4 col-lg-4">
-                                  <ul>
-                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
-                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
-                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
-                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
-                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
-                                  </ul>
-                                </div>
-                                <div class="col-12 col-sm-12 col-md-4 col-lg-4">
-                                  <ul>
-                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
-                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
-                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
-                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
-                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
-                                  </ul>
-                                </div>
-                                <div class="col-12 col-sm-12 col-md-4 col-lg-4">
-                                  <ul>
-                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
-                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
-                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
-                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
-                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
-                                  </ul>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="tab-pane fade" id="create" role="tabpanel" aria-labelledby="create-tab">
-                              <div class="row">
-                                <div class="col-12 col-sm-12 col-md-4 col-lg-4">
-                                  <ul>
-                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
-                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
-                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
-                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
-                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
-                                  </ul>
-                                </div>
-                                <div class="col-12 col-sm-12 col-md-4 col-lg-4">
-                                  <ul>
-                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
-                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
-                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
-                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
-                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
-                                  </ul>
-                                </div>
-                                <div class="col-12 col-sm-12 col-md-4 col-lg-4">
-                                  <ul>
-                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
-                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
-                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
-                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
-                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
-                                  </ul>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="tab-pane fade" id="manage" role="tabpanel" aria-labelledby="manage-tab">
-                              <div class="row">
-                                <div class="col-12 col-sm-12 col-md-4 col-lg-4">
-                                  <ul>
-                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
-                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
-                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
-                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
-                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
-                                  </ul>
-                                </div>
-                                <div class="col-12 col-sm-12 col-md-4 col-lg-4">
-                                  <ul>
-                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
-                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
-                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
-                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
-                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
-                                  </ul>
-                                </div>
-                                <div class="col-12 col-sm-12 col-md-4 col-lg-4">
-                                  <ul>
-                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
-                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
-                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
-                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
-                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
-                                  </ul>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="tab-pane fade" id="view" role="tabpanel" aria-labelledby="view-tab">
-                              <div class="row">
-                                <div class="col-12 col-sm-12 col-md-4 col-lg-4">
-                                  <ul>
-                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
-                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
-                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
-                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
-                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
-                                  </ul>
-                                </div>
-                                <div class="col-12 col-sm-12 col-md-4 col-lg-4">
-                                  <ul>
-                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
-                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
-                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
-                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
-                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
-                                  </ul>
-                                </div>
-                                <div class="col-12 col-sm-12 col-md-4 col-lg-4">
-                                  <ul>
-                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
-                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
-                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
-                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
-                                    <li><a href="#">Nagarkot Dhulikhel Cycling Tour</a></li>
-                                  </ul>
-                                </div>
-                              </div>
-                            </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </li> {% endcomment %}
+               
                 <li class="nav-item dropdown megamenu-li dmenu">
                   <a class="nav-link dropdown-toggle" href="" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Bhutan</a>
                   <div class="dropdown-menu megamenu sm-menu" aria-labelledby="dropdown01">
@@ -357,7 +162,7 @@
                 </li> {% endcomment %}
                <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Company Info
+                    About
                   </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="{% url 'about-us' %}">About us</a>
