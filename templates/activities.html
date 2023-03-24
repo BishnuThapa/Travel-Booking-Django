@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+<div class="page-banner">
+  <div class="overlay">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-sm-12">
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="banner-bredcrumb">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-sm-12">
+        <h1>Activities</h1>
+        <ul class="breadcrumb">
+          <li><a href="/">Home</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="adventure">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-sm-12 nepal-content">
+        <h2>{{ single_act.name }}</h2>
+        <p>{{ single_act.description | safe }}</p>
+      </div>
+      <div class="col-12 col-sm-12">
+        <h4>Explore the Trips - {{single_act.name}}</h4>
+      </div>
+      {% if tours %}
+        {% for i in tours %}
+        <div class="col-12 col-sm-12 col-md-6 col-lg-4">
+          <div class="adventure-box">
+            <div class="box">
+              <div class="imgBox">
+                <img src="{{ i.featured_image.url }}" loading="lazy" alt="">
+              </div>
+              <div class="content">
+                <a href="{% url 'tour-detail' i.slug %}" class="btn btn-book">Book Your Trip Now</a>
+                <p><a href="{% url 'tour-detail' i.slug %}">or Learn More</a></p>
+              </div>
+            </div>
+            <h6 class="group"><i class="fa fa-trek"></i> {{i.activity}}</h6>
+            <p class="reviews"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> of 31 reviews</p>
+            <div class="price-box">
+            {% if regular_price %}
+              <span class="trip-card__regular-price">from <del>US$ {{i.regular_price}}</del></span>
+              {% endif %}
+              <span class="trip-card__sale-price">US$ <strong>{{ i.sell_price }}</strong><sup></sup></span>
+            </div>
+            <h5><a href="{% url 'tour-detail' i.slug %}">{{i.name}}</a></h5>
+            <ul>
+              <li><i class="fas fa-tachometer-alt"></i><span>Grade</span> <h6>{{i.difficulty }}</h6></li>
+              <li><i class="far fa-calendar-alt"></i><span>Duration</span> <h6>{{i.duration}} Days</h6></li>
+              <li><i class="fas fa-hiking"></i><span>Activity</span> <h6>{{i.activity}}</h6></li>
+            </ul>
+          </div>
+        </div>
+        {% endfor %}
+      {% else %}
+      <div class="col-12 col-sm-12">
+        <h5>No result found...</h5>
+      </div>
+      {% endif %}
+      {% comment %} <div class="col-12 col-sm-12">
+        <ul class="pagination">
+          <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+          <li class="page-item active"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item"><a class="page-link" href="#">Next</a></li>
+        </ul>
+      </div> {% endcomment %}
+    </div>
+  </div>
+</div>
+{% endblock content %}

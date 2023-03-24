@@ -21,3 +21,13 @@ def destination(request, destination_slug):
         'tours': tours,
     }
     return render(request, 'destination.html', context)
+
+
+def activities(request, activity_slug):
+    tours = Tour.objects.filter(activity__slug=activity_slug)
+    single_act = get_object_or_404(Tour_Type, slug=activity_slug)
+    context = {
+        'tours': tours,
+        'single_act': single_act,
+    }
+    return render(request, 'activities.html', context)

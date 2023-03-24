@@ -1,7 +1,7 @@
 
 from django.urls import path, include
 from . import views
-from .context_processor import destination
+from .context_processor import destination, activities
 
 urlpatterns = [
     path('', views.index, name='index'),
@@ -12,6 +12,8 @@ urlpatterns = [
     path('trips/<slug:tour_slug>/', views.tour_detail, name='tour-detail'),
     path('destination/<slug:destination_slug>/',
          destination, name='destination'),
+    path('activities/<slug:activity_slug>/',
+         activities, name='activities'),
     path('team/', views.team, name='team'),
     path('why-us/', views.why_us, name='why-us'),
     path('our-story/', views.our_story, name='our-story'),

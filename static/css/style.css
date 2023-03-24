@@ -362,10 +362,6 @@ a.btn.btn-plans:hover{
 
 
 
-
-
-
-
 .menu-section{
   background-color: #e37740;
   margin-bottom: -1px;
@@ -503,95 +499,58 @@ nav.navbar.navbar-expand-lg.navbar-light {
     border-bottom: 1px solid #eee !important
 }
 
-.tab-pane ul{
-    padding: 0px;
-    margin: 0px;
-    margin-top: 20px;
+
+
+
+/********MENU NEW CSS START********/
+
+.menu-section .dropdown-menu li {
+position: relative;
+}
+.menu-section .dropdown-menu .dropdown-submenu {
+display: none;
+position: absolute;
+left: 100%;
+top: -7px;
+}
+.menu-section .dropdown-menu .dropdown-submenu-left {
+right: 100%;
+left: auto;
+}
+.menu-section .dropdown-menu > li:hover > .dropdown-submenu {
+display: block;
 }
 
-.tab-pane ul li{
-    list-style-type: none;
-    padding-bottom: 15px;
-    margin-bottom: 15px;
-    border-bottom: 1px solid #eee;
+.dropdown-item span{
+    float: right;
 }
 
-.tab-pane ul li:last-child{
-    padding-bottom: 0px;
-    margin-bottom: 10px;
-    border-bottom: none;
-}
-
-.tab-pane ul li a{
-    font-size: 14px;
-    line-height: 18px;
+.menu-section button#dropdownMenuButton {
+    background-color: #e37740;
+    border: 1px solid #e37740;
+    padding: 12px 30px;
+    border-radius: 0px;
+    color: #fff;
+    font-size: 15px;
+    line-height: 22px;
     font-weight: 600;
-    color: #000;
-    text-decoration: none;
+    text-transform: uppercase;
 }
 
-.tab-pane ul li a:hover{
-    color: #e37740;
+.btn-primary.focus, .btn-primary:focus{
+    box-shadow: none;
 }
 
-.tab-pane .row{
-    margin-right: 0px;
-}
-
-.menu-section .tab-pane img{
-    width: 100%;
-    height: 140px;
-    margin-top: 30px;
-    margin-bottom: 10px;
-}
-
-.tab-pane a p{
-    font-size: 14px;
-    line-height: 18px;
-    font-weight: 600;
-    color: #000;
-    text-decoration: none;
-    margin-bottom: 0px;
-}
-
-.tab-pane a p:hover{
-    color: #e37740;
-}
-
-.bhutan-menus{
-    margin-left: 0px;
-    margin-right: 0px;
-}
-
-.bhutan-menus img{
-    width: 100%;
-    height: 200px;
-    margin-bottom: 10px;
-    margin-top: 20px;
-}
-
-.bhutan-menus a{
-    text-decoration: none;
-}
-
-.bhutan-menus a p{
-    font-size: 14px;
-    line-height: 18px;
-    font-weight: 600;
-    color: #000;
-    text-decoration: none;
-    margin-bottom: 10px;
-}
-
-.bhutan-menus a p:hover{
-    color: #e37740;
-}
+/********MENU NEW CSS END********/
 
 
 
-/*.searchbox{
-    padding: 30px 0;
-}*/
+
+
+
+
+
+
 
 .searchbox h4{
     font-size: 30px;
@@ -7201,7 +7160,7 @@ input[type="checkbox"]{
         width: 45%;
     }
     .navbar-light .navbar-nav .nav-link {
-        padding: 14px 16px;
+        padding: 14px 15px;
     }
     .destination-section a {
         font-size: 12px;
