@@ -179,6 +179,7 @@ class Tour(models.Model):
     publish = models.CharField(
         choices=PUBLISH_CHOICES, default=1, max_length=15, null=True, blank=True)
     featured_image = models.ImageField(upload_to='tour')
+    route_map = models.ImageField(upload_to='tour')
     destination = models.ForeignKey(Destination, on_delete=models.CASCADE)
     activity = models.ForeignKey(
         Tour_Type, on_delete=models.CASCADE)

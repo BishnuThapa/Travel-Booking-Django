@@ -8,6 +8,7 @@ def index(request):
     sliders = Slider.objects.all()[:3]
     intro = AboutUs.objects.first()
     tour_category = Tour_Type.objects.all()[:6]
+    destinations = Destination.objects.all()
     tours = Tour.objects.filter(is_featured=True)[:6]
     culturaltour = Tour.objects.filter(activity__name='Religious Tour')[:6]
     blogs = Blog.objects.all().order_by('-id')[:2]
@@ -16,7 +17,7 @@ def index(request):
         'sliders': sliders,
         'intro': intro,
         'tour_category': tour_category,
-
+        'destinations': destinations,
         'tours': tours,
         'culturaltour': culturaltour,
         'blogs': blogs,

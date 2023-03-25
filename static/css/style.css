@@ -320,7 +320,7 @@ a.btn.btn-plans:hover{
 .header-search #custom-search-input{
     border: solid 1px #e37740;
     border-radius: 30px;
-    background-color: transparent;
+    background-color: #fff;
     margin-top: 5px;
 }
 
@@ -570,7 +570,7 @@ display: block;
     margin-top: -84px;
     position: relative;
     z-index: 99;
-    background-color: #e37740;
+    /* background-color: #e37740; */
 }
 
 .searchbox label {

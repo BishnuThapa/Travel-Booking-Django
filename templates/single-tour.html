@@ -88,6 +88,8 @@
             </p>
           </div>
           </div>
+
+          {% if single_tour.itinerary_set.all %}
           <div class="row itenerary" id="itinerary">
           <div class="col-12 col-sm-12">
             <h4>Itenerary</h4>
@@ -112,6 +114,8 @@
             </div>
           </div>
           </div>
+          {% endif %}
+          {% if single_tour.gallery_set.all %}
           <div class="row photo-video" id="photo-video">
             <div class="col-12 col-sm-12">
               <h4>Photos</h4>
@@ -124,6 +128,9 @@
             {% endfor %}
             
           </div>
+          {% endif %}
+
+          {% if single_tour.includes %}
           <div class="row includes" id="includes">
             <div class="col-12 col-sm-12">
               <h4><i class="fa fa-check"></i> What is Included?</h4>
@@ -134,6 +141,8 @@
               </ul>
             </div>
           </div>
+          {% endif %}
+          {% if single_tour.excludes %}
           <div class="row excludes">
             <div class="col-12 col-ms-12">
               <h4><i class="fa fa-times"></i> What is Excluded?</h4>
@@ -143,12 +152,14 @@
               </ul>
             </div>
           </div>
+          {% endif %}
           <!-- <div class="row route-map" id="routemap">
             <div class="col-12 col-ms-12">
               <h4><i class="fa fa-map-marker"></i> Route Map</h4>
               <img src="./images/map.jpg" alt="">
             </div>
           </div> -->
+          {% if single_tour.additional_information %}
           <div class="row equipment" id="equipment">
             <div class="col-12 col-ms-12">
               <h4><i class="fas fa-box-open"></i>Additional Information</h4>
@@ -156,6 +167,8 @@
               
             </div>
           </div>
+          {% endif %}
+          {% if single_tour.faq %}
           <div class="row faqssection" id="faqs">
             <div class="col-12 col-sm-12">
               <h4><i class="fas fa-question-circle"></i> faqs</h4>
@@ -177,7 +190,8 @@
               {% endfor %}
             </div>
           </div>
-          <div class="row trip-reviews" id="reviews">
+          {% endif %}
+          {% comment %} <div class="row trip-reviews" id="reviews">
             <div class="col-12 col-ms-12">
               <h3>Trip Reviews</h3>
             </div>
@@ -211,7 +225,7 @@
                 <p>We booked with DWT per our friend’s recommendation. They had a very good experience trekking the EBC in March 2019, and our experience was the same if not better.DWT is a socially conscious company, providing uniforms to the guides, offering family activities and events to the staff, and regulating weight limits for their porters.The owner of the company, Paul, was very accommodating and responsive to all of our inquiries. He made sure we were happy and satisfied. He treated us like his family.Our guide, Dol, was simply amazing! Dol was kind, humble, respectful, and just a solid human being! We felt safe the entire time.</p>
               </div>
             </div>
-          </div>
+          </div> {% endcomment %}
         </div>
         <div class="col-12 col-sm-12 col-md-4 col-lg-4 main-rights">
           <div class="right-conatainer">
@@ -220,19 +234,7 @@
                 <div class="price-listing">
                   <!-- <h5 class="days">We Offer Group Discount</h5>
                   <h3>US$ <span>1550</span><sup>pp</sup></h3> -->
-                  <div class="discount">
-                    <h5 class="offer">We Offer Group Discount</h5>
-                    <a href="#" class="btn btn-checked">Write Us</a>
-                    <ul class="sidebar-block__card-item discount-card__list bottomMenu1"> 
-                      <li> <span class="persion">1 Pax</span> <span class="discount-price">US$ 1550</span> </li> 
-                      <li> <span class="persion">2 Paxes</span> <span class="discount-price">US$ 1350</span> </li> 
-                      <li> <span class="persion">3 Paxes</span> <span class="discount-price">US$ 1320</span> </li> 
-                      <li> <span class="persion">4 - 6 Paxes</span> <span class="discount-price">US$ 1290</span> </li> 
-                      <li> <span class="persion">7 - 12 Paxes</span> <span class="discount-price">US$ 1250</span> </li> 
-                      <li> <span class="persion">13 - 18 Paxes</span> <span class="discount-price">US$ 1210</span> </li> <li> <span class="persion">19 - 24 Paxes</span> <span class="discount-price">US$ 1175</span> </li> 
-                      <li> <span class="persion">25 - 30 Paxes</span> <span class="discount-price">US$ 1150</span> </li> 
-                    </ul>
-                  </div>
+                  
                   <ul class="sidebar-block__card-item list small-check feature-list--small" style="display: block;">
                     <li><i class="fa fa-check"></i> Best Price Guarantee</li>
                     <li><i class="fa fa-check"></i> Hassle-Free Booking</li>
@@ -327,7 +329,7 @@
             </a>
           </div>
           <div class="download-box">
-            <a href="#" class="btn btn-download"><i class="fas fa-money-bill-alt"></i> Offline Payment</a>
+            <a href="{% url 'offline-payment' %}" class="btn btn-download"><i class="fas fa-money-bill-alt"></i> Offline Payment</a>
             <a href="#" class="btn btn-download"><i class="fas fa-file-pdf"></i> Download the Trip PDF</a>
           </div>
           </div>
@@ -357,7 +359,7 @@
                 <li><i class="fa fa-check"></i> Your Happiness Guaranteed</li>
               </ul>
               <a href="#" class="btn btn-checked1">Check Availability</a>
-              <div class="sidebar-block"> <a href="#" class="inquire-link">Have Questions? Inquire Now <i class="fa fa-angle-right"></i></a></div>
+              <div class="sidebar-block"> <a href="{% url 'contact-us' %}" class="inquire-link">Have Questions? Inquire Now <i class="fa fa-angle-right"></i></a></div>
               <ul class="social-link">
                 <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
                 <li><a href="#"><i class="fab fa-twitter"></i></a></li>
@@ -439,7 +441,7 @@
           <div class="ourmaps">
             <h4>Our Maps</h4>
             <a href="#" data-toggle="modal" data-target="#myModal">
-              <img src="./images/map.jpg" alt="">
+              <img src="{{ single_tour.route_map }}" alt="">
             </a>
           </div>
           <div class="download-box">
