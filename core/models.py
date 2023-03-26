@@ -98,6 +98,7 @@ class CompanyInfo(models.Model):
 
     short_description = models.TextField(max_length=255, blank=True, null=True)
     location_map = models.TextField(null=True, blank=True)
+    video_url = models.CharField(max_length=255, null=True, blank=True)
     footer_text_copyright = models.CharField(
         max_length=100, null=True, blank=True)
     footer_copyright_url = models.URLField(
