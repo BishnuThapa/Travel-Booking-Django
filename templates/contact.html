@@ -43,26 +43,27 @@
         </div>
       </div>
       <div class="col-12 col-sm-12 col-md-4 col-lg-4">
-        <form>
+        <form method="post">
+        {% csrt_token %}
           <div class="row">
             <div class="col-md-12">
               <div class="md-form">
                 <input type="text" name="name" class="form-control" placeholder="Full name">
               </div>
               <div class="md-form">
-                <input type="email" class="form-control" placeholder="Email Address">
+                <input type="email" name="email" class="form-control" placeholder="Email Address">
               </div>
               <div class="md-form">
                 <input type="text" class="form-control" placeholder="Phone">
               </div>
               <div class="md-form">
-                <input type="text" name="name" class="form-control" placeholder="Subject">
+                <input type="text" name="subject" class="form-control" placeholder="Subject">
               </div>
             </div>
             <div class="col-md-12">
               <div class="md-form">
                 <textarea type="text" placeholder="Your message"></textarea>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary">Send Message</button>
               </div>
             </div>
           </div>
