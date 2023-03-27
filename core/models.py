@@ -310,17 +310,31 @@ class Inquiry(models.Model):
         verbose_name_plural = 'Customer\'s Inquiry'
 
 
-class Booking(models.Model):
-    name = models.CharField(max_length=255, null=True, blank=True)
-    email = models.EmailField(null=True, blank=True)
-    phone = models.CharField(max_length=10, null=True, blank=True)
-    trip = models.ForeignKey(Tour, on_delete=models.CASCADE)
-    subject = models.CharField(max_length=255, null=True, blank=True)
-    message = models.TextField(null=True, blank=True)
+class FlightBooking(models.Model):
+    BAGGAGE_CHOICES = (
+        ('Economy', 'Economy'),
+        ('Business', 'Business'),
+        ('VIP', 'VIP')
+    )
+    PAYMENT_CHOICES = (
+        ('Pending', 'Pending'),
+        ('Paid', 'Paid')
+    )
+    from_city = models.CharField(max_length=255)
+    dest_city = models.CharField(max_length=255)
+    depart_date = models.DateField()
+    return_date = models.DateField()
+    passengers = models.IntegerField()
+    baggage = models.CharField(max_length=50, choices=BAGGAGE_CHOICES)
+    full_name = models.CharField(max_length=255)
+    phone = models.CharField(max_length=100)
+    additional_information = models.TextField()
+    payment = models.TextField(
+        max_length=10, choices=PAYMENT_CHOICES, default='Pending', null=True, blank=True)
 
     def __str__(self):
-        return self.name
+        return self.full_name
 
     class Meta:
-        verbose_name = 'Inquiry'
-        verbose_name_plural = 'Customer\'s Inquiry'
+        verbose_name = 'Flight Booking'
+        verbose_name_plural = 'Flight Booking'

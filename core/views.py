@@ -6,6 +6,19 @@ from .models import *
 
 
 def index(request):
+    if request.method == "POST":
+        from_city = request.POST.get('from_city')
+        dest_city = request.POST.get('dest_city')
+        depart_date = request.POST.get('depart_date')
+        return_date = request.POST.get('return_date')
+        passengers = request.POST.get('passengers')
+        baggage = request.POST.get('baggage')
+        full_name = request.POST.get('full_name')
+        phone = request.POST.get('phone')
+        additional_information = request.POST.get('additional_information')
+        FlightBooking.objects.create(
+            from_city=from_city, dest_city=dest_city, depart_date=depart_date, return_date=return_date, passengers=passengers, baggage=baggage, full_name=full_name, phone=phone, additional_information=additional_information)
+        return redirect('index')
     sliders = Slider.objects.all()[:3]
     intro = AboutUs.objects.first()
     # tour_category = Tour_Type.objects.all()[:6]

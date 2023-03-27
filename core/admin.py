@@ -107,3 +107,10 @@ class TeamAdmin(admin.ModelAdmin):
 @admin.register(Inquiry)
 class InquiryAdmin(admin.ModelAdmin):
     list_display = ('name', 'email', 'phone', 'message')
+
+
+@admin.register(FlightBooking)
+class FlightBookingAdmin(admin.ModelAdmin):
+    list_display = ('from_city', 'dest_city', 'depart_date',
+                    'return_date', 'passengers', 'baggage', 'full_name', 'phone', 'additional_information', 'payment')
+    list_editable = ('payment',)

@@ -141,39 +141,39 @@
           </nav>
           <div class="tab-content" id="nav-tabContent">
               <div class="tab-pane fade show active" id="round-trip" role="tabpanel" aria-labelledby="round-trip-tab">
-                <form id="regForm" action="">
-
+                <form id="regForm" method="POST">
+               {% csrf_token %}
                   <!-- One "tab" for each step in the form: -->
                   <div class="tab">
                     <div class="row">
                       <div class="col-md-6">
                         <div class="md-form">
                           <label>From</label>
-                          <input type="text" name="name" class="form-control" placeholder="City or airport name">
+                          <input type="text" name="from_city" class="form-control" placeholder="City or airport name">
                         </div>
                       </div>
                       <div class="col-md-6">
                         <div class="md-form">
                           <label>To</label>
-                          <input type="email" name="email" class="form-control" placeholder="City or airport name">
+                          <input type="text" name="dest_city" class="form-control" placeholder="City or airport name">
                         </div>
                       </div>
                       <div class="col-md-3">
                         <div class="md-form">
                           <label>Depart date</label>
-                          <input type="date" name="phone" class="form-control">
+                          <input type="date" id="txtDate" name="depart_date" class="form-control">
                         </div>
                       </div>
                       <div class="col-md-3">
                         <div class="md-form">
                           <label>Return date</label>
-                          <input type="date" name="phone" class="form-control">
+                          <input type="date" id="txtDate1" name="return_date" class="form-control">
                         </div>
                       </div>
                       <div class="col-md-3">
                         <div class="md-form">
                           <label>Passengers</label>
-                          <select>
+                          <select name="passengers">
                             <option>1</option>
                             <option>2</option>
                             <option>3</option>
@@ -185,7 +185,7 @@
                       <div class="col-md-3">
                         <div class="md-form">
                           <label>Baggage</label>
-                          <select>
+                          <select name="baggage">
                             <option>Economy</option>
                             <option>Business</option>
                             <option>VIP</option>
@@ -200,19 +200,19 @@
                       <div class="col-md-6">
                         <div class="md-form">
                           <label>Your name</label>
-                          <input type="text" name="name" class="form-control" placeholder="Enter your full name">
+                          <input type="text" name="full_name" class="form-control" placeholder="Enter your full name">
                         </div>
                       </div>
                       <div class="col-md-6">
                         <div class="md-form">
                           <label>Contact phone</label>
-                          <input type="number" name="name" class="form-control" placeholder="Phone">
+                          <input type="number" name="phone" class="form-control" placeholder="Phone">
                         </div>
                       </div>
                       <div class="col-md-12">
                         <div class="md-form">
                           <label>Additional Information</label>  
-                          <textarea type="text" name="message" placeholder="Your message"></textarea>
+                          <textarea type="text" name="additional_information" placeholder="Your message"></textarea>
                         </div>
                       </div>
                     </div>
@@ -245,11 +245,17 @@
                       </div>
                       <div class="col-md-6">
                         <div class="md-form">
+                          <label>To</label>
+                          <input type="text" name="name" class="form-control" placeholder="City or airport name">
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="md-form">
                           <label>Depart date</label>
                           <input type="date" name="phone" class="form-control">
                         </div>
                       </div>
-                      <div class="col-md-6">
+                      <div class="col-md-4">
                         <div class="md-form">
                           <label>Passengers</label>
                           <select>
@@ -261,7 +267,7 @@
                           </select>
                         </div>
                       </div>
-                      <div class="col-md-6">
+                      <div class="col-md-4">
                         <div class="md-form">
                           <label>Baggage</label>
                           <select>
@@ -431,6 +437,7 @@
     </div>
   </div>
 </div>
+
 
 
 {% endblock %}
