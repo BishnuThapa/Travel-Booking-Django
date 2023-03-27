@@ -106,4 +106,4 @@ class TeamAdmin(admin.ModelAdmin):
 
 @admin.register(Inquiry)
 class InquiryAdmin(admin.ModelAdmin):
-    list_display = ('name', 'email', 'subject', 'message')
+    list_display = ('name', 'email', 'phone', 'message')

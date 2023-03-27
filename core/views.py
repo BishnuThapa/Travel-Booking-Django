@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
+from django.db.models import Count
 from .models import *
 # Create your views here.
 
@@ -7,6 +8,7 @@ from .models import *
 def index(request):
     sliders = Slider.objects.all()[:3]
     intro = AboutUs.objects.first()
+    # tour_category = Tour_Type.objects.all()[:6]
     tour_category = Tour_Type.objects.all()[:6]
     destinations = Destination.objects.all()
     tours = Tour.objects.filter(is_featured=True)[:6]
@@ -27,6 +29,15 @@ def index(request):
 
 def tour_detail(request, tour_slug):
     single_tour = get_object_or_404(Tour, slug=tour_slug)
+    if request.method == "POST":
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        phone = request.POST.get('phone')
+        message = request.POST.get('message')
+        # print(name, email, phone, subject, message)
+        Inquiry.objects.create(name=name, email=email, phone=phone,
+                               message=message)
+        return redirect('contact-us')
     context = {
         'single_tour': single_tour
     }
@@ -62,11 +73,10 @@ def contact(request):
         name = request.POST.get('name')
         email = request.POST.get('email')
         phone = request.POST.get('phone')
-        subject = request.POST.get('subject')
         message = request.POST.get('message')
         # print(name, email, phone, subject, message)
         Inquiry.objects.create(name=name, email=email, phone=phone,
-                               subject=subject, message=message)
+                               message=message)
         return redirect('contact-us')
     context = {
         'company_info': company_info
