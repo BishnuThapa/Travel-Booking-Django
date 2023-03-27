@@ -293,3 +293,17 @@ class FooterUseFulInfo(models.Model):
     class Meta:
         verbose_name = 'Useful Info'
         verbose_name_plural = 'Useful Info'
+
+
+class Inquiry(models.Model):
+    name = models.CharField(max_length=255, null=True, blank=True)
+    email = models.EmailField(null=True, blank=True)
+    subject = models.CharField(max_length=255, null=True, blank=True)
+    message = models.TextField(null=True, blank=True)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = 'Inquiry'
+        verbose_name_plural = 'Customer\'s Inquiry'
