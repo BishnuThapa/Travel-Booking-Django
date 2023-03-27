@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from .models import *
 # Create your views here.
@@ -58,6 +58,16 @@ def blog_detail(request, blog_slug):
 
 def contact(request):
     company_info = CompanyInfo.objects.first()
+    if request.method == "POST":
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        phone = request.POST.get('phone')
+        subject = request.POST.get('subject')
+        message = request.POST.get('message')
+        # print(name, email, phone, subject, message)
+        Inquiry.objects.create(name=name, email=email, phone=phone,
+                               subject=subject, message=message)
+        return redirect('contact-us')
     context = {
         'company_info': company_info
     }
