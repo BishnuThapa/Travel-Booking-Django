@@ -16,6 +16,7 @@ urlpatterns = [
          activities, name='activities'),
     path('team/', views.team, name='team'),
     path('booking-form/', views.booking_form, name='booking-form'),
+    path('booking-success/', views.booking_success, name="booking-success"),
     path('why-us/', views.why_us, name='why-us'),
     path('our-story/', views.our_story, name='our-story'),
     path('about-us/', views.about_us, name='about-us'),

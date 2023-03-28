@@ -150,11 +150,13 @@ def offline_payment(request):
 
 def booking_form(request):
     if request.method == "POST":
-        trip = request.POST.get('trip')
-        print(trip)
+        trip = request.POST['trip_name']
+        price = request.POST['trip_price']
+        # print(trip)
 
     context = {
-        'trip': trip
+        'trip': trip,
+        'price': price,
 
     }
     return render(request, 'booking-form.html', context)
@@ -167,3 +169,7 @@ def search(request):
         'tours': tours
     }
     return render(request, 'search.html', context)
+
+
+def booking_success(request):
+    return render(request, 'booking-success.html')

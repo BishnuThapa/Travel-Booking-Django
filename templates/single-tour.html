@@ -252,10 +252,10 @@
                     
                   </ul> {% endcomment %}
                   <div class="col-md-12 col-xs-12 col-sm-12">
-                  <form action={% url 'booking-form' %} method="POST">
+                  <form action='{% url 'booking-form' %}' method="POST">
                   {% csrf_token %}
-                  <input name="trip" type="hidden" id="{{single_tour.id}}" />
-                 
+                  <input name="trip_name" type="hidden" value="{{single_tour.name}}" />
+                 <input name="trip_price" type="hidden" value="{{ single_tour.sell_price }}" />
                   <button class="btn btn-block btn-lg btn-primary" type="submit">Book Now </button>
                   </form>
                 </div>

@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block content %}
 <div class="page-banner">
   <div class="overlay">
@@ -31,12 +31,12 @@
       <div class="col-12 col-sm-12 col-md-6 col-lg-6 tripdetail1">
         <span>1</span>
         <h5>Trip Details</h5>
-        <p><i class="fa fa-angle-double-right"></i> Select Package{{ trip.name }}</p>
-        <p><i class="fa fa-angle-double-right"></i> Enter Package price</p>
+        <p><i class="fa fa-angle-double-right"></i> Package: {{ trip }}</p>
+        <p><i class="fa fa-angle-double-right"></i> Price: {{ price }}$ </p>
       </div>
       <div class="col-12 col-sm-12 col-md-6 col-lg-6">
         <span>2</span>
-        <h5>Payment Details</h5>
+        <h5>Booking Details</h5>
         <p><i class="fa fa-angle-double-right"></i> Credit Card Information</p>
         <p><i class="fa fa-angle-double-right"></i> Billing Details</p>
       </div>
@@ -44,43 +44,113 @@
     <div class="row detailsrow">
       <div class="col-12 col-sm-12">
         <form>
-          <div class="row">
+            
+                <div class="row">
             <div class="col-12 col-sm-12">
-              <h4>Payment Details</h4>
+              <h4>Booking Details</h4>
             </div>
               <div class="col-12 col-sm-12 form-group">
                 <div class="input-group">
-                  <label>Full Name:</label>
-                  <input type="text" class="form-control" placeholder="full name" required="required">
+                  <label>Package:</label>
+                  <input type="text" disabled class="form-control" value="{{ trip }}" />
+                  
+                </div>
+              </div>
+            </div>
+             <div class="row">
+              <div class="col-12 col-sm-12 form-group">
+                <div class="input-group">
+                  <label>Package Price in USD:</label>
+                  <input type="text" class="form-control" value="{{ price }} USD" required="required" disabled>
                 </div>
               </div>
             </div>
             <div class="row">
               <div class="col-12 col-sm-12 form-group">
+                <div class="input-group">
+                  <label>Trip Start Date(your preference):</label>
+                  <input type="date" id="txtDate" class="form-control" required="required">
+                </div>
+              </div>
+              
+            </div>
+            
+            <div class="row">
+              <div class="col-12 col-sm-12 form-group">
+                <div class="input-group">
+                  <label>Full Name:</label>
+                  <input type="text" class="form-control" placeholder="Full Name" required="required">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12 col-md-6 col-lg-6 col-sm-12 form-group">
                 <div class="input-group">
                   <label>Email:</label>
                   <input type="email" class="form-control" placeholder="Email" required="required">
                 </div>
               </div>
+              <div class="col-12 col-md-6 col-lg-6 col-sm-12 form-group">
+                <div class="input-group">
+                  <label>Nationality:</label>
+                  <input type="text" class="form-control" placeholder="Country" required="required">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12 col-md-6 col-lg-6 col-sm-12 form-group">
+                <div class="input-group">
+                  <label>Personal Contact No:</label>
+                  <input type="text" class="form-control" placeholder="Contact Number" required="required">
+                </div>
+              </div>
+              <div class="col-12 col-md-6 col-lg-6 col-sm-12 form-group">
+                <div class="input-group">
+                  <label>Emergency Contact No:</label>
+                  <input type="text" class="form-control" placeholder="Emergency Contact Number" required="required">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12 col-md-6 col-lg-6 col-sm-12 form-group">
+                <div class="input-group">
+                  <label>Passport No:</label>
+                  <input type="text" class="form-control" placeholder="Passport number" required="required">
+                </div>
+              </div>
+              <div class="col-12 col-md-6 col-lg-6 col-sm-12 form-group">
+                <div class="input-group">
+                  <label>Place of Issue:</label>
+                  <input type="text" class="form-control" placeholder="Place of issue" required="required">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12 col-md-6 col-lg-6 col-sm-12 form-group">
+                <div class="input-group">
+                  <label>Date of Issue:</label>
+                  <input type="date" class="form-control" required="required">
+                </div>
+              </div>
+              <div class="col-12 col-md-6 col-lg-6 col-sm-12 form-group">
+                <div class="input-group">
+                  <label>Date of Expiry:</label>
+                  <input type="date" class="form-control"  required="required">
+                </div>
+              </div>
             </div>
             <div class="row">
               <div class="col-12 col-sm-12 form-group">
                 <div class="input-group">
-                  <label>Package:</label>
-                  <select>
-                    <option>Select Package</option>
-                    <option>Island Peak Climb with Heli Shuttle</option>
-                    <option>Everest Base Camp Trek</option>
-                    <option>Upper Mustang Trek with Yara</option>
-                    <option>Island Peak Climb</option>
-                    <option>Annapurna Base Camp Trek</option>
-                    <option>Annapurna Sanctuary Trek</option>
-                    <option>Nepal Everest Base Camp Trek</option>
-                    <option>Annapurna Base Camp Short Trek</option>
-                  </select>
+                  <label>Date Of Birth:</label>
+                  <input type="date" class="form-control" placeholder="Full Name" required="required">
                 </div>
               </div>
             </div>
+            <div class="row">
+              
+            </div>
+            
             <div class="row">
               <div class="col-12 col-sm-12 form-group">
                 <div class="input-group">
@@ -99,15 +169,8 @@
                 </div>
               </div>
             </div>
-            <div class="row">
-              <div class="col-12 col-sm-12 form-group">
-                <div class="input-group">
-                  <label>Package Price in USD:</label>
-                  <input type="text" class="form-control" placeholder="0.00" required="required">
-                </div>
-              </div>
-            </div>
-            <div class="row payment-radio">
+           
+            {% comment %} <div class="row payment-radio">
               <div class="col-12 col-sm-12 form-group">
                 <div class="input-group">
                   <label>Payment options:</label>
@@ -149,10 +212,10 @@
                   <input type="text" class="form-control" placeholder="0.00" required="required">
                 </div>
               </div>
-            </div>
+            </div> {% endcomment %}
             <div class="row">
               <div class="col-12 col-sm-12">
-                <img src="./images/online-pay.png" alt="">
+                <img src="{% static 'images/online-pay.png' %}" alt="">
               </div>
             </div>
             <div class="row">
