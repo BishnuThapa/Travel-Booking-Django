@@ -1,0 +1,170 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="page-banner">
+  <div class="overlay">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-sm-12">
+                    
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="banner-bredcrumb">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-sm-12">
+        <h1>Payment</h1>
+        <ul class="breadcrumb">
+          <li><a href="index.html">Home</a></li>
+          <li>Payment</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="online-body">
+  <div class="container">
+    <div class="row tripdetails">
+      <div class="col-12 col-sm-12 col-md-6 col-lg-6 tripdetail1">
+        <span>1</span>
+        <h5>Trip Details</h5>
+        <p><i class="fa fa-angle-double-right"></i> Select Package{{ trip.name }}</p>
+        <p><i class="fa fa-angle-double-right"></i> Enter Package price</p>
+      </div>
+      <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+        <span>2</span>
+        <h5>Payment Details</h5>
+        <p><i class="fa fa-angle-double-right"></i> Credit Card Information</p>
+        <p><i class="fa fa-angle-double-right"></i> Billing Details</p>
+      </div>
+    </div>
+    <div class="row detailsrow">
+      <div class="col-12 col-sm-12">
+        <form>
+          <div class="row">
+            <div class="col-12 col-sm-12">
+              <h4>Payment Details</h4>
+            </div>
+              <div class="col-12 col-sm-12 form-group">
+                <div class="input-group">
+                  <label>Full Name:</label>
+                  <input type="text" class="form-control" placeholder="full name" required="required">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12 col-sm-12 form-group">
+                <div class="input-group">
+                  <label>Email:</label>
+                  <input type="email" class="form-control" placeholder="Email" required="required">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12 col-sm-12 form-group">
+                <div class="input-group">
+                  <label>Package:</label>
+                  <select>
+                    <option>Select Package</option>
+                    <option>Island Peak Climb with Heli Shuttle</option>
+                    <option>Everest Base Camp Trek</option>
+                    <option>Upper Mustang Trek with Yara</option>
+                    <option>Island Peak Climb</option>
+                    <option>Annapurna Base Camp Trek</option>
+                    <option>Annapurna Sanctuary Trek</option>
+                    <option>Nepal Everest Base Camp Trek</option>
+                    <option>Annapurna Base Camp Short Trek</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12 col-sm-12 form-group">
+                <div class="input-group">
+                  <label>No of People:</label>
+                  <select>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12 col-sm-12 form-group">
+                <div class="input-group">
+                  <label>Package Price in USD:</label>
+                  <input type="text" class="form-control" placeholder="0.00" required="required">
+                </div>
+              </div>
+            </div>
+            <div class="row payment-radio">
+              <div class="col-12 col-sm-12 form-group">
+                <div class="input-group">
+                  <label>Payment options:</label>
+                  <input type="radio" id="male" name="gender" value="male">
+                  <label for="male">Pay 20% now</label><br>
+                  <input type="radio" id="female" name="gender" value="female">
+                  <label for="female">Pay 100% now</label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12 col-sm-12 form-group">
+                <div class="input-group">
+                  <label>Total Cost in USD:</label>
+                  <input type="text" class="form-control" placeholder="0.00" required="required">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12 col-sm-12 form-group">
+                <div class="input-group">
+                  <label>Total Deposit Amount in USD:</label>
+                  <input type="text" class="form-control" placeholder="0.00" required="required">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12 col-sm-12 form-group">
+                <div class="input-group">
+                  <label>3.5% Credit Card Processing Fee:</label>
+                  <input type="text" class="form-control" placeholder="0.00" required="required">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12 col-sm-12 form-group">
+                <div class="input-group">
+                  <label>Total:</label>
+                  <input type="text" class="form-control" placeholder="0.00" required="required">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12 col-sm-12">
+                <img src="./images/online-pay.png" alt="">
+              </div>
+            </div>
+            <div class="row">
+            <div class="form-group">
+              <div class="col-12 col-sm-12">
+                <button type="submit" class="btn btn-primary">Submit <span class="fa fa-paper-plane"></span></button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}

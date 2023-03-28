@@ -85,8 +85,8 @@
               <img src="{{ tour.featured_image.url }}" loading="lazy" alt="">
             </div>
             <div class="content">
-              <a href="#" class="btn btn-book">Book Your Trip Now</a>
-              <p><a href="{% url 'tour-detail' tour.slug %}">or Learn More</a></p>
+              <a href="{% url 'tour-detail' tour.slug %}" class="btn btn-book">Learn More</a>
+              
             </div>
           </div>
           <h6 class="group"><i class="fa fa-star"></i> Featured </h6>
@@ -234,31 +234,33 @@
                 </form>
               </div>
               <div class="tab-pane fade" id="one-way" role="tabpanel" aria-labelledby="one-way-tab">
+              <form method="POST">
+                {% csrf_token %}  
                 <div class="onewayform">
                   <form>
                     <div class="row">
                       <div class="col-md-6">
                         <div class="md-form">
                           <label>From</label>
-                          <input type="text" name="name" class="form-control" placeholder="City or airport name">
+                          <input type="text" name="from_city" class="form-control" placeholder="City or airport name">
                         </div>
                       </div>
                       <div class="col-md-6">
                         <div class="md-form">
                           <label>To</label>
-                          <input type="text" name="name" class="form-control" placeholder="City or airport name">
+                          <input type="text" name="dest_city" class="form-control" placeholder="City or airport name">
                         </div>
                       </div>
                       <div class="col-md-4">
                         <div class="md-form">
                           <label>Depart date</label>
-                          <input type="date" name="phone" class="form-control">
+                          <input type="date" id="txtDate" name="depart_date" class="form-control">
                         </div>
                       </div>
                       <div class="col-md-4">
                         <div class="md-form">
                           <label>Passengers</label>
-                          <select>
+                          <select name="passengers">
                             <option>1</option>
                             <option>2</option>
                             <option>3</option>
@@ -270,7 +272,7 @@
                       <div class="col-md-4">
                         <div class="md-form">
                           <label>Baggage</label>
-                          <select>
+                          <select name="baggage">
                             <option>Economy</option>
                             <option>Business</option>
                             <option>VIP</option>
@@ -283,8 +285,10 @@
                     </div>
                   </form>
                 </div>
+                </form>
                 <div class="onewayformfinal">
                   <form>
+                
                     <div class="row">
                       <div class="col-md-6">
                         <div class="md-form">
@@ -295,13 +299,13 @@
                       <div class="col-md-6">
                         <div class="md-form">
                           <label>Contact phone</label>
-                          <input type="number" name="name" class="form-control" placeholder="Phone">
+                          <input type="number" name="phone" class="form-control" placeholder="Phone">
                         </div>
                       </div>
                       <div class="col-md-12">
                         <div class="md-form">
                           <label>Additional Information</label>  
-                          <textarea type="text" name="message" placeholder="Your message"></textarea>
+                          <textarea type="text" name="additional_information" placeholder="Your message"></textarea>
                         </div>
                       </div>
                       <div class="col-12 col-sm-12" style="float: right;">
@@ -319,9 +323,8 @@
         <div class="col-12 col-sm-12 col-md-4 col-lg-4">
           <div class="flight-right-box">
             <div class="overlay">
-              <h5>Collect your miles</h5>
-              <h6>And get discount next flights with our card discount next flights with our card.</h6>
-              <a href="#" class="btn btn-getcard">Get Card <i class="fa fa-arrow-right"></i></a>
+              <img class="img-thumbnail" src="{% static 'images/flight-booking.png'%}" />
+              
             </div>
           </div>
         </div>
@@ -348,8 +351,8 @@
               <img src="{{ tour.featured_image.url }}" loading="lazy" alt="">
             </div>
             <div class="content">
-              <a href="#" class="btn btn-book">Book Your Trip Now</a>
-              <p><a href="{% url 'tour-detail' tour.slug %}">or Learn More</a></p>
+              <a href="{% url 'tour-detail' tour.slug %}" class="btn btn-book">Learn More</a>
+              
             </div>
           </div>
           <h6 class="group"> Cultural Tour </h6>

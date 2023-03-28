@@ -15,6 +15,7 @@ urlpatterns = [
     path('activities/<slug:activity_slug>/',
          activities, name='activities'),
     path('team/', views.team, name='team'),
+    path('booking-form/', views.booking_form, name='booking-form'),
     path('why-us/', views.why_us, name='why-us'),
     path('our-story/', views.our_story, name='our-story'),
     path('about-us/', views.about_us, name='about-us'),

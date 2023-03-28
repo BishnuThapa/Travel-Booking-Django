@@ -244,13 +244,21 @@
                   </ul>
                   {% comment %} <a href="#" class="btn btn-checked1">Check Availability</a> {% endcomment %}
                   {% comment %} <div class="sidebar-block"> <a href="#" class="inquire-link">Have Questions? Inquire Now <i class="fa fa-angle-right"></i></a></div> {% endcomment %}
-                  <ul class="social-link">
+                  {% comment %} <ul class="social-link">
                     <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
                     <li><a href="#"><i class="fab fa-twitter"></i></a></li>
                     <li><a href="#"><i class="fa fa-envelope"></i></a></li>
                     <li><a href="#"><i class="fa fa-link"></i></a></li>
-                    <li><a href="#" class="btn btn-book-trip">Book The Trip</a></li>
-                  </ul>
+                    
+                  </ul> {% endcomment %}
+                  <div class="col-md-12 col-xs-12 col-sm-12">
+                  <form action={% url 'booking-form' %} method="POST">
+                  {% csrf_token %}
+                  <input name="trip" type="hidden" id="{{single_tour.id}}" />
+                 
+                  <button class="btn btn-block btn-lg btn-primary" type="submit">Book Now </button>
+                  </form>
+                </div>
                   <ul class="what-viber">
                     <li><a href="#"><i class="fab fa-whatsapp"></i></a></li>
                     <li><a href="#"><i class="fab fa-viber"></i></a></li>
@@ -371,7 +379,7 @@
                 <li><a href="#"><i class="fab fa-twitter"></i></a></li>
                 <li><a href="#"><i class="fa fa-envelope"></i></a></li>
                 <li><a href="#"><i class="fa fa-link"></i></a></li>
-                <li><a href="#" class="btn btn-book-trip">Book The Trip</a></li>
+                <li><a href="{% url 'booking-form' %}" class="btn btn-book-trip">Book The Trip</a></li>
               </ul>
               <ul class="what-viber">
                 <li><a href="#"><i class="fab fa-whatsapp"></i></a></li>

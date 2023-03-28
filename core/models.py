@@ -323,12 +323,12 @@ class FlightBooking(models.Model):
     from_city = models.CharField(max_length=255)
     dest_city = models.CharField(max_length=255)
     depart_date = models.DateField()
-    return_date = models.DateField()
+    return_date = models.DateField(blank=True, null=True)
     passengers = models.IntegerField()
     baggage = models.CharField(max_length=50, choices=BAGGAGE_CHOICES)
     full_name = models.CharField(max_length=255)
     phone = models.CharField(max_length=100)
-    additional_information = models.TextField()
+    additional_information = models.TextField(blank=True, null=True)
     payment = models.TextField(
         max_length=10, choices=PAYMENT_CHOICES, default='Pending', null=True, blank=True)
 

@@ -19,6 +19,7 @@ def index(request):
         FlightBooking.objects.create(
             from_city=from_city, dest_city=dest_city, depart_date=depart_date, return_date=return_date, passengers=passengers, baggage=baggage, full_name=full_name, phone=phone, additional_information=additional_information)
         return redirect('index')
+
     sliders = Slider.objects.all()[:3]
     intro = AboutUs.objects.first()
     # tour_category = Tour_Type.objects.all()[:6]
@@ -145,3 +146,15 @@ def plan_my_trip(request):
 
 def offline_payment(request):
     return render(request, 'offline-payment.html')
+
+
+def booking_form(request):
+    if request.method == "POST":
+        trip = request.POST.get('trip')
+        print(trip)
+
+    context = {
+        'trip': trip
+
+    }
+    return render(request, 'booking-form.html', context)
