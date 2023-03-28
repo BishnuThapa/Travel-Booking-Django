@@ -158,3 +158,12 @@ def booking_form(request):
 
     }
     return render(request, 'booking-form.html', context)
+
+
+def search(request):
+    query = request.GET.get('tour-search')
+    tours = Tour.objects.filter(name__icontains=query)
+    context = {
+        'tours': tours
+    }
+    return render(request, 'search.html', context)

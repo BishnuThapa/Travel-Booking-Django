@@ -20,4 +20,5 @@ urlpatterns = [
     path('our-story/', views.our_story, name='our-story'),
     path('about-us/', views.about_us, name='about-us'),
     path('offline-payment/', views.offline_payment, name='offline-payment'),
+    path('search/', views.search, name='search'),
 ]

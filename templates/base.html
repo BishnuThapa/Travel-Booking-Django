@@ -41,16 +41,18 @@
           <a href="/" class="logo"><img src="{{ company_info.logo.url }}" alt=""></a>
         </div>       
         <div class="col-12 col-sm-6 col-md-4 col-lg-6 header-search">
+        <form action='{% url 'search' %}'>
           <div id="custom-search-input">
             <div class="input-group">
-              <input type="text" class="form-control input-lg" placeholder="Search" />
+              <input type="text" name="tour-search" class="form-control input-lg" placeholder="Search" />
               <span class="input-group-btn">
-                <button class="btn btn-info btn-lg" type="button">
+                <button class="btn btn-info btn-lg" type="submit">
                   <i class="fa fa-search"></i>
                 </button>
               </span>
             </div>
           </div>
+          </form>
         </div>
         <div class="col-12 col-sm-6 col-md-3 col-lg-2 search-box">
           <a href="{% url 'plan-my-trip' %}" class="btn btn-plans">Plan Your Trip</a>
