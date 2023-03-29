@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from django.db.models import Count
+from django.core.mail import send_mail
 from .models import *
 # Create your views here.
 
@@ -91,6 +92,17 @@ def contact(request):
         # print(name, email, phone, subject, message)
         Inquiry.objects.create(name=name, email=email, phone=phone,
                                message=message)
+        subject = "Inquiry from website"
+        to = ('thapabishnu20@gmail.com',)
+        # admin_email = 'thapabishnu20@gmail.com'
+        # send_mail(
+        #     'New Tour inquiry',
+        #     'You have a new inquiry for the tour.'
+        #     '. Please login to admin panel to for more info',
+        #     email,  # from user
+        #     [to],  # to user
+        #     fail_silently=False,
+        # )
         return redirect('contact-us')
     context = {
         'company_info': company_info
