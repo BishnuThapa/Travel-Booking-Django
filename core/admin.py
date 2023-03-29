@@ -114,3 +114,9 @@ class FlightBookingAdmin(admin.ModelAdmin):
     list_display = ('from_city', 'dest_city', 'depart_date',
                     'return_date', 'passengers', 'baggage', 'full_name', 'phone', 'additional_information', 'payment')
     list_editable = ('payment',)
+
+
+@admin.register(TourBooking)
+class TourBookingAdmin(admin.ModelAdmin):
+    list_display = ('package', 'price', 'full_name',
+                    'trip_start_date', 'email', 'nationality', 'contact_number', 'no_of_people')

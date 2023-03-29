@@ -43,8 +43,8 @@
     </div>
     <div class="row detailsrow">
       <div class="col-12 col-sm-12">
-        <form>
-            
+        <form method="POST" action="{% url 'booking-form' %}">
+            {% csrf_token %}
                 <div class="row">
             <div class="col-12 col-sm-12">
               <h4>Booking Details</h4>
@@ -52,7 +52,7 @@
               <div class="col-12 col-sm-12 form-group">
                 <div class="input-group">
                   <label>Package:</label>
-                  <input type="text"  disabled class="form-control" value="{{ trip }}" />
+                  <input type="text" name="package" readonly class="form-control" value="{{ trip }}" />
                   
                 </div>
               </div>
@@ -61,7 +61,7 @@
               <div class="col-12 col-sm-12 form-group">
                 <div class="input-group">
                   <label>Package Price in USD:</label>
-                  <input type="text" class="form-control" value="{{ price }} USD" required="required" disabled>
+                  <input type="text" name="price" class="form-control" value="{{ price }} USD" readonly>
                 </div>
               </div>
             </div>
@@ -69,7 +69,7 @@
               <div class="col-12 col-sm-12 form-group">
                 <div class="input-group">
                   <label>Trip Start Date(your preference):</label>
-                  <input type="date" id="txtDate" class="form-control" required="required">
+                  <input type="date" name="trip_start_date" id="txtDate" class="form-control" required="required">
                 </div>
               </div>
               
@@ -79,7 +79,7 @@
               <div class="col-12 col-sm-12 form-group">
                 <div class="input-group">
                   <label>Full Name:</label>
-                  <input type="text" class="form-control" placeholder="Full Name" required="required">
+                  <input type="text" name="full_name" class="form-control" placeholder="Full Name" required="required">
                 </div>
               </div>
             </div>
@@ -87,13 +87,13 @@
               <div class="col-12 col-md-6 col-lg-6 col-sm-12 form-group">
                 <div class="input-group">
                   <label>Email:</label>
-                  <input type="email" class="form-control" placeholder="Email" required="required">
+                  <input type="email" name="email" class="form-control" placeholder="Email" required="required">
                 </div>
               </div>
               <div class="col-12 col-md-6 col-lg-6 col-sm-12 form-group">
                 <div class="input-group">
                   <label>Nationality:</label>
-                  <input type="text" class="form-control" placeholder="Country" required="required">
+                  <input type="text" name="nationality" class="form-control" placeholder="Country" required="required">
                 </div>
               </div>
             </div>
@@ -101,13 +101,13 @@
               <div class="col-12 col-md-6 col-lg-6 col-sm-12 form-group">
                 <div class="input-group">
                   <label>Personal Contact No:</label>
-                  <input type="text" class="form-control" placeholder="Contact Number" required="required">
+                  <input type="text" name="contact_number" class="form-control" placeholder="Contact Number" required="required">
                 </div>
               </div>
               <div class="col-12 col-md-6 col-lg-6 col-sm-12 form-group">
                 <div class="input-group">
                   <label>Emergency Contact No:</label>
-                  <input type="text" class="form-control" placeholder="Emergency Contact Number" required="required">
+                  <input type="text" name="emergency_contact_number" class="form-control" placeholder="Emergency Contact Number" required="required">
                 </div>
               </div>
             </div>
@@ -115,13 +115,13 @@
               <div class="col-12 col-md-6 col-lg-6 col-sm-12 form-group">
                 <div class="input-group">
                   <label>Passport No:</label>
-                  <input type="text" class="form-control" placeholder="Passport number" required="required">
+                  <input type="text" name="passport_no" class="form-control" placeholder="Passport number" required="required">
                 </div>
               </div>
               <div class="col-12 col-md-6 col-lg-6 col-sm-12 form-group">
                 <div class="input-group">
                   <label>Place of Issue:</label>
-                  <input type="text" class="form-control" placeholder="Place of issue" required="required">
+                  <input type="text" name="place_of_issue" class="form-control" placeholder="Place of issue" required="required">
                 </div>
               </div>
             </div>
@@ -129,13 +129,13 @@
               <div class="col-12 col-md-6 col-lg-6 col-sm-12 form-group">
                 <div class="input-group">
                   <label>Date of Issue:</label>
-                  <input type="date" class="form-control" required="required">
+                  <input type="date" name="date_of_issue" class="form-control" required="required">
                 </div>
               </div>
               <div class="col-12 col-md-6 col-lg-6 col-sm-12 form-group">
                 <div class="input-group">
                   <label>Date of Expiry:</label>
-                  <input type="date" class="form-control"  required="required">
+                  <input type="date" name="date_of_expiry" class="form-control"  required="required">
                 </div>
               </div>
             </div>
@@ -143,7 +143,7 @@
               <div class="col-12 col-sm-12 form-group">
                 <div class="input-group">
                   <label>Date Of Birth:</label>
-                  <input type="date" class="form-control" placeholder="Full Name" required="required">
+                  <input type="date" name="date_of_birth" class="form-control" placeholder="Full Name" required="required">
                 </div>
               </div>
             </div>
@@ -155,7 +155,7 @@
               <div class="col-12 col-sm-12 form-group">
                 <div class="input-group">
                   <label>No of People:</label>
-                  <select>
+                  <select name="no_of_people">
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
@@ -213,11 +213,11 @@
                 </div>
               </div>
             </div> {% endcomment %}
-            <div class="row">
+            {% comment %} <div class="row">
               <div class="col-12 col-sm-12">
                 <img src="{% static 'images/online-pay.png' %}" alt="">
               </div>
-            </div>
+            </div> {% endcomment %}
             <div class="row">
             <div class="form-group">
               <div class="col-12 col-sm-12">

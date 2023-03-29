@@ -252,7 +252,8 @@
                     
                   </ul> {% endcomment %}
                   <div class="col-md-12 col-xs-12 col-sm-12">
-                  <form action='{% url 'booking-form' %}' method="POST">
+                  {% comment %} <form  method="POST"> {% endcomment %}
+                  <form action='{% url 'booking-form' %}' method="GET">
                   {% csrf_token %}
                   <input name="trip_name" type="hidden" value="{{single_tour.name}}" />
                  <input name="trip_price" type="hidden" value="{{ single_tour.sell_price }}" />

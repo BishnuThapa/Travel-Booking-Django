@@ -341,25 +341,25 @@ class FlightBooking(models.Model):
 
 
 class TourBooking(models.Model):
-    package = models.CharField(max_length=255)
-    price = models.DecimalField(max_digits=6, decimal_places=2)
-    trip_start_date = models.DateField()
-    full_name = models.CharField(max_length=255)
-    email = models.EmailField()
-    nationality = models.CharField(max_length=255)
+    package = models.CharField(max_length=255, null=True, blank=True)
+    price = models.TextField(max_length=255, null=True, blank=True)
+    trip_start_date = models.DateField(null=True, blank=True)
+    full_name = models.CharField(max_length=255, null=True, blank=True)
+    email = models.EmailField(null=True, blank=True)
+    nationality = models.CharField(max_length=255, null=True, blank=True)
     contact_number = models.CharField(
-        max_length=20, help_text='Phone with country code')
+        max_length=20, help_text='Phone with country code', null=True, blank=True)
     emergency_contact_number = models.CharField(
-        max_length=20, help_text='Phone with country code')
-    passport_no = models.CharField(max_length=50)
-    place_of_issue = models.CharField(max_length=255)
-    date_of_issue = models.DateField()
-    date_of_expiry = models.DateField()
-    date_of_birth = models.DateField()
-    no_of_people = models.IntegerField()
+        max_length=20, help_text='Phone with country code', null=True, blank=True)
+    passport_no = models.CharField(max_length=50, null=True, blank=True)
+    place_of_issue = models.CharField(max_length=255, null=True, blank=True)
+    date_of_issue = models.DateField(null=True, blank=True)
+    date_of_expiry = models.DateField(null=True, blank=True)
+    date_of_birth = models.DateField(null=True, blank=True)
+    no_of_people = models.IntegerField(null=True, blank=True)
 
     def __str__(self):
-        return self.package
+        return self.full_name
 
     class Meta:
         verbose_name = 'Trip Booking'

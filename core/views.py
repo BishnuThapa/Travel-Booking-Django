@@ -161,11 +161,30 @@ def offline_payment(request):
 
 
 def booking_form(request):
-    if request.method == "POST":
-        trip = request.POST['trip_name']
-        price = request.POST['trip_price']
+    if request.method == 'GET':
+        trip = request.GET.get('trip_name')
+        price = request.GET.get('trip_price')
+        # print(trip, price)
 
-        # print(trip)
+    if request.method == "POST":
+
+        package = request.POST.get('package')
+        price = request.POST.get('price')
+        trip_start_date = request.POST.get('trip_start_date')
+        full_name = request.POST.get('full_name')
+        email = request.POST.get('email')
+        nationality = request.POST.get('nationality')
+        contact_number = request.POST.get('contact_number')
+        emergency_contact_number = request.POST.get('emergency_contact_number')
+        passport_no = request.POST.get('passport_no')
+        place_of_issue = request.POST.get('place_of_issue')
+        date_of_issue = request.POST.get('date_of_issue')
+        date_of_expiry = request.POST.get('date_of_expiry')
+        date_of_birth = request.POST.get('date_of_birth')
+        no_of_people = request.POST.get('no_of_people')
+        TourBooking.objects.create(
+            package=package, price=price, trip_start_date=trip_start_date, full_name=full_name, email=email, nationality=nationality, contact_number=contact_number, emergency_contact_number=emergency_contact_number, passport_no=passport_no, place_of_issue=place_of_issue, date_of_issue=date_of_issue, date_of_expiry=date_of_expiry, date_of_birth=date_of_birth, no_of_people=no_of_people)
+        return redirect('booking-success')
 
     context = {
         'trip': trip,
