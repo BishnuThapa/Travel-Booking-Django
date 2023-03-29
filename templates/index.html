@@ -1,11 +1,7 @@
-{% extends 'base.html' %}
-{% load static %}
-
-{% block content %}
+{% extends 'base.html' %} {% load static %} {% block content %}
 
 <div class="slider">
   <div id="slider-animation" class="carousel slide" data-ride="carousel">
-
     <!-- Indicators -->
     <!-- <ul class="carousel-indicators">
       <li data-target="#slider-animation" data-slide-to="0" class="active"></li>
@@ -17,14 +13,15 @@
     <div class="carousel-inner">
       {% for slider in sliders %}
       <div class="carousel-item {% if forloop.first %} active {% endif %}">
-        <img src="{{slider.image.url}}" alt="{{slider.heading}}">
-          <div class="text-box">
-            <h2 class="wow slideInUp" data-wow-duration="2s">{{slider.heading}}</h2>
-            <!-- <a href="#" class="btn btn-explore wow slideInUp" data-wow-duration="2s">Explore more <i class="fa fa-arrow-right"></i></a> -->
-          </div>
+        <img src="{{slider.image.url}}" alt="{{slider.heading}}" />
+        <div class="text-box">
+          <h2 class="wow slideInUp" data-wow-duration="2s">
+            {{slider.heading}}
+          </h2>
+          <!-- <a href="#" class="btn btn-explore wow slideInUp" data-wow-duration="2s">Explore more <i class="fa fa-arrow-right"></i></a> -->
+        </div>
       </div>
       {% endfor %}
-     
     </div>
 
     <!-- Left and right controls -->
@@ -34,28 +31,25 @@
     <a class="carousel-control-next" href="#slider-animation" data-slide="next">
       <span class="carousel-control-next-icon"></span>
     </a>
-
   </div>
 </div>
-
-
 
 <div class="destination-section">
   <div class="container">
     <div class="row">
-
       {% for category in tour_category%}
       <div class="col-12 col-sm-6 col-md-4 col-lg-2">
-        <img src="{{ category.icon.url }}" alt="">
-        <a href="{% url 'activities' category.slug %}">{{ category.name }} <br><span>{{ category.tour_set.all.count }} Package</span></a>
+        <img src="{{ category.icon.url }}" alt="" />
+        <a href="{% url 'activities' category.slug %}"
+          >{{ category.name }} <br /><span
+            >{{ category.tour_set.all.count }} Package</span
+          ></a
+        >
       </div>
       {% endfor %}
-      
     </div>
   </div>
 </div>
-
-
 
 <div class="welcome-section">
   <div class="container">
@@ -63,7 +57,9 @@
       <div class="col-12 col-sm-12">
         <h1>{{ intro.heading }}</h1>
         <p>{{ intro.description | safe | truncatewords:160 }}</p>
-        <a href="{% url 'about-us' %}" class="btn btn-reads">Read More <i class="fa fa-arrow-right"></i></a>
+        <a href="{% url 'about-us' %}" class="btn btn-reads"
+          >Read More <i class="fa fa-arrow-right"></i
+        ></a>
       </div>
     </div>
   </div>
@@ -74,41 +70,67 @@
   <div class="container">
     <div class="row">
       <div class="col-12 col-sm-12">
-        <h3>Most Popular Trips {% now 'Y' %} </h3>
-        <p class="exclusive-text">We offer you a large variety of popular outdoor adventure activities on earth. <a href="#">View All of Our Deals</a></p>
+        <h3>Most Popular Trips {% now 'Y' %}</h3>
+        <p class="exclusive-text">
+          We offer you a large variety of popular outdoor adventure activities
+          on earth. <a href="#">View All of Our Deals</a>
+        </p>
       </div>
       {% for tour in tours %}
       <div class="col-12 col-sm-12 col-md-6 col-lg-4">
         <div class="adventure-box">
           <div class="box">
             <div class="imgBox">
-              <img src="{{ tour.featured_image.url }}" loading="lazy" alt="">
+              <img src="{{ tour.featured_image.url }}" loading="lazy" alt="" />
             </div>
             <div class="content">
-              <a href="{% url 'tour-detail' tour.slug %}" class="btn btn-book">Learn More</a>
-              
+              <a href="{% url 'tour-detail' tour.slug %}" class="btn btn-book"
+                >Learn More</a
+              >
             </div>
           </div>
-          <h6 class="group"><i class="fa fa-star"></i> Featured </h6>
-          <p class="reviews"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> of 31 reviews</p>
+          <h6 class="group"><i class="fa fa-star"></i> Featured</h6>
+          {% comment %}
+          <p class="reviews">
+            <i class="fa fa-star"></i><i class="fa fa-star"></i
+            ><i class="fa fa-star"></i><i class="fa fa-star"></i
+            ><i class="fa fa-star"></i> of 31 reviews
+          </p>
+          {% endcomment %}
           <div class="price-box">
             {% if tour.regular_price %}
-            <span class="trip-card__regular-price">from  <del>US$ {{tour.regular_price }}</del></span>
+            <span class="trip-card__regular-price"
+              >from <del>US$ {{tour.regular_price }}</del></span
+            >
             {% endif %}
-            <span class="trip-card__sale-price">US$ <strong>{{tour.sell_price }}</strong><sup></sup></span>
+            <span class="trip-card__sale-price"
+              >US$ <strong>{{tour.sell_price }}</strong><sup></sup
+            ></span>
           </div>
-          <h5><a href="{% url 'tour-detail' tour.slug %}">{{tour.name |truncatechars:35}}</a></h5>
+          <h5>
+            <a href="{% url 'tour-detail' tour.slug %}"
+              >{{tour.name |truncatechars:35}}</a
+            >
+          </h5>
           <ul>
-            <li><i class="fas fa-tachometer-alt"></i><span>Grade</span> <h6>{{tour.difficulty}}</h6></li>
+            <li>
+              <i class="fas fa-tachometer-alt"></i><span>Grade</span>
+              <h6>{{tour.difficulty}}</h6>
+            </li>
             {% if tour.duration %}
-            <li><i class="far fa-calendar-alt"></i><span>Duration</span> <h6>{{tour.duration }} Days</h6></li>
+            <li>
+              <i class="far fa-calendar-alt"></i><span>Duration</span>
+              <h6>{{tour.duration }} Days</h6>
+            </li>
             {% endif %}
-            <li><i class="fas fa-hiking"></i><span>Activity</span> <h6>{{ tour.activity }}</h6></li>
+            <li>
+              <i class="fas fa-hiking"></i><span>Activity</span>
+              <h6>{{ tour.activity }}</h6>
+            </li>
           </ul>
         </div>
       </div>
       {% endfor %}
-      
     </div>
   </div>
 </div>
@@ -122,139 +144,233 @@
 
 <!-- popular trip end here -->
 
-
-<div class="flight-section">
+<div class="flight-section" id="flight-section">
   <div class="overlay">
     <div class="container">
       <div class="row">
         <div class="col-12 col-sm-12">
+          {% for message in messages %}
+          <div
+            class="alert alert-success alert-dismissible fade show"
+            role="alert"
+          >
+            <strong>Message: </strong> {{message}}
+            <button
+              type="button"
+              class="close"
+              data-dismiss="alert"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          {% endfor %}
           <h3>Get your flight</h3>
           <h4>Online request for private flight</h4>
         </div>
         <div class="col-12 col-sm-12 col-md-8 col-lg-8">
-
           <nav>
-              <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
-                  <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#round-trip" role="tab" aria-controls="round-trip" aria-selected="true">Round Trip</a>
-                  <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#one-way" role="tab" aria-controls="one-way" aria-selected="false">One Way</a>
-              </div>
+            <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+              <a
+                class="nav-item nav-link active"
+                id="nav-home-tab"
+                data-toggle="tab"
+                href="#round-trip"
+                role="tab"
+                aria-controls="round-trip"
+                aria-selected="true"
+                >Round Trip</a
+              >
+              <a
+                class="nav-item nav-link"
+                id="nav-profile-tab"
+                data-toggle="tab"
+                href="#one-way"
+                role="tab"
+                aria-controls="one-way"
+                aria-selected="false"
+                >One Way</a
+              >
+            </div>
           </nav>
           <div class="tab-content" id="nav-tabContent">
-              <div class="tab-pane fade show active" id="round-trip" role="tabpanel" aria-labelledby="round-trip-tab">
-                <form id="regForm" method="POST">
-               {% csrf_token %}
-                  <!-- One "tab" for each step in the form: -->
-                  <div class="tab">
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="md-form">
-                          <label>From</label>
-                          <input type="text" name="from_city" class="form-control" placeholder="City or airport name">
-                        </div>
+            <div
+              class="tab-pane fade show active"
+              id="round-trip"
+              role="tabpanel"
+              aria-labelledby="round-trip-tab"
+            >
+              <form id="regForm" method="POST">
+                {% csrf_token %}
+                <!-- One "tab" for each step in the form: -->
+                <div class="tab">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="md-form">
+                        <label>From</label>
+                        <input
+                          type="text"
+                          name="from_city"
+                          class="form-control"
+                          placeholder="City or airport name"
+                        />
                       </div>
-                      <div class="col-md-6">
-                        <div class="md-form">
-                          <label>To</label>
-                          <input type="text" name="dest_city" class="form-control" placeholder="City or airport name">
-                        </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="md-form">
+                        <label>To</label>
+                        <input
+                          type="text"
+                          name="dest_city"
+                          class="form-control"
+                          placeholder="City or airport name"
+                        />
                       </div>
-                      <div class="col-md-3">
-                        <div class="md-form">
-                          <label>Depart date</label>
-                          <input type="date" id="txtDate" name="depart_date" class="form-control">
-                        </div>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="md-form">
+                        <label>Depart date</label>
+                        <input
+                          type="date"
+                          id="txtDate"
+                          name="depart_date"
+                          class="form-control"
+                        />
                       </div>
-                      <div class="col-md-3">
-                        <div class="md-form">
-                          <label>Return date</label>
-                          <input type="date" id="txtDate1" name="return_date" class="form-control">
-                        </div>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="md-form">
+                        <label>Return date</label>
+                        <input
+                          type="date"
+                          id="txtDate1"
+                          name="return_date"
+                          class="form-control"
+                        />
                       </div>
-                      <div class="col-md-3">
-                        <div class="md-form">
-                          <label>Passengers</label>
-                          <select name="passengers">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                          </select>
-                        </div>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="md-form">
+                        <label>Passengers</label>
+                        <select name="passengers">
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                          <option>5</option>
+                        </select>
                       </div>
-                      <div class="col-md-3">
-                        <div class="md-form">
-                          <label>Baggage</label>
-                          <select name="baggage">
-                            <option>Economy</option>
-                            <option>Business</option>
-                            <option>VIP</option>
-                          </select>
-                        </div>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="md-form">
+                        <label>Baggage</label>
+                        <select name="baggage">
+                          <option>Economy</option>
+                          <option>Business</option>
+                          <option>VIP</option>
+                        </select>
                       </div>
                     </div>
                   </div>
+                </div>
 
-                  <div class="tab">
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="md-form">
-                          <label>Your name</label>
-                          <input type="text" name="full_name" class="form-control" placeholder="Enter your full name">
-                        </div>
+                <div class="tab">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="md-form">
+                        <label>Your name</label>
+                        <input
+                          type="text"
+                          name="full_name"
+                          class="form-control"
+                          placeholder="Enter your full name"
+                        />
                       </div>
-                      <div class="col-md-6">
-                        <div class="md-form">
-                          <label>Contact phone</label>
-                          <input type="number" name="phone" class="form-control" placeholder="Phone">
-                        </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="md-form">
+                        <label>Contact phone</label>
+                        <input
+                          type="number"
+                          name="phone"
+                          class="form-control"
+                          placeholder="Phone"
+                        />
                       </div>
-                      <div class="col-md-12">
-                        <div class="md-form">
-                          <label>Additional Information</label>  
-                          <textarea type="text" name="additional_information" placeholder="Your message"></textarea>
-                        </div>
+                    </div>
+                    <div class="col-md-12">
+                      <div class="md-form">
+                        <label>Additional Information</label>
+                        <textarea
+                          type="text"
+                          name="additional_information"
+                          placeholder="Your message"
+                        ></textarea>
                       </div>
                     </div>
                   </div>
+                </div>
 
-                  <div>
-                    <div style="float:right;">
-                      <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
-                      <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
-                    </div>
+                <div>
+                  <div style="float: right">
+                    <button type="button" id="prevBtn" onclick="nextPrev(-1)">
+                      Previous
+                    </button>
+                    <button type="button" id="nextBtn" onclick="nextPrev(1)">
+                      Next
+                    </button>
                   </div>
+                </div>
 
-                  <!-- Circles which indicates the steps of the form: -->
-                  <div style="text-align:center;margin-top:40px;">
-                    <span class="step"></span>
-                    <span class="step"></span>
-                  </div>
-
-                </form>
-              </div>
-              <div class="tab-pane fade" id="one-way" role="tabpanel" aria-labelledby="one-way-tab">
-              <form method="POST">
-                {% csrf_token %}  
+                <!-- Circles which indicates the steps of the form: -->
+                <div style="text-align: center; margin-top: 40px">
+                  <span class="step"></span>
+                  <span class="step"></span>
+                </div>
+              </form>
+            </div>
+            <div
+              class="tab-pane fade"
+              id="one-way"
+              role="tabpanel"
+              aria-labelledby="one-way-tab"
+            >
+             
+                <form method="POST" >
+                {% csrf_token %}
                 <div class="onewayform">
-                  <form>
                     <div class="row">
                       <div class="col-md-6">
                         <div class="md-form">
                           <label>From</label>
-                          <input type="text" name="from_city" class="form-control" placeholder="City or airport name">
+                          <input
+                            type="text"
+                            name="from_city"
+                            class="form-control"
+                            placeholder="City or airport name"
+                          />
                         </div>
                       </div>
                       <div class="col-md-6">
                         <div class="md-form">
                           <label>To</label>
-                          <input type="text" name="dest_city" class="form-control" placeholder="City or airport name">
+                          <input
+                            type="text"
+                            name="dest_city"
+                            class="form-control"
+                            placeholder="City or airport name"
+                          />
                         </div>
                       </div>
                       <div class="col-md-4">
                         <div class="md-form">
                           <label>Depart date</label>
-                          <input type="date" id="txtDate" name="depart_date" class="form-control">
+                          <input
+                            type="date"
+                            id="txtDate"
+                            name="depart_date"
+                            class="form-control"
+                          />
                         </div>
                       </div>
                       <div class="col-md-4">
@@ -280,51 +396,75 @@
                         </div>
                       </div>
                       <div class="col-12 col-sm-12">
-                        <button style="float: right;" type="button" id="formButton">Next</button> 
+                        <button
+                          style="float: right"
+                          type="button"
+                          id="formButton"
+                        >
+                          Next
+                        </button>
                       </div>
                     </div>
-                  </form>
+                  {% comment %} </form> {% endcomment %}
                 </div>
+              {% comment %} </form> {% endcomment %}
+              <div class="onewayformfinal">
+                {% comment %} <form> {% endcomment %}
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="md-form">
+                        <label>Your name</label>
+                        <input
+                          type="text"
+                          name="name"
+                          class="form-control"
+                          placeholder="Enter your full name"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="md-form">
+                        <label>Contact phone</label>
+                        <input
+                          type="number"
+                          name="phone"
+                          class="form-control"
+                          placeholder="Phone"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <div class="md-form">
+                        <label>Additional Information</label>
+                        <textarea
+                          type="text"
+                          name="additional_information"
+                          placeholder="Your message"
+                        ></textarea>
+                      </div>
+                    </div>
+                    <div class="col-12 col-sm-12" style="float: right">
+                      <div style="float: right">
+                        <button type="button" id="previewBtn">Previous</button>
+
+                        <button type="submit" id="submitBtn" name="submitBtn">
+                          Submit
+                        </button>
+                      </div>
+                    </div>
+                  </div>
                 </form>
-                <div class="onewayformfinal">
-                  <form>
-                
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="md-form">
-                          <label>Your name</label>
-                          <input type="text" name="name" class="form-control" placeholder="Enter your full name">
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="md-form">
-                          <label>Contact phone</label>
-                          <input type="number" name="phone" class="form-control" placeholder="Phone">
-                        </div>
-                      </div>
-                      <div class="col-md-12">
-                        <div class="md-form">
-                          <label>Additional Information</label>  
-                          <textarea type="text" name="additional_information" placeholder="Your message"></textarea>
-                        </div>
-                      </div>
-                      <div class="col-12 col-sm-12" style="float: right;">
-                        <div style="float: right;">
-                          <button type="button" id="previewBtn">Previous</button>                  
-                          <button type="submit" id="submitBtn" name="submitBtn">Submit</button>
-                        </div>
-                      </div>
-                    </div>
-                  </form>
-                </div>
               </div>
+            </div>
           </div>
         </div>
         <div class="col-12 col-sm-12 col-md-4 col-lg-4">
           <div class="flight-right-box">
             <div class="overlay">
-              <img class="img-thumbnail" src="{% static 'images/flight-booking.png'%}" />
-              
+              <img
+                class="img-thumbnail"
+                src="{% static 'images/flight-booking.png'%}"
+              />
             </div>
           </div>
         </div>
@@ -332,55 +472,78 @@
     </div>
   </div>
 </div>
-
 
 {% if culturaltour %}
 <div class="adventure">
   <div class="container">
     <div class="row">
       <div class="col-12 mt-5 mb-3 col-sm-12">
-        <h3>Religious & Cultural Tour </h3>
-        <p class="exclusive-text">We offer you a large variety of popular outdoor adventure activities on earth. <a href="#">View All of Our Deals</a></p>
+        <h3>Religious & Cultural Tour</h3>
+        <p class="exclusive-text">
+          We offer you a large variety of popular outdoor adventure activities
+          on earth. <a href="#">View All of Our Deals</a>
+        </p>
       </div>
-     
+
       {% for tour in culturaltour %}
       <div class="col-12 col-sm-12 col-md-6 col-lg-4">
         <div class="adventure-box">
           <div class="box">
             <div class="imgBox">
-              <img src="{{ tour.featured_image.url }}" loading="lazy" alt="">
+              <img src="{{ tour.featured_image.url }}" loading="lazy" alt="" />
             </div>
             <div class="content">
-              <a href="{% url 'tour-detail' tour.slug %}" class="btn btn-book">Learn More</a>
-              
+              <a href="{% url 'tour-detail' tour.slug %}" class="btn btn-book"
+                >Learn More</a
+              >
             </div>
           </div>
-          <h6 class="group"> Cultural Tour </h6>
-          <p class="reviews"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> of 31 reviews</p>
+          <h6 class="group">Cultural Tour</h6>
+          {% comment %}
+          <p class="reviews">
+            <i class="fa fa-star"></i><i class="fa fa-star"></i
+            ><i class="fa fa-star"></i><i class="fa fa-star"></i
+            ><i class="fa fa-star"></i> of 31 reviews
+          </p>
+          {% endcomment %}
           <div class="price-box">
             {% if tour.regular_price %}
-            <span class="trip-card__regular-price">from  <del>US$ {{tour.regular_price }}</del></span>
+            <span class="trip-card__regular-price"
+              >from <del>US$ {{tour.regular_price }}</del></span
+            >
             {% endif %}
-            <span class="trip-card__sale-price">US$ <strong>{{tour.sell_price }}</strong><sup></sup></span>
+            <span class="trip-card__sale-price"
+              >US$ <strong>{{tour.sell_price }}</strong><sup></sup
+            ></span>
           </div>
-          <h5><a href="{% url 'tour-detail' tour.slug %}">{{tour.name |truncatechars:35}}</a></h5>
+          <h5>
+            <a href="{% url 'tour-detail' tour.slug %}"
+              >{{tour.name |truncatechars:35}}</a
+            >
+          </h5>
           <ul>
-            <li><i class="fas fa-tachometer-alt"></i><span>Grade</span> <h6>{{tour.difficulty}}</h6></li>
+            <li>
+              <i class="fas fa-tachometer-alt"></i><span>Grade</span>
+              <h6>{{tour.difficulty}}</h6>
+            </li>
             {% if tour.duration %}
-            <li><i class="far fa-calendar-alt"></i><span>Duration</span> <h6>{{tour.duration }} Days</h6></li>
+            <li>
+              <i class="far fa-calendar-alt"></i><span>Duration</span>
+              <h6>{{tour.duration }} Days</h6>
+            </li>
             {% endif %}
-            <li><i class="fas fa-hiking"></i><span>Activity</span> <h6>{{ tour.activity }}</h6></li>
+            <li>
+              <i class="fas fa-hiking"></i><span>Activity</span>
+              <h6>{{ tour.activity }}</h6>
+            </li>
           </ul>
         </div>
       </div>
       {% endfor %}
-
     </div>
   </div>
 </div>
 {% endif %}
-
-
 
 <div class="testimonials">
   <div class="container">
@@ -388,18 +551,27 @@
       <div class="col-12 col-sm-12">
         <h4>Traveller's Review</h4>
       </div>
-     <script src="https://apps.elfsight.com/p/platform.js" defer></script>
-<div class="elfsight-app-ca19e0e4-1d55-4a15-ab34-d595fa6f5fab"></div>
-      {% comment %} <div class="col-12 col-sm-12 testi-item owl-carousel">
+      <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+      <div class="elfsight-app-ca19e0e4-1d55-4a15-ab34-d595fa6f5fab"></div>
+      {% comment %}
+      <div class="col-12 col-sm-12 testi-item owl-carousel">
         <div class="testi-box">
-          
           <h5><a href="#">Three high passes in the Everest, Nepal</a></h5>
-          <p class="testi-content">This year, I had an opportunity to explore three high passes in the Everest region of Nepal and I did it. All the credit to Third Rock. Had I contacted another company, I would not have got satisfied. Mr. Naba personally called me, I ask... <a href="#">Read More...</a></p>
-          <p class="testi-rating"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></p>
+          <p class="testi-content">
+            This year, I had an opportunity to explore three high passes in the
+            Everest region of Nepal and I did it. All the credit to Third Rock.
+            Had I contacted another company, I would not have got satisfied. Mr.
+            Naba personally called me, I ask... <a href="#">Read More...</a>
+          </p>
+          <p class="testi-rating">
+            <i class="fa fa-star"></i><i class="fa fa-star"></i
+            ><i class="fa fa-star"></i><i class="fa fa-star"></i
+            ><i class="fa fa-star"></i>
+          </p>
           <h6>Kathmandu, Nepal | June 06 2020 <span>John Doe</span></h6>
         </div>
-        
-      </div> {% endcomment %}
+      </div>
+      {% endcomment %}
       <div class="col-12 col-sm-12">
         <a href="#" class="btn btn-testi">View More</a>
       </div>
@@ -417,14 +589,21 @@
           </div>
           {% for blog in blogs %}
           <div class="col-12 col-sm-12 col-md-6 col-lg-6">
-            <a href="{% url 'blog-detail' blog.slug %}"><img src="{{ blog.featured_image.url }}" loading="lazy" alt=""></a>
+            <a href="{% url 'blog-detail' blog.slug %}"
+              ><img src="{{ blog.featured_image.url }}" loading="lazy" alt=""
+            /></a>
             <div class="blog-box">
-              <h5><a href="{% url 'blog-detail' blog.slug %}">{{ blog.title }}</a></h5>
-              <a href="{% url 'blog-detail' blog.slug %}" class="btn btn-continue">Continue Reading</a>
+              <h5>
+                <a href="{% url 'blog-detail' blog.slug %}">{{ blog.title }}</a>
+              </h5>
+              <a
+                href="{% url 'blog-detail' blog.slug %}"
+                class="btn btn-continue"
+                >Continue Reading</a
+              >
             </div>
           </div>
           {% endfor %}
-          
         </div>
       </div>
       <div class="col-12 col-sm-12 col-md-6 col-lg-6">
@@ -433,7 +612,15 @@
             <h4>Our Video</h4>
           </div>
           <div class="col-12 col-sm-12">
-            <iframe width="100%" preload="none" height="300" src="https://www.youtube.com/embed/dBeVPsZoRdo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe
+              width="100%"
+              preload="none"
+              height="300"
+              src="https://www.youtube.com/embed/dBeVPsZoRdo"
+              frameborder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
           </div>
         </div>
       </div>
@@ -441,7 +628,4 @@
   </div>
 </div>
 
-
-
 {% endblock %}
-

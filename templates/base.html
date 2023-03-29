@@ -267,7 +267,7 @@
         <div class="col-12 col-sm-12 col-md-6 col-lg-3 our-partners">
           <h3>Follow Us</h3>
           <ul class="footer-icons">
-          {% if company_info.facebook_link %}
+            {% if company_info.facebook_link %}
             <li><a href="{{ company_info.facebook_link}}" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
             {% endif %}
             {% if company_info.twitter_link %}
@@ -276,7 +276,8 @@
             {% if company_info.linkedin_link %}
             <li><a href="{{ company_info.linkedin_link}}"><i class="fab fa-linkedin-in" target="_blank"></i></a></li>
             {% endif %}
-            <li><a href="#"><i class="fab fa-instagram" target="_blank"></i></a></li>
+
+            {% comment %} <li><a href="www.google.com"><i class="fab fa-instagram-i"></i></a></li> {% endcomment %}
             {% if company_info.youtube_link %}
             <li><a href="{{ company_info.youtube_link}}"><i class="fab fa-youtube" target="_blank"></i></a></li>
             {% endif %}
@@ -334,9 +335,9 @@
   </span>
 </div>
 
-<div class="payonline">
+{% comment %} <div class="payonline">
   <a href="#">Pay Online</a>
-</div>
+</div> {% endcomment %}
 
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="{% static 'js/bootstrap.min.js' %}"></script>    
