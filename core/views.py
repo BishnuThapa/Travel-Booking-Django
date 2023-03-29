@@ -164,6 +164,7 @@ def booking_form(request):
     if request.method == "POST":
         trip = request.POST['trip_name']
         price = request.POST['trip_price']
+
         # print(trip)
 
     context = {

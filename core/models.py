@@ -338,3 +338,29 @@ class FlightBooking(models.Model):
     class Meta:
         verbose_name = 'Flight Booking'
         verbose_name_plural = 'Flight Booking'
+
+
+class TourBooking(models.Model):
+    package = models.CharField(max_length=255)
+    price = models.DecimalField(max_digits=6, decimal_places=2)
+    trip_start_date = models.DateField()
+    full_name = models.CharField(max_length=255)
+    email = models.EmailField()
+    nationality = models.CharField(max_length=255)
+    contact_number = models.CharField(
+        max_length=20, help_text='Phone with country code')
+    emergency_contact_number = models.CharField(
+        max_length=20, help_text='Phone with country code')
+    passport_no = models.CharField(max_length=50)
+    place_of_issue = models.CharField(max_length=255)
+    date_of_issue = models.DateField()
+    date_of_expiry = models.DateField()
+    date_of_birth = models.DateField()
+    no_of_people = models.IntegerField()
+
+    def __str__(self):
+        return self.package
+
+    class Meta:
+        verbose_name = 'Trip Booking'
+        verbose_name_plural = 'Trip Booking'
