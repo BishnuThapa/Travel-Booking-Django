@@ -76,7 +76,7 @@
                 </li>
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Destination
+                    All Destination
                   </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                   {% for dest in destination %}
@@ -120,14 +120,20 @@
                     </ul>
                   </div>
                 </li>
-               
+               <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Outbound Tour
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  {% for dest in outbound %}
+                    <a class="dropdown-item" href="{% url 'destination' dest.slug %}">{{dest.name}}</a>
+                    
+                    
+                    {% endfor %}
+                  </div>
+                </li>
                 
-                <li class="nav-item">
-                  <a class="nav-link" href="/destination/bhutan">Bhutan</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="/destination/tibet/">Tibet</a>
-                </li>
+                
                <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     About
@@ -277,7 +283,9 @@
             <li><a href="{{ company_info.linkedin_link}}"><i class="fab fa-linkedin-in" target="_blank"></i></a></li>
             {% endif %}
 
-            {% comment %} <li><a href="www.google.com"><i class="fab fa-instagram-i"></i></a></li> {% endcomment %}
+            {% if company_info.instagram_link %}
+            <li><a href="{{ company_info.instagram_link}}"><i class="fab fa-instagram-square"></i></a></li>
+            {% endif %}
             {% if company_info.youtube_link %}
             <li><a href="{{ company_info.youtube_link}}"><i class="fab fa-youtube" target="_blank"></i></a></li>
             {% endif %}
