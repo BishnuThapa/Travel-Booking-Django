@@ -74,7 +74,7 @@
                 <li class="nav-item active">
                   <a class="nav-link" href="/">Home</a>
                 </li>
-                <li class="nav-item dropdown">
+                {% comment %} <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     All Destination
                   </a>
@@ -85,12 +85,12 @@
                     
                     {% endfor %}
                   </div>
-                </li>
+                </li> {% endcomment %}
                 <li class="nav-item">
                   <div class="dropdown">
                     <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton"
                       data-mdb-toggle="dropdown" aria-expanded="false">
-                      Activities
+                      Inbound Activities
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                       {% for act in activities %}
