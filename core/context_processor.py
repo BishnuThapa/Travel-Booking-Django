@@ -5,7 +5,7 @@ from django.shortcuts import render, get_object_or_404
 def default(request):
     destination = Destination.objects.all()
     outbound = Destination.objects.exclude(name='Nepal')
-    activities = Tour_Type.objects.all()
+    activities = Tour_Type.objects.filter(destination__name=u'Nepal')
     company_info = CompanyInfo.objects.first()
     return {
         'destination': destination,
