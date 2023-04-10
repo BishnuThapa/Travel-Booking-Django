@@ -61,6 +61,7 @@ class DestinationAdmin(admin.ModelAdmin):
         'slug': ['name', ]
     }
     list_display = ('name', 'ordering', 'created_at', 'updated_at')
+    list_editable = ('ordering',)
 
 
 @admin.register(CompanyInfo)

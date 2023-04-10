@@ -38,7 +38,7 @@
   <div class="container">
     <div class="row">
       {% for category in tour_category%}
-      <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+      <div class="col-6 col-sm-6 col-md-4 col-lg-2">
         <img src="{{ category.icon.url }}" alt="" />
         <a href="{% url 'activities' category.slug %}"
           >{{ category.name }} <br /><span
@@ -64,6 +64,72 @@
     </div>
   </div>
 </div>
+
+<!-- Destination Section -->
+<section class="destination">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-sm-12">
+        <h4>Choose Your Destinations</h4>
+      </div>
+      <div class="col-12 col-sm-12 col-md-8 col-lg-8 destibox">
+        <a href="{% url 'destination' first_dest.slug %}">
+          <div class="zoom-out-effect left">
+            <div class="img-box">
+             <img src="{{ first_dest.featured_image.url }}" class="img-responsive" alt="">
+            </div>
+          </div>
+        </a>
+        <div class="desti-text">
+          <!--<h6><a href="{% url 'destination' second_dest.slug %}">{{destination.0.name }}</a></h6>-->
+          <h6><a href="{% url 'destination' first_dest.slug %}">{{first_dest.name }}</a></h6>
+          <p>{{ first_dest.tour_set.all.count }} Packages</p>
+        </div>
+      </div>
+      <div class="col-12 col-sm-12 col-md-4 col-lg-4 destibox2">
+        <a href="{% url 'destination' first_dest.slug %}">
+          <div class="zoom-out-effect left">
+            <div class="img-box">
+             <img src="{{ second_dest.featured_image.url }}" class="img-responsive" alt="">
+            </div>
+          </div>
+        </a>
+        <div class="desti-text">
+          <h6><a href="{% url 'destination' second_dest.slug %}">{{second_dest.name}}</a></h6>
+          <p>{{ second_dest.tour_set.all.count }} Packages</p>
+        </div>
+      </div>
+      <div class="col-12 col-sm-12 col-md-4 col-lg-4 destibox3">
+        <a href="{% url 'destination' third_dest.slug %}">
+          <div class="zoom-out-effect left">
+            <div class="img-box">
+             <img src="{{ third_dest.featured_image.url }}" class="img-responsive" alt="">
+            </div>
+          </div>
+        </a>
+        <div class="desti-text">
+          <h6><a href="{% url 'destination' third_dest.slug %}">{{third_dest.name}}</a></h6>
+          <p>{{ third_dest.tour_set.all.count }} Packages</p>
+        </div>
+      </div>
+      <div class="col-12 col-sm-12 col-md-8 col-lg-8 destibox4">
+        <a href="{% url 'destination' fourth_dest.slug %}">
+          <div class="zoom-out-effect left">
+            <div class="img-box">
+             <img src="{{ fourth_dest.featured_image.url }}" class="img-responsive" alt="">
+            </div>
+          </div>
+        </a>
+        <div class="desti-text">
+          <h6><a href="{% url 'destination' fourth_dest.slug %}">{{fourth_dest.name}}</a></h6>
+          <p>{{ fourth_dest.tour_set.all.count }} Packages</p>
+        </div>
+      </div>
+    </div>
+  </div>  
+</section>
+
+<!-- End of Destination Section -->
 
 <!-- adventure start here -->
 <div class="adventure">
@@ -473,111 +539,111 @@
   </div>
 </div>
 
-{% if culturaltour %}
-<div class="adventure">
-  <div class="container">
-    <div class="row">
-      <div class="col-12 mt-5 mb-3 col-sm-12">
-        <h3>Religious & Cultural Tour</h3>
-        <p class="exclusive-text">
-          We offer you a large variety of popular outdoor adventure activities
-          on earth. <a href="#">View All of Our Deals</a>
-        </p>
-      </div>
+<!--{% if culturaltour %}-->
+<!--<div class="adventure">-->
+<!--  <div class="container">-->
+<!--    <div class="row">-->
+<!--      <div class="col-12 mt-5 mb-3 col-sm-12">-->
+<!--        <h3>Religious & Cultural Tour</h3>-->
+<!--        <p class="exclusive-text">-->
+<!--          We offer you a large variety of popular outdoor adventure activities-->
+<!--          on earth. <a href="#">View All of Our Deals</a>-->
+<!--        </p>-->
+<!--      </div>-->
 
-      {% for tour in culturaltour %}
-      <div class="col-12 col-sm-12 col-md-6 col-lg-4">
-        <div class="adventure-box">
-          <div class="box">
-            <div class="imgBox">
-              <img src="{{ tour.featured_image.url }}" loading="lazy" alt="" />
-            </div>
-            <div class="content">
-              <a href="{% url 'tour-detail' tour.slug %}" class="btn btn-book"
-                >Learn More</a
-              >
-            </div>
-          </div>
-          <h6 class="group">Cultural Tour</h6>
-          {% comment %}
-          <p class="reviews">
-            <i class="fa fa-star"></i><i class="fa fa-star"></i
-            ><i class="fa fa-star"></i><i class="fa fa-star"></i
-            ><i class="fa fa-star"></i> of 31 reviews
-          </p>
-          {% endcomment %}
-          <div class="price-box">
-            {% if tour.regular_price %}
-            <span class="trip-card__regular-price"
-              >from <del>US$ {{tour.regular_price }}</del></span
-            >
-            {% endif %}
-            <span class="trip-card__sale-price"
-              >US$ <strong>{{tour.sell_price }}</strong><sup></sup
-            ></span>
-          </div>
-          <h5>
-            <a href="{% url 'tour-detail' tour.slug %}"
-              >{{tour.name |truncatechars:35}}</a
-            >
-          </h5>
-          <ul>
-            <li>
-              <i class="fas fa-tachometer-alt"></i><span>Grade</span>
-              <h6>{{tour.difficulty}}</h6>
-            </li>
-            {% if tour.duration %}
-            <li>
-              <i class="far fa-calendar-alt"></i><span>Duration</span>
-              <h6>{{tour.duration }} Days</h6>
-            </li>
-            {% endif %}
-            <li>
-              <i class="fas fa-hiking"></i><span>Activity</span>
-              <h6>{{ tour.activity }}</h6>
-            </li>
-          </ul>
-        </div>
-      </div>
-      {% endfor %}
-    </div>
-  </div>
-</div>
-{% endif %}
+<!--      {% for tour in culturaltour %}-->
+<!--      <div class="col-12 col-sm-12 col-md-6 col-lg-4">-->
+<!--        <div class="adventure-box">-->
+<!--          <div class="box">-->
+<!--            <div class="imgBox">-->
+<!--              <img src="{{ tour.featured_image.url }}" loading="lazy" alt="" />-->
+<!--            </div>-->
+<!--            <div class="content">-->
+<!--              <a href="{% url 'tour-detail' tour.slug %}" class="btn btn-book"-->
+<!--                >Learn More</a-->
+<!--              >-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <h6 class="group">Cultural Tour</h6>-->
+<!--          {% comment %}-->
+<!--          <p class="reviews">-->
+<!--            <i class="fa fa-star"></i><i class="fa fa-star"></i-->
+<!--            ><i class="fa fa-star"></i><i class="fa fa-star"></i-->
+<!--            ><i class="fa fa-star"></i> of 31 reviews-->
+<!--          </p>-->
+<!--          {% endcomment %}-->
+<!--          <div class="price-box">-->
+<!--            {% if tour.regular_price %}-->
+<!--            <span class="trip-card__regular-price"-->
+<!--              >from <del>US$ {{tour.regular_price }}</del></span-->
+<!--            >-->
+<!--            {% endif %}-->
+<!--            <span class="trip-card__sale-price"-->
+<!--              >US$ <strong>{{tour.sell_price }}</strong><sup></sup-->
+<!--            ></span>-->
+<!--          </div>-->
+<!--          <h5>-->
+<!--            <a href="{% url 'tour-detail' tour.slug %}"-->
+<!--              >{{tour.name |truncatechars:35}}</a-->
+<!--            >-->
+<!--          </h5>-->
+<!--          <ul>-->
+<!--            <li>-->
+<!--              <i class="fas fa-tachometer-alt"></i><span>Grade</span>-->
+<!--              <h6>{{tour.difficulty}}</h6>-->
+<!--            </li>-->
+<!--            {% if tour.duration %}-->
+<!--            <li>-->
+<!--              <i class="far fa-calendar-alt"></i><span>Duration</span>-->
+<!--              <h6>{{tour.duration }} Days</h6>-->
+<!--            </li>-->
+<!--            {% endif %}-->
+<!--            <li>-->
+<!--              <i class="fas fa-hiking"></i><span>Activity</span>-->
+<!--              <h6>{{ tour.activity }}</h6>-->
+<!--            </li>-->
+<!--          </ul>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      {% endfor %}-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+<!--{% endif %}-->
 
-<div class="testimonials">
-  <div class="container">
-    <div class="row">
-      <div class="col-12 col-sm-12">
-        <h4>Traveller's Review</h4>
-      </div>
-      <script src="https://apps.elfsight.com/p/platform.js" defer></script>
-      <div class="elfsight-app-ca19e0e4-1d55-4a15-ab34-d595fa6f5fab"></div>
-      {% comment %}
-      <div class="col-12 col-sm-12 testi-item owl-carousel">
-        <div class="testi-box">
-          <h5><a href="#">Three high passes in the Everest, Nepal</a></h5>
-          <p class="testi-content">
-            This year, I had an opportunity to explore three high passes in the
-            Everest region of Nepal and I did it. All the credit to Third Rock.
-            Had I contacted another company, I would not have got satisfied. Mr.
-            Naba personally called me, I ask... <a href="#">Read More...</a>
-          </p>
-          <p class="testi-rating">
-            <i class="fa fa-star"></i><i class="fa fa-star"></i
-            ><i class="fa fa-star"></i><i class="fa fa-star"></i
-            ><i class="fa fa-star"></i>
-          </p>
-          <h6>Kathmandu, Nepal | June 06 2020 <span>John Doe</span></h6>
-        </div>
-      </div>
-      {% endcomment %}
-      <div class="col-12 col-sm-12">
-        <a href="#" class="btn btn-testi">View More</a>
-      </div>
-    </div>
-  </div>
-</div>
+<!--<div class="testimonials">-->
+<!--  <div class="container">-->
+<!--    <div class="row">-->
+<!--      <div class="col-12 col-sm-12">-->
+<!--        <h4>Traveller's Review</h4>-->
+<!--      </div>-->
+<!--      <script src="https://apps.elfsight.com/p/platform.js" defer></script>-->
+<!--      <div class="elfsight-app-ca19e0e4-1d55-4a15-ab34-d595fa6f5fab"></div>-->
+<!--      {% comment %}-->
+<!--      <div class="col-12 col-sm-12 testi-item owl-carousel">-->
+<!--        <div class="testi-box">-->
+<!--          <h5><a href="#">Three high passes in the Everest, Nepal</a></h5>-->
+<!--          <p class="testi-content">-->
+<!--            This year, I had an opportunity to explore three high passes in the-->
+<!--            Everest region of Nepal and I did it. All the credit to Third Rock.-->
+<!--            Had I contacted another company, I would not have got satisfied. Mr.-->
+<!--            Naba personally called me, I ask... <a href="#">Read More...</a>-->
+<!--          </p>-->
+<!--          <p class="testi-rating">-->
+<!--            <i class="fa fa-star"></i><i class="fa fa-star"></i-->
+<!--            ><i class="fa fa-star"></i><i class="fa fa-star"></i-->
+<!--            ><i class="fa fa-star"></i>-->
+<!--          </p>-->
+<!--          <h6>Kathmandu, Nepal | June 06 2020 <span>John Doe</span></h6>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      {% endcomment %}-->
+<!--      <div class="col-12 col-sm-12">-->
+<!--        <a href="#" class="btn btn-testi">View More</a>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
 
 <div class="blog-section">
   <div class="container">
