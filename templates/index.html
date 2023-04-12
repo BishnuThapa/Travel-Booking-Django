@@ -82,7 +82,7 @@
         </a>
         <div class="desti-text">
           <!--<h6><a href="{% url 'destination' second_dest.slug %}">{{destination.0.name }}</a></h6>-->
-          <h6><a href="{% url 'destination' first_dest.slug %}">{{first_dest.name }}</a></h6>
+          <h6><a href="{% url 'destination' first_dest.slug %}">{{ destination.0.name }}</a></h6>
           <p>{{ first_dest.tour_set.all.count }} Packages</p>
         </div>
       </div>
