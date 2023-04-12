@@ -73,17 +73,17 @@
         <h4>Choose Your Destinations</h4>
       </div>
       <div class="col-12 col-sm-12 col-md-8 col-lg-8 destibox">
-        <a href="{% url 'destination' first_dest.slug %}">
+        <a href="{% url 'destination' destination.0.slug %}">
           <div class="zoom-out-effect left">
             <div class="img-box">
-             <img src="{{ first_dest.featured_image.url }}" class="img-responsive" alt="">
+             <img src="{{ destination.0.featured_image.url }}" class="img-responsive" alt="">
             </div>
           </div>
         </a>
         <div class="desti-text">
           <!--<h6><a href="{% url 'destination' second_dest.slug %}">{{destination.0.name }}</a></h6>-->
-          <h6><a href="{% url 'destination' first_dest.slug %}">{{ destination.0.name }}</a></h6>
-          <p>{{ first_dest.tour_set.all.count }} Packages</p>
+          <h6><a href="{% url 'destination' destination.0.slug %}">{{ destination.0.name }}</a></h6>
+          <p>{{ destination.0.tour_set.all.count }} Packages</p>
         </div>
       </div>
       <div class="col-12 col-sm-12 col-md-4 col-lg-4 destibox2">
