@@ -77,8 +77,8 @@ a.btn.btn-news-read {
     line-height: 16px;
     font-weight: 600;
     color: #ffffff;
-    background-color: #e37740;
-    border: 1px solid #e37740;
+    background-color: #308DD9;
+    border: 1px solid #308DD9;
 }
 
 
@@ -111,7 +111,7 @@ a.logo h5{
     font-size: 40px;
     line-height: 44px;
     font-weight: 900;
-    color: #e37740;
+    color: #308DD9;
     margin-bottom: 0px;
 }
 
@@ -196,7 +196,7 @@ a.logo h5{
 }
 
 .rating-rating h6 i{
-    border: 1px solid #e37740;
+    border: 1px solid #308DD9;
     padding: 2px;
     border-radius: 50%;
     font-size: 10px;
@@ -204,15 +204,15 @@ a.logo h5{
     width: 20px;
     line-height: 12px;
     text-align: center;
-    color: #e37740;
+    color: #308DD9;
     margin-right: 2px;
 }
 
 a.btn.btn-plans {
-    border: 1px solid #e37740;
-    background-color: #e37740;
+    border: 1px solid #308DD9;
+    background-color: #308DD9;
     padding: 10px 20px;
-    font-size: 14px;
+    font-size: 16px;
     border-radius: 30px;
     line-height: 18px;
     font-weight: 600;
@@ -223,8 +223,8 @@ a.btn.btn-plans {
 }
 
 a.btn.btn-plans:hover{
-    border: 1px solid #e37740;
-    background-color: #e37740;
+    border: 1px solid #308DD9;
+    background-color: #308DD9;
     color: #fff;
 }
 
@@ -318,7 +318,7 @@ a.btn.btn-plans:hover{
 
 
 .header-search #custom-search-input{
-    border: solid 1px #e37740;
+    border: solid 1px #308DD9;
     border-radius: 30px;
     background-color: #fff;
     margin-top: 5px;
@@ -328,7 +328,7 @@ a.btn.btn-plans:hover{
     border: 0;
     box-shadow: none;
     background-color: transparent;
-    color: #e37740;
+    color: #308DD9;
 }
 
 /*#custom-search-input input::placeholder{
@@ -342,19 +342,19 @@ a.btn.btn-plans:hover{
     border: 0;
     color: #ffffff;
     padding: 4px 16px 0 14px;
-    border-left: solid 1px #e37740;
+    border-left: solid 1px #308DD9;
     border-radius: 0;
 }
 
 .header-search #custom-search-input button:hover{
     border: 0;
     box-shadow: none;
-    border-left: solid 1px #e37740;
+    border-left: solid 1px #308DD9;
 }
 
 .header-search #custom-search-input .fa-search{
     font-size: 23px;
-    color: #e37740;
+    color: #308DD9;
 }
 
 
@@ -363,7 +363,7 @@ a.btn.btn-plans:hover{
 
 
 .menu-section{
-  background-color: #e37740;
+  background-color: #308DD9;
   margin-bottom: -1px;
 }
 
@@ -430,7 +430,7 @@ nav.navbar.navbar-expand-lg.navbar-light {
 
 .dropdown-item:hover{
   color: #fff;
-  background-color: #e37740;
+  background-color: #308DD9;
 }
 
 .dropdown-item {
@@ -476,7 +476,7 @@ nav.navbar.navbar-expand-lg.navbar-light {
 }
 
 .menu-section .nav-pills .nav-link.active{
-    background-color: #e37740;
+    background-color: #308DD9;
     border-radius: 0px !important;
     color: #fff !important;
 }
@@ -493,7 +493,7 @@ nav.navbar.navbar-expand-lg.navbar-light {
 }
 
 .menu-section .nav-pills .nav-link:hover{
-    background-color: #e37740;
+    background-color: #308DD9;
     color: #fff !important;
     border-radius: 0px !important;
     border-bottom: 1px solid #eee !important
@@ -526,8 +526,8 @@ display: block;
 }
 
 .menu-section button#dropdownMenuButton {
-    background-color: #e37740;
-    border: 1px solid #e37740;
+    background-color: #308DD9;
+    border: 1px solid #308DD9;
     padding: 12px 30px;
     border-radius: 0px;
     color: #fff;
@@ -570,7 +570,7 @@ display: block;
     margin-top: -84px;
     position: relative;
     z-index: 99;
-    /* background-color: #e37740; */
+    /* background-color: #308DD9; */
 }
 
 .searchbox label {
@@ -604,8 +604,8 @@ display: block;
 }
 
 a.btn.btn-search:hover {
-    border: 1px solid #e37740;
-    background-color: #e37740;
+    border: 1px solid #308DD9;
+    background-color: #308DD9;
     color: #fff;
 }
 
@@ -635,7 +635,7 @@ a.btn.btn-search {
     position: absolute;
     top: -32px;
     right: 15px;
-    color: #e37740;
+    color: #308DD9;
     z-index: 99;
     display: inline-block;
     float: left;
@@ -819,8 +819,8 @@ a.btn.btn-search {
 }
 
 a.btn.btn-explore{
-    border: 1px solid #e37740;
-    background-color: #e37740;
+    border: 1px solid #308DD9;
+    background-color: #308DD9;
     padding: 14px 30px;
     border-radius: 30px;
     font-size: 16px;
@@ -855,7 +855,7 @@ a.btn.btn-explore i{
 
 .destination-section{
     padding: 20px 0;
-    background-color: #e37740;
+    background-color: #308DD9;
 }
 
 .destination-section img {
@@ -911,7 +911,7 @@ a.btn.btn-explore i{
     font-size: 42px;
     line-height: 48px;
     font-weight: 700;
-    color: #e37740;
+    color: #308DD9;
     margin-bottom: 20px;
 }
 
@@ -920,8 +920,8 @@ a.btn.btn-explore i{
 }
 
 a.btn.btn-reads {
-    border: 1px solid #e37740;
-    background-color: #e37740;
+    border: 1px solid #308DD9;
+    background-color: #308DD9;
     padding: 10px 20px;
     font-size: 16px;
     line-height: 20px;
@@ -951,7 +951,7 @@ a.btn.btn-reads:hover{
 
 .titlehead{
     margin-left: 130px;
-    border-left: 2px solid #e37740;
+    border-left: 2px solid #308DD9;
     padding-left: 30px;
 }
 
@@ -967,7 +967,7 @@ a.btn.btn-reads:hover{
     font-size: 14px;
     line-height: 18px;
     font-weight: 700;
-    color: #e37740;
+    color: #308DD9;
     margin-bottom: 10px;
     text-transform: uppercase;
 }
@@ -1192,7 +1192,7 @@ video#hero-video{
     font-size: 42px;
     line-height: 48px;
     font-weight: 700;
-    color: #e37740;
+    color: #308DD9;
     margin-bottom: 25px;
     text-align: center;
 }
@@ -1201,7 +1201,7 @@ video#hero-video{
     font-size: 42px;
     line-height: 48px;
     font-weight: 700;
-    color: #e37740;
+    color: #308DD9;
     margin-bottom: 5px;
     text-align: center;
 }
@@ -1290,13 +1290,13 @@ video#hero-video{
 }
 
 .adventure-box .box .content .btn{
-    color: #e37740;
+    color: #308DD9;
     text-decoration: none;
 }
 
 .adventure-box .box .content .btn:hover{
-    border: 1px solid #e37740;
-    background-color: #e37740;
+    border: 1px solid #308DD9;
+    background-color: #308DD9;
     color: #fff;
 }
 
@@ -1316,7 +1316,8 @@ video#hero-video{
 }
 
 .group{
-    background-color: #0091ff;
+    /*background-color: #0091ff;*/
+    background-color:#f98a18;
     position: absolute;
     top: -3px;
     right: 30px;
@@ -1392,9 +1393,9 @@ video#hero-video{
     bottom: 35%;
     right: 0px;
     width: 126px;
-    background-color: #e37740;
+    background-color: #28a745;
     padding: 5px;
-    color: rgba(255,255,255,0.75);
+    color: rgb(255,255,255);
     text-align: center;
     z-index: 2;
 }
@@ -1422,7 +1423,7 @@ span.trip-card__sale-price{
 
 .adventure-box h5 a{
     text-decoration: none;
-    color: #e37740;
+    color: #308DD9;
 }
 
 .adventure-box h5 a:hover{
@@ -1442,10 +1443,10 @@ span.trip-card__sale-price{
 
 .adventure-box ul li i{
     font-size: 16px;
-    border: 1px solid #e37740;
+    /*border: 1px solid #308DD9;*/
     padding: 5px;
-    background-color: #e37740;
-    color: #fff;
+    background-color: transparent;
+    color: #308DD9;
     float: left;
     margin-right: 5px;
     border-radius: 3px;
@@ -1482,7 +1483,8 @@ span.trip-card__sale-price{
 }
 
 .adventure-box{
-    border-bottom: 1px solid #eee;
+    /*border-bottom: 1px solid #eee;*/
+    box-shadow: 0px 12px 12px -15px #111; 
     padding-bottom: 30px;
     margin-bottom: 50px;
 }
@@ -1525,7 +1527,7 @@ span.trip-card__sale-price{
 }
 
 .award-box h5 a:hover{
-    color: #e37740;
+    color: #308DD9;
 }
 
 .award-box p{
@@ -1572,11 +1574,11 @@ span.trip-card__sale-price{
 }
 
 .trip-section h4 a:hover{
-    color: #e37740;
+    color: #308DD9;
 }
 
 .trip-section h5{
-    background-color: #e37740;
+    background-color: #308DD9;
     border: 2px solid #fff;
     padding: 10px;
     text-align: center;
@@ -1609,7 +1611,7 @@ span.trip-card__sale-price{
     list-style-type: none;
     display: inline-block;
     width: 24%;
-    border: 1px dotted #e37740;
+    border: 1px dotted #308DD9;
     padding: 13px;
     margin-right: -5px;
     background-color: rgba(0, 0, 0, 0.2);
@@ -1626,7 +1628,7 @@ span.trip-card__sale-price{
     font-size: 12px;
     line-height: 16px;
     font-weight: 700;
-    color: #e37740;
+    color: #308DD9;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
@@ -1738,7 +1740,7 @@ span.trip-card__sale-price{
 
 .flight-section .nav-tabs .nav-item.show .nav-link, .flight-section .nav-tabs .nav-link.active {
     color: #fff;
-    background-color: #e37740;
+    background-color: #308DD9;
 }
 
 .flight-section #tabs .nav-tabs .nav-item.show .nav-link, .flight-section .nav-tabs .nav-link.active{
@@ -1863,8 +1865,8 @@ span.trip-card__sale-price{
 }
 
 .flight-section button.btn.btn-primary {
-    border: 1px solid #e37740;
-    background-color: #e37740;
+    border: 1px solid #308DD9;
+    background-color: #308DD9;
     padding: 10px 24px;
     border-radius: 30px;
     font-size: 14px;
@@ -1908,8 +1910,8 @@ span.trip-card__sale-price{
 }
 
 a.btn.btn-getcard {
-    border: 1px solid #e37740;
-    background-color: #e37740;
+    border: 1px solid #308DD9;
+    background-color: #308DD9;
     padding: 14px 44px;
     font-size: 14px;
     line-height: 18px;
@@ -1975,7 +1977,7 @@ h1 {
 }
 
 .flight-section button {
-  background-color: #e37740;
+  background-color: #308DD9;
   color: #ffffff;
   border: none;
   padding: 10px 20px;
@@ -2029,7 +2031,7 @@ h1 {
     font-size: 42px;
     line-height: 48px;
     font-weight: 700;
-    color: #e37740;
+    color: #308DD9;
     margin-bottom: 25px;
     text-align: center;
 }
@@ -2070,8 +2072,8 @@ a.btn.btn-views{
 }
 
 a.btn.btn-views:hover{
-    border: 1px solid #e37740;
-    background: #e37740;
+    border: 1px solid #308DD9;
+    background: #308DD9;
     color: #fff;
     text-decoration: none;
 }
@@ -2340,9 +2342,9 @@ td {
 }
 
 a.btn.btn--border.btn--small {
-    border: 1px solid #e37740;
+    border: 1px solid #308DD9;
     color: #fff;
-    background-color: #e37740;
+    background-color: #308DD9;
     border-radius: 30px;
     padding: 6px 30px;
     font-size: 14px;
@@ -2356,14 +2358,14 @@ a.btn.btn--border.btn--small:hover{
 }
 
 a.btn.btnjoin-trip {
-    border: 2px solid #e37740;
+    border: 2px solid #308DD9;
     background-color: transparent;
     padding: 10px 40px;
     border-radius: 30px;
     font-size: 18px;
     line-height: 22px;
     font-weight: 600;
-    color: #e37740;
+    color: #308DD9;
     max-width: 190px;
     width: 100%;
     margin: 0 auto;
@@ -2524,7 +2526,7 @@ span.fa.fa-angle-right {
     font-size: 42px;
     line-height: 48px;
     font-weight: 700;
-    color: #e37740;
+    color: #308DD9;
     margin-bottom: 25px;
     text-align: center;
 }
@@ -2579,7 +2581,7 @@ span.fa.fa-angle-right {
 }
 
 .exclusive-text a:hover{
-    color: #e37740;
+    color: #308DD9;
 }
 
 /****************PLAN SECTION***************/
@@ -2602,8 +2604,8 @@ span.fa.fa-angle-right {
 }
 
 a.btn.btn-plan{
-    border: 2px solid #e37740;
-    background-color: #e37740;
+    border: 2px solid #308DD9;
+    background-color: #308DD9;
     border-radius: 30px;
     padding: 14px 40px;
     font-size: 14px;
@@ -2630,7 +2632,7 @@ a.btn.btn-plan:hover{
     font-size: 42px;
     line-height: 48px;
     font-weight: 700;
-    color: #e37740;
+    color: #308DD9;
     margin-bottom: 25px;
     text-align: center;
 }
@@ -2799,7 +2801,7 @@ a.btn.btn-plan:hover{
     font-size: 42px;
     line-height: 48px;
     font-weight: 700;
-    color: #e37740;
+    color: #308DD9;
     margin-bottom: 25px;
 }
 
@@ -2817,27 +2819,27 @@ a.btn.btn-plan:hover{
 
 .blog-box h5 a {
     text-decoration: none;
-    color: #e37740;
+    color: #308DD9;
 }
 
 .blog-box h5 a:hover {
-    color: #e37740;
+    color: #308DD9;
 }
 
 a.btn.btn-continue {
-    border: 1px solid #e37740;
+    border: 1px solid #308DD9;
     background-color: transparent;
     padding: 8px 30px;
     border-radius: 30px;
     font-size: 14px;
     line-height: 18px;
     font-weight: 600;
-    color: #e37740;
+    color: #308DD9;
 }
 
 a.btn.btn-continue:hover{
-    border: 1px solid #e37740;
-    background-color: #e37740;
+    border: 1px solid #308DD9;
+    background-color: #308DD9;
     color: #fff;
 }
 
@@ -3036,7 +3038,7 @@ a.btn.btn-become:hover{
     font-size: 16px;
     line-height: 20px;
     font-weight: 600;
-    color: #e37740;
+    color: #308DD9;
     margin-bottom: 10px;
     text-transform: uppercase;
 }
@@ -3061,7 +3063,7 @@ ul.footer-lists li a{
 
 ul.footer-lists li a:hover{
     text-decoration: underline;
-    color: #e37740;
+    color: #308DD9;
 }
 
 a.btn.btn-customized{
@@ -3151,7 +3153,7 @@ ul.footer-icons li a i.fa-youtube:hover{
     font-size: 16px;
     line-height: 20px;
     font-weight: 600;
-    color: #e37740;
+    color: #308DD9;
     margin-top: 20px;
     margin-bottom: 10px;
     text-align: center;
@@ -3159,8 +3161,8 @@ ul.footer-icons li a i.fa-youtube:hover{
 }
 
 a.btn.btn-partners{
-    border: 1px solid #e37740;
-    background-color: #e37740;
+    border: 1px solid #308DD9;
+    background-color: #308DD9;
     padding: 14px 40px;
     font-size: 18px;
     line-height: 22px;
@@ -3180,7 +3182,7 @@ a.btn.btn-partners{
     font-size: 20px;
     line-height: 24px;
     font-weight: 400;
-    color: #e37740;
+    color: #308DD9;
     margin-bottom: 20px;
 }
 
@@ -3219,7 +3221,7 @@ a.btn.btn-partners{
     font-size: 16px;
     line-height: 20px;
     font-weight: 600;
-    color: #e37740;
+    color: #308DD9;
     margin-bottom: 5px;
     text-transform: uppercase;
 }
@@ -3240,7 +3242,7 @@ a.btn.btn-partners{
 }
 
 .bottom-footer{
-    background-color: #e37740;
+    background-color: #308DD9;
     padding: 15px 0;
 }
 
@@ -3296,7 +3298,7 @@ border: 2px solid #243c4f;
 .content .btn {
 min-height: 50px; 
 border-radius:0 10px 10px 0;
-background: #e37740;
+background: #308DD9;
 color: #fff;
 font-weight:600;
 }
@@ -3312,7 +3314,7 @@ font-weight:600;
     position: fixed;
     text-align: center;
     z-index: 99999999;
-    background-color: #e37740;
+    background-color: #308DD9;
     line-height: 20px;
     border-radius: 5px 0 0 5px;
     right: 0px;
@@ -3385,7 +3387,7 @@ font-weight:600;
     font-size: 42px;
     line-height: 48px;
     font-weight: 700;
-    color: #e37740;
+    color: #308DD9;
     margin-bottom: 25px;
     text-align: center;
 }
@@ -3448,11 +3450,11 @@ font-weight:600;
 }
 
 .testi-box h5 a:hover{
-    color: #e37740;
+    color: #308DD9;
 }
 
 .testi-box p a{
-    color: #e37740;
+    color: #308DD9;
     text-decoration: none;
 }
 
@@ -3489,8 +3491,8 @@ font-weight:600;
 }
 
 a.btn.btn-testi {
-    border: 1px solid #e37740;
-    background-color: #e37740;
+    border: 1px solid #308DD9;
+    background-color: #308DD9;
     padding: 10px 30px;
     border-radius: 30px;
     font-size: 16px;
@@ -3669,7 +3671,7 @@ header
 .tourdes ul li{
     list-style-type: none;
     display: inline-block;
-    border-bottom: 1px solid #e37740;
+    border-bottom: 1px solid #308DD9;
     width: 47%;
     margin-right: 20px;
     font-size: 14px;
@@ -3880,7 +3882,7 @@ input[type=checkbox], input[type=radio] {
 }
 
 .overviews{
-    border-bottom: 1px solid #e37740;
+    border-bottom: 1px solid #308DD9;
     padding-bottom: 30px;
 }
 
@@ -3888,7 +3890,7 @@ input[type=checkbox], input[type=radio] {
     font-size: 30px;
     line-height: 34px;
     font-weight: 700;
-    color: #e37740;
+    color: #308DD9;
     margin-bottom: 15px;
     margin-top: 50px;
     text-decoration: underline;
@@ -3898,7 +3900,7 @@ input[type=checkbox], input[type=radio] {
     font-size: 24px;
     line-height: 30px;
     font-weight: 700;
-    color: #e37740;
+    color: #308DD9;
     margin-bottom: 10px;
     margin-top: 40px;
     text-decoration: underline;
@@ -3929,7 +3931,7 @@ ul.trip-facts-inline li i{
     font-size: 30px;
     line-height: 34px;
     font-weight: 700;
-    color: #e37740;
+    color: #308DD9;
     margin-bottom: 15px;
     margin-top: 50px;
     text-decoration: underline;
@@ -3937,7 +3939,7 @@ ul.trip-facts-inline li i{
 
 .itenerary{
     padding-bottom: 30px;
-    border-bottom: 1px solid #e37740;
+    border-bottom: 1px solid #308DD9;
 }
 
 
@@ -3945,7 +3947,7 @@ ul.trip-facts-inline li i{
 
 
 .main{
-    border-right: 1px solid #e37740;
+    border-right: 1px solid #308DD9;
     padding-right: 30px;
 }
 
@@ -3994,7 +3996,7 @@ header
 }
 
 .price-listing{
-    border: solid 1px #e37740;
+    border: solid 1px #308DD9;
     margin-bottom: 20px;
 }
 
@@ -4009,7 +4011,7 @@ header
 }
 
 .price-listing h3{
-    font-size: 40px;
+    font-size: 20px;
     line-height: 44px;
     font-weight: 400;
     color: #000;
@@ -4019,6 +4021,9 @@ header
 
 .price-listing h3 span{
     font-weight: 700;
+    font-size: 30px;
+    line-height: 44px;
+
 }
 
 .price-listing h3 sup{
@@ -4194,13 +4199,13 @@ ul.social-link li a i{
 }
 
 ul.social-link li a i:hover{
-    border: 1px solid #e37740;
-    color: #e37740;
+    border: 1px solid #308DD9;
+    color: #308DD9;
 }
 
 a.btn.btn-book-trip{
-    background-color: #e37740;
-    border: 1px solid #e37740;
+    background-color: #308DD9;
+    border: 1px solid #308DD9;
     padding: 10px 20px;
     border-radius: 20px;
     font-size: 14px;
@@ -4251,7 +4256,7 @@ ul.what-viber li a i.fa-viber{
 }
 
 /*.download-box{
-    border: solid 1px #e37740;
+    border: solid 1px #308DD9;
     padding: 20px;
     margin-bottom: 30px;
 }*/
@@ -4264,7 +4269,7 @@ ul.what-viber li a i.fa-viber{
 }
 
 a.btn.btn-download{
-    border: 1px solid #e37740;
+    border: 1px solid #308DD9;
     background-color: transparent;
     padding: 10px 30px;
     width: 100%;
@@ -4272,13 +4277,13 @@ a.btn.btn-download{
     font-size: 16px;
     line-height: 20px;
     font-weight: 600;
-    color: #e37740;
+    color: #308DD9;
     margin-top: 10px;
 }
 
 a.btn.btn-download:hover{
-    border: 1px solid #e37740;
-    background-color: #e37740;  
+    border: 1px solid #308DD9;
+    background-color: #308DD9;  
     color: #fff;
 }
 
@@ -4298,7 +4303,7 @@ a.btn.btn-download:hover{
 
 .scroll-menus{
     box-shadow: 0 2px 10px 0 rgba(0,0,0,0.15);
-    background-color: #e37740;
+    background-color: #308DD9;
     height: 50px;
 }
 
@@ -4319,7 +4324,7 @@ a.btn.btn-download:hover{
     font-weight: 600;
     color: #fff;
     padding: 17px 15px 16px;
-    background-color: #e37740;
+    background-color: #308DD9;
     text-decoration: none;
 }
 
@@ -4405,7 +4410,7 @@ a.btn.btn-book-thetrip:hover {
     font-size: 30px;
     line-height: 35px;
     font-weight: 400;
-    color: #e37740;
+    color: #308DD9;
     text-align: center;
     background-color: #eee;
     padding: 10px;
@@ -4463,7 +4468,7 @@ a.btn.btn-book-thetrip:hover {
     font-size: 25px;
     line-height: 30px;
     font-weight: 700;
-    color: #e37740;
+    color: #308DD9;
     margin-bottom: 15px;
 }
 
@@ -4489,7 +4494,7 @@ a.btn.btn-book-thetrip:hover {
     font-size: 20px;
     line-height: 26px;
     font-weight: 700;
-    color: #e37740;
+    color: #308DD9;
     margin-bottom: 15px;
 }
 
@@ -4503,7 +4508,7 @@ a.btn.btn-book-thetrip:hover {
     font-size: 30px;
     line-height: 36px;
     font-weight: 700;
-    color: #e37740;
+    color: #308DD9;
     margin-bottom: 15px;
 }
 
@@ -4518,14 +4523,14 @@ a.btn.btn-book-thetrip:hover {
 
 .photo-video{
     padding-bottom: 30px;
-    border-bottom: 1px solid #e37740;
+    border-bottom: 1px solid #308DD9;
 }
 
 .photo-video h4{
     font-size: 30px;
     line-height: 36px;
     font-weight: 700;
-    color: #e37740;
+    color: #308DD9;
     margin-bottom: 15px;
     margin-top: 50px;
     text-decoration: underline;
@@ -4620,7 +4625,7 @@ div#carouselExampleIndicators{
     font-size: 30px;
     line-height: 36px;
     font-weight: 700;
-    color: #e37740;
+    color: #308DD9;
     margin-bottom: 0px;
     width: 100%;
 }
@@ -4805,7 +4810,7 @@ div#carouselExampleIndicators{
     font-size: 20px;
     line-height: 24px;
     font-weight: 700;
-    color: #e37740;
+    color: #308DD9;
     margin-right: 10px;
 }
 
@@ -4855,7 +4860,7 @@ div#carouselExampleIndicators{
     font-size: 30px;
     line-height: 36px;
     font-weight: 700;
-    color: #e37740;
+    color: #308DD9;
     margin-bottom: 15px;
 }
 
@@ -4863,7 +4868,7 @@ div#carouselExampleIndicators{
     font-size: 16px;
     line-height: 20px;
     font-weight: 400;
-    color: #e37740;
+    color: #308DD9;
     text-align: center;
 }
 
@@ -4871,7 +4876,7 @@ div#carouselExampleIndicators{
     font-size: 26px;
     line-height: 30px;
     font-weight: 700;
-    color: #e37740;
+    color: #308DD9;
     display: block;
 }
 
@@ -4879,7 +4884,7 @@ div#carouselExampleIndicators{
     font-size: 20px;
     line-height: 26px;
     font-weight: 700;
-    color: #e37740;
+    color: #308DD9;
     margin-bottom: 15px;
 }
 
@@ -4902,14 +4907,14 @@ div#carouselExampleIndicators{
 .includes{
     padding-bottom: 30px;
     margin-bottom: 30px;
-    border-bottom: 1px solid #e37740;
+    border-bottom: 1px solid #04D26A;
 }
 
 .includes h4{
     font-size: 30px;
     line-height: 36px;
     font-weight: 700;
-    color: #e37740;
+    color: #308DD9;
     margin-bottom: 15px;
     margin-top: 50px;
     text-decoration: underline;
@@ -4943,14 +4948,14 @@ div#carouselExampleIndicators{
 
 .excludes{
     padding-bottom: 30px;
-    border-bottom: 1px solid #e37740;
+    border-bottom: 1px solid #308DD9;
 }
 
 .excludes h4{
     font-size: 30px;
     line-height: 36px;
     font-weight: 700;
-    color: #e37740;
+    color: #F92F60;
     margin-bottom: 15px;
     text-decoration: underline;
 }
@@ -4992,7 +4997,7 @@ div#carouselExampleIndicators{
     font-size: 30px;
     line-height: 36px;
     font-weight: 700;
-    color: #e37740;
+    color: #308DD9;
     margin-bottom: 15px;
 }
 
@@ -5004,14 +5009,14 @@ div#carouselExampleIndicators{
 
 .equipment{
     padding-bottom: 30px;
-    border-bottom: 1px solid #e37740;
+    border-bottom: 1px solid #308DD9;
 }
 
 .equipment h4{
     font-size: 30px;
     line-height: 36px;
     font-weight: 700;
-    color: #e37740;
+    color: #308DD9;
     margin-bottom: 15px;
     margin-top: 50px;
     text-decoration: underline;
@@ -5029,7 +5034,7 @@ div#carouselExampleIndicators{
     font-size: 18px;
     line-height: 22px;
     font-weight: 700;
-    color: #e37740;
+    color: #308DD9;
     margin-bottom: 15px;
 }
 
@@ -5053,14 +5058,14 @@ div#carouselExampleIndicators{
 
 .faqssection {
     padding-bottom: 30px;
-    border-bottom: 1px solid #e37740;
+    border-bottom: 1px solid #308DD9;
 }
 
 .faqssection h4 {
     font-size: 30px;
     line-height: 36px;
     font-weight: 700;
-    color: #e37740;
+    color: #308DD9;
     margin-bottom: 15px;
     margin-top: 50px;
     text-decoration: underline;
@@ -5076,7 +5081,7 @@ div#carouselExampleIndicators{
     font-size: 30px;
     line-height: 36px;
     font-weight: 700;
-    color: #e37740;
+    color: #308DD9;
     margin-bottom: 15px;
 }
 
@@ -5084,7 +5089,7 @@ div#carouselExampleIndicators{
     font-size: 20px;
     line-height: 26px;
     font-weight: 700;
-    color: #e37740;
+    color: #308DD9;
     margin-bottom: 15px;
 }
 
@@ -5092,7 +5097,7 @@ div#carouselExampleIndicators{
     font-size: 18px;
     line-height: 22px;
     font-weight: 700;
-    color: #e37740;
+    color: #308DD9;
     margin-bottom: 15px;
 }
 
@@ -5116,21 +5121,21 @@ div#carouselExampleIndicators{
     font-size: 30px;
     line-height: 36px;
     font-weight: 700;
-    color: #e37740;
+    color: #308DD9;
     margin-bottom: 15px;
 }
 
 /*.trip-reviews{
     padding-bottom: 30px;
     margin-bottom: 30px;
-    border-bottom: 1px solid #e37740;
+    border-bottom: 1px solid #308DD9;
 }*/
 
 .trip-reviews h3{
     font-size: 30px;
     line-height: 36px;
     font-weight: 700;
-    color: #e37740;
+    color: #308DD9;
     margin-bottom: 15px;
     margin-top: 50px;
     text-decoration: underline;
@@ -5491,7 +5496,7 @@ button#groupbooking {
 }
 
 .related ul li a h5:hover{
-    color: #e37740;
+    color: #308DD9;
 }
 
 .related ul li p {
@@ -5509,7 +5514,7 @@ button#groupbooking {
     line-height: 24px;
     font-weight: 600;
     color: #fff;
-    background-color: #e37740;
+    background-color: #308DD9;
     padding: 15px;
     margin-top: 0px;
     margin-bottom: 0px;
@@ -5543,8 +5548,8 @@ button#groupbooking {
 
 .quickform .btn-info {
     color: #fff;
-    background-color: #e37740;
-    border-color: #e37740;
+    background-color: #308DD9;
+    border-color: #308DD9;
 }
 
 .quickform .btn-info:hover{
@@ -5557,7 +5562,7 @@ button#groupbooking {
     line-height: 24px;
     font-weight: 600;
     color: #fff;
-    background-color: #e37740;
+    background-color: #308DD9;
     padding: 15px;
     margin-top: 0px;
     margin-bottom: 0px;
@@ -5594,7 +5599,7 @@ button#groupbooking {
     font-size: 30px;
     line-height: 34px;
     font-weight: 700;
-    color: #e37740;
+    color: #308DD9;
     margin-bottom: 0px;
 }
 
@@ -5609,13 +5614,13 @@ button#groupbooking {
 .banner-bredcrumb ul.breadcrumb li {
     display: inline;
     font-size: 14px;
-    color: #e37740;
+    color: #308DD9;
     font-weight: 600;
     letter-spacing: 1px;
 }
 
 .banner-bredcrumb ul.breadcrumb li a {
-    color: #e37740;
+    color: #308DD9;
     text-decoration: none;
 }
 
@@ -5626,7 +5631,7 @@ button#groupbooking {
 .banner-bredcrumb ul.breadcrumb li+li:before {
     padding: 8px;
     content: "/\00a0";
-    color: #e37740;
+    color: #308DD9;
 }
 
 .about-body {
@@ -5713,8 +5718,8 @@ a.moreless.less{
   background: #fdfdfd;
     line-height: 25px;
     border: 1px solid #ddd;
-    border-top:5px solid #e37740;
-    border-bottom:5px solid #e37740;
+    border-top:5px solid #308DD9;
+    border-bottom:5px solid #308DD9;
     padding:30px 25px;
 }
 
@@ -5722,7 +5727,7 @@ a.moreless.less{
 .team-body nav > div a.nav-item.nav-link:focus
 {
   border: none;
-    background: #e37740;
+    background: #308DD9;
     color:#fff;
     border-radius:0;
     transition:background 0.20s linear;
@@ -5809,7 +5814,7 @@ a.moreless.less{
     font-size: 26px;
     line-height: 30px;
     font-weight: 600;
-    color: #e37740;
+    color: #308DD9;
     margin-bottom: 3px;
 }
 
@@ -5817,7 +5822,7 @@ a.moreless.less{
     font-size: 22px;
     line-height: 26px;
     font-weight: 600;
-    color: #e37740;
+    color: #308DD9;
     margin-bottom: 3px;
 }
 
@@ -5845,7 +5850,7 @@ a.moreless.less{
 }
 
 .blog-box h4 a:hover{
-    color: #e37740;
+    color: #308DD9;
 }
 
 .blog-box img{
@@ -5856,8 +5861,8 @@ a.moreless.less{
 }
 
 a.btn.btn-read{
-    border: 1px solid #e37740;
-    background-color: #e37740;
+    border: 1px solid #308DD9;
+    background-color: #308DD9;
     padding: 8px 15px;
     font-size: 16px;
     line-height: 20px;
@@ -5890,7 +5895,7 @@ a.btn.btn-read:hover{
     font-size: 26px;
     line-height: 30px;
     font-weight: 700;
-    color: #e37740;
+    color: #308DD9;
     margin-bottom: 20px;
 }
 
@@ -5916,7 +5921,7 @@ a.btn.btn-read:hover{
     font-size: 16px;
     line-height: 20px;
     font-weight: 400;
-    color: #e37740;
+    color: #308DD9;
     text-decoration: none;
 }
 
@@ -5928,7 +5933,7 @@ a.btn.btn-read:hover{
     font-size: 26px;
     line-height: 30px;
     font-weight: 700;
-    color: #e37740;
+    color: #308DD9;
     margin-bottom: 20px;
 }
 
@@ -6009,14 +6014,14 @@ a.btn.btn-read:hover{
 }
 
 .relatepack ul li a h5:hover{
-    color: #e37740;
+    color: #308DD9;
 }
 
 .relatepack h4{
     font-size: 24px;
     line-height: 30px;
     font-weight: 400;
-    color: #e37740;
+    color: #308DD9;
     margin-bottom: 15px;
 }
 
@@ -6124,7 +6129,7 @@ a.btn.btn-read:hover{
     padding: 10px 20px;
 }
 .testimonial-body .pag-link > a{
-    background-color: #e37740;
+    background-color: #308DD9;
     color: #fff;
     cursor: pointer;
 }
@@ -6205,7 +6210,7 @@ a.btn.btn-read:hover{
     width: 100%;
     margin: 0 auto;
     margin-bottom: 20px;
-    background-color: #e37740;
+    background-color: #308DD9;
     padding: 20px;
     border-radius: 10px;
     border: 5px solid #4b79b3;
@@ -6249,7 +6254,7 @@ a.btn.btn-read:hover{
     font-size: 26px;
     line-height: 30px;
     font-weight: 700;
-    color: #e37740;
+    color: #308DD9;
     margin-bottom: 20px;
 }
 
@@ -6304,8 +6309,8 @@ a.btn.btn-read:hover{
 }
 
 .detailsrow button.btn.btn-primary{
-    border: 2px solid #e37740;
-    background-color: #e37740;
+    border: 2px solid #308DD9;
+    background-color: #308DD9;
     padding: 12px 30px;
     border-radius: 0px;
     font-size: 18px;
@@ -6330,7 +6335,7 @@ a.btn.btn-read:hover{
     font-size: 34px;
     line-height: 30px;
     font-weight: 400;
-    color: #e37740;
+    color: #308DD9;
     margin-bottom: 15px;
     text-align: center;
 }
@@ -6354,7 +6359,7 @@ a.btn.btn-read:hover{
     font-size: 20px;
     line-height: 24px;
     font-weight: 400;
-    color: #e37740;
+    color: #308DD9;
     margin-bottom: 15px;
 }
 
@@ -6375,7 +6380,7 @@ a.btn.btn-read:hover{
     font-size: 34px;
     line-height: 30px;
     font-weight: 400;
-    color: #e37740;
+    color: #308DD9;
     margin-bottom: 30px;
     text-align: center;
 }
@@ -6453,13 +6458,13 @@ input#exampleFormControlFile1{
     font-size: 40px;
     line-height: 45px;
     font-weight: 400;
-    color: #e37740;
+    color: #308DD9;
     text-align: center;
     margin-bottom: 15px;
 }
 
 .csr-box{
-    border: 5px solid #e37740;
+    border: 5px solid #308DD9;
     padding: 20px;
     background-color: #fbfbfb;
     margin-bottom: 30px;
@@ -6469,7 +6474,7 @@ input#exampleFormControlFile1{
     font-size: 30px;
     line-height: 35px;
     font-weight: 400;
-    color: #e37740;
+    color: #308DD9;
     margin-bottom: 15px;
 }
 
@@ -6495,7 +6500,7 @@ input#exampleFormControlFile1{
     font-size: 20px;
     line-height: 25px;
     font-weight: 400;
-    color: #e37740;
+    color: #308DD9;
     margin-bottom: 15px;
 }
 
@@ -6514,7 +6519,7 @@ input#exampleFormControlFile1{
 }
 
 .why-box i{
-    background-color: #e37740;
+    background-color: #308DD9;
     padding: 10px;
     width: 60px;
     height: 60px;
@@ -6529,7 +6534,7 @@ input#exampleFormControlFile1{
     font-size: 26px;
     line-height: 30px;
     font-weight: 700;
-    color: #e37740;
+    color: #308DD9;
     margin-bottom: 15px;
 }
 
@@ -6555,7 +6560,7 @@ input#exampleFormControlFile1{
     font-size: 32px;
     line-height: 36px;
     font-weight: 600;
-    color: #e37740;
+    color: #308DD9;
     margin-bottom: 15px;
 }
 
@@ -6563,7 +6568,7 @@ input#exampleFormControlFile1{
     font-size: 30px;
     line-height: 34px;
     font-weight: 700;
-    color: #e37740;
+    color: #308DD9;
     margin-bottom: 15px;
 }
 
@@ -6571,7 +6576,7 @@ input#exampleFormControlFile1{
     font-size: 24px;
     line-height: 30px;
     font-weight: 700;
-    color: #e37740;
+    color: #308DD9;
     margin-bottom: 15px;
 }
 
@@ -6584,7 +6589,7 @@ input#exampleFormControlFile1{
     font-size: 24px;
     line-height: 30px;
     font-weight: 400;
-    color: #e37740;
+    color: #308DD9;
     margin-bottom: 15px;
 }
 
@@ -6607,7 +6612,7 @@ input#exampleFormControlFile1{
 }
 
 .recent-box ul li a:hover{
-    color: #e37740;
+    color: #308DD9;
 }
 
 /******************CONTACT US PAGE START HERE******************/
@@ -6663,8 +6668,8 @@ input#exampleFormControlFile1{
 }
 
 .contact-body button.btn.btn-primary {
-    border: 1px solid #e37740;
-    background-color: #e37740;
+    border: 1px solid #308DD9;
+    background-color: #308DD9;
     padding: 10px;
     width: 100%;
     border-radius: 0px;
@@ -6780,7 +6785,7 @@ input#exampleFormControlFile1{
     font-size: 35px;
     line-height: 30px;
     font-weight: 700;
-    color: #e37740;
+    color: #308DD9;
     margin-bottom: 20px;
     text-align: center;
 }
@@ -6803,7 +6808,7 @@ input#exampleFormControlFile1{
 
 .single-trips p i{
     font-size: 30px;
-    color: #e37740;
+    color: #308DD9;
     display: block;
     margin-bottom: 10px;
 }
@@ -6822,8 +6827,8 @@ input#exampleFormControlFile1{
 
 button.btn.btn-primary.nextBtn.pull-right{
     width: 100%;
-    border: 1px solid #e37740;
-    background-color: #e37740;
+    border: 1px solid #308DD9;
+    background-color: #308DD9;
     padding: 12px 30px;
     border-radius: 0px;
     font-size: 18px;
@@ -6909,8 +6914,8 @@ button.btn.btn-primary.nextBtn.pull-right{
 }
 
 a.btn.btn-nepal{
-    border: 1px solid #e37740;
-    background-color: #e37740;
+    border: 1px solid #308DD9;
+    background-color: #308DD9;
     padding: 10px 20px;
     font-size: 16px;
     line-height: 20px;
@@ -7112,7 +7117,9 @@ input[type="checkbox"]{
     margin-bottom: 15px;
 }
 
-
+.mobile-sidebar{
+    display: none;
+}
 
 
 
@@ -7566,6 +7573,17 @@ input[type="checkbox"]{
     }
     .flight-section .tab-content>.tab-pane{
         height: auto;
+    }
+
+    .price-listing{
+        display: none;
+    }
+    
+    .price-listing.mobile-sidebox{
+        display: block !important;
+    }
+    .mobile-sidebar{
+        display: block
     }
 }
 
