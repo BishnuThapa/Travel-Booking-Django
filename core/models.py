@@ -120,8 +120,8 @@ class CompanyInfo(models.Model):
         return self.email
 
     class Meta:
-        verbose_name = 'General Setting'
-        verbose_name_plural = 'General Setting'
+        verbose_name = 'General Settings'
+        verbose_name_plural = 'General Settings'
 
 
 class Tour_Type(models.Model):
