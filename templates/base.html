@@ -55,7 +55,8 @@
           </form>
         </div>
         <div class="col-12 col-sm-6 col-md-3 col-lg-2 search-box">
-          <a href="{% url 'plan-my-trip' %}" class="btn btn-plans">Plan Your Trip</a>
+          <!--<a href="{% url 'plan-my-trip' %}" class="btn btn-plans">Plan Your Trip</a>-->
+          <a href="tel:+9779813265198" class="btn btn-plans"><span> <i class="fab fa-whatsapp"></i> </span> (+977)9813265198</a>
         </div>
       </div>
     </div>
@@ -71,26 +72,27 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav mx-auto">
-                <li class="nav-item active">
+                <!--<li class="nav-item active">-->
+                 <li class="nav-item">
                   <a class="nav-link" href="/">Home</a>
                 </li>
-                {% comment %} <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    All Destination
-                  </a>
-                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  {% for dest in destination %}
-                    <a class="dropdown-item" href="{% url 'destination' dest.slug %}">{{dest.name}}</a>
+                <!--<li class="nav-item dropdown">-->
+                <!--  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+                <!--    Destination-->
+                <!--  </a>-->
+                <!--  <div class="dropdown-menu" aria-labelledby="navbarDropdown">-->
+                <!--  {% for dest in destination %}-->
+                <!--    <a class="dropdown-item" href="{% url 'destination' dest.slug %}">{{dest.name}}</a>-->
                     
                     
-                    {% endfor %}
-                  </div>
-                </li> {% endcomment %}
+                <!--    {% endfor %}-->
+                <!--  </div>-->
+                <!--</li>-->
                 <li class="nav-item">
                   <div class="dropdown">
                     <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton"
                       data-mdb-toggle="dropdown" aria-expanded="false">
-                      Inbound Activities
+                     Inbound Activities
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                       {% for act in activities %}
@@ -101,7 +103,7 @@
                         </a>
                         {% else %}
                          <a class="dropdown-item" href="{% url 'activities' act.slug %}">
-                          {{ act.name }} </span>
+                          {{ act.name }} 
                         </a>
 
                         {% endif %}
@@ -120,20 +122,62 @@
                     </ul>
                   </div>
                 </li>
-               <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Outbound Tour
-                  </a>
-                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  {% for dest in outbound %}
-                    <a class="dropdown-item" href="{% url 'destination' dest.slug %}">{{dest.name}}</a>
-                    
-                    
-                    {% endfor %}
+                
+                <li class="nav-item">
+                  <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton"
+                      data-mdb-toggle="dropdown" aria-expanded="false">
+                     Outbound Activities
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                      {% for dest in outbound %}
+                      <li>
+                        {% if dest.tour_set.all %}
+                        <a class="dropdown-item" href="{% url 'destination' dest.slug %}">
+                          {{ dest.name }} <span>&raquo;</span>
+                        </a>
+                        {% else %}
+                         <a class="dropdown-item" href="{% url 'destination' dest.slug %}">
+                          {{ dest.name }}
+                        </a>
+
+                        {% endif %}
+                        
+
+                        <ul class="dropdown-menu dropdown-submenu">
+                        {% for tour in dest.tour_set.all %}
+                          <li>
+                            <a class="dropdown-item" href="{% url 'tour-detail' tour.slug %}">{{ tour.name }}</a>
+                          </li>
+                          
+                        {% endfor %}
+                        </ul>
+                      </li>
+                        {% endfor %}
+
+                    </ul>
                   </div>
                 </li>
+               
+               <!--<li class="nav-item dropdown">-->
+               <!--   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+               <!--     Outbound Activities-->
+               <!--   </a>-->
+               <!--   <div class="dropdown-menu" aria-labelledby="navbarDropdown">-->
+               <!--   {% for dest in outbound %}-->
+               <!--     <a class="dropdown-item" href="{% url 'destination' dest.slug %}">{{dest.name}}</a>-->
+                    
+                    
+               <!--     {% endfor %}-->
+               <!--   </div>-->
+               <!-- </li>-->
                 
-                
+                <!--<li class="nav-item">-->
+                <!--  <a class="nav-link" href="/destination/bhutan">Bhutan</a>-->
+                <!--</li>-->
+                <!--<li class="nav-item">-->
+                <!--  <a class="nav-link" href="/destination/tibet/">Tibet</a>-->
+                <!--</li>-->
                <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     About Company
@@ -220,7 +264,7 @@
     <div class="container">
       <div class="row footer-content-box">
         <div class="col-12 col-sm-6 col-md-6 col-lg-3 footerbox">
-          <h4>Destinations</h4>
+          <h4>All Destinations</h4>
           <ul class="footer-lists">
           {% for dest in destination %}
             <li><a href="{% url 'destination' dest.slug %}">{{ dest.name }}</a></li>
@@ -229,7 +273,7 @@
           </ul>
         </div>
         <div class="col-12 col-sm-6 col-md-6 col-lg-3 footerbox">
-          <h4>Activities</h4>
+          <h4>Inbound Activities</h4>
           <ul class="footer-lists">
           {% for activitiy in activities %}
             <li><a href="#">{{ activitiy.name }}</a></li>
@@ -283,17 +327,15 @@
             <li><a href="{{ company_info.linkedin_link}}"><i class="fab fa-linkedin-in" target="_blank"></i></a></li>
             {% endif %}
 
-            {% if company_info.instagram_link %}
-            <li><a href="{{ company_info.instagram_link}}"><i class="fab fa-instagram-square"></i></a></li>
-            {% endif %}
+            {% comment %} <li><a href="www.google.com"><i class="fab fa-instagram-i"></i></a></li> {% endcomment %}
             {% if company_info.youtube_link %}
             <li><a href="{{ company_info.youtube_link}}"><i class="fab fa-youtube" target="_blank"></i></a></li>
             {% endif %}
           </ul>
         </div>
-        <div class="col-12 col-sm-12 col-md-6 col-lg-3">
-          <a href="#" class="btn btn-partners">Our Partner</a>
-        </div>
+        <!--<div class="col-12 col-sm-12 col-md-6 col-lg-3">-->
+        <!--  <a href="#" class="btn btn-partners">Our Partner</a>-->
+        <!--</div>-->
       </div>
     </div>
   </div>
