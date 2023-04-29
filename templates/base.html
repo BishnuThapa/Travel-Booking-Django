@@ -405,8 +405,10 @@
 
 
 <script>
+{% for flashmsg in messages %}
  alertify.set('notifier','position', 'top-right');
- alertify.success('Bishnu Thapa');
+ alertify.success('{{ flashmsg }}');
+ {% endfor %}
 </script>
 <script>
 $(function(){
