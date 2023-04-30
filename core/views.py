@@ -21,6 +21,13 @@ def index(request):
         additional_information = request.POST.get('additional_information')
         FlightBooking.objects.create(
             from_city=from_city, dest_city=dest_city, depart_date=depart_date, return_date=return_date, passengers=passengers, baggage=baggage, full_name=full_name, phone=phone, additional_information=additional_information)
+        subject = "New Flight Booking from " + full_name
+        message = "Flight Booking by" + " " + full_name + " " + "Depart From" + \
+            " " + from_city + " " + "Destination" + " " + \
+            dest_city + " " + "Phone" + " " + phone
+        from_email = settings.EMAIL_HOST_USER
+        recipient_list = ['ybghartmagar@gmail.com',]
+        send_mail(subject, message, from_email, recipient_list)
 
         messages.success(
             request, 'Your Flight Booking request sent successfully!')
