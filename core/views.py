@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from django.db.models import Count
 from django.core.mail import send_mail
+from django.conf import settings
 from django.contrib import messages
 from .models import *
 # Create your views here.
@@ -20,6 +21,7 @@ def index(request):
         additional_information = request.POST.get('additional_information')
         FlightBooking.objects.create(
             from_city=from_city, dest_city=dest_city, depart_date=depart_date, return_date=return_date, passengers=passengers, baggage=baggage, full_name=full_name, phone=phone, additional_information=additional_information)
+
         messages.success(
             request, 'Your Flight Booking request sent successfully!')
         return redirect('index')
@@ -96,9 +98,16 @@ def contact(request):
         # print(name, email, phone, subject, message)
         Inquiry.objects.create(name=name, email=email, phone=phone,
                                message=message)
+
         messages.success(request, 'Your message sent successfully!')
-        subject = "Inquiry from website"
-        to = ('thapabishnu20@gmail.com',)
+        subject = "Inquiry from " + name
+        message = message + " " + "email " + " " + email + " " + "phone " + phone
+        from_email = settings.EMAIL_HOST_USER
+        recipient_list = ['ybghartmagar@gmail.com',]
+        send_mail(subject, message, from_email, recipient_list)
+
+        # subject = "Inquiry from website"
+        # to = ('thapabishnu20@gmail.com',)
         # admin_email = 'thapabishnu20@gmail.com'
         # send_mail(
         #     'New Tour inquiry',
