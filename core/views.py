@@ -113,17 +113,6 @@ def contact(request):
         recipient_list = ['ybghartmagar@gmail.com',]
         send_mail(subject, message, from_email, recipient_list)
 
-        # subject = "Inquiry from website"
-        # to = ('thapabishnu20@gmail.com',)
-        # admin_email = 'thapabishnu20@gmail.com'
-        # send_mail(
-        #     'New Tour inquiry',
-        #     'You have a new inquiry for the tour.'
-        #     '. Please login to admin panel to for more info',
-        #     email,  # from user
-        #     [to],  # to user
-        #     fail_silently=False,
-        # )
         return redirect('contact-us')
     context = {
         'company_info': company_info
@@ -205,6 +194,13 @@ def booking_form(request):
         no_of_people = request.POST.get('no_of_people')
         TourBooking.objects.create(
             package=package, price=price, trip_start_date=trip_start_date, full_name=full_name, email=email, nationality=nationality, contact_number=contact_number, emergency_contact_number=emergency_contact_number, passport_no=passport_no, place_of_issue=place_of_issue, date_of_issue=date_of_issue, date_of_expiry=date_of_expiry, date_of_birth=date_of_birth, no_of_people=no_of_people)
+        subject = "New Flight Booking from " + full_name
+        message = "New Tour Booking by" + " " + full_name + " " + "Tour Name" + \
+            " " + package
+        from_email = settings.EMAIL_HOST_USER
+        recipient_list = ['ybghartmagar@gmail.com',]
+        send_mail(subject, message, from_email, recipient_list)
+        messages.success(request, 'Booking Successful!')
         return redirect('booking-success')
 
     context = {
