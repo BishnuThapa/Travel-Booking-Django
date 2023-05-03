@@ -194,7 +194,7 @@ def booking_form(request):
         no_of_people = request.POST.get('no_of_people')
         TourBooking.objects.create(
             package=package, price=price, trip_start_date=trip_start_date, full_name=full_name, email=email, nationality=nationality, contact_number=contact_number, emergency_contact_number=emergency_contact_number, passport_no=passport_no, place_of_issue=place_of_issue, date_of_issue=date_of_issue, date_of_expiry=date_of_expiry, date_of_birth=date_of_birth, no_of_people=no_of_people)
-        subject = "New Tour Booking from " + full_name
+        subject = "New Tour Booking Alert "
         message = "New Tour Booking by" + " " + full_name + " " + "Tour Name" + \
             " " + package
         from_email = settings.EMAIL_HOST_USER
