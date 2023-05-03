@@ -65,6 +65,12 @@ def tour_detail(request, tour_slug):
         Inquiry.objects.create(name=name, email=email, phone=phone,
                                message=message)
         messages.success(request, 'Your message sent successfully!')
+        subject = "Inquiry from " + name
+        message = message + " " + "email " + " " + email + " " + "phone " + phone
+        from_email = settings.EMAIL_HOST_USER
+        recipient_list = ['ybghartmagar@gmail.com',]
+        send_mail(subject, message, from_email, recipient_list)
+
         return redirect('/trips/' + single_tour.slug)
     context = {
         'single_tour': single_tour
